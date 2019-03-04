@@ -16,6 +16,7 @@
 ## Commit
 * Subject line is **short** summary
 * Do not end the subject line with a period
+* Start subject line with issue number after *#*
 * Capitalize the subject line and each paragraph
 * Use the imperative mood in the subject line
 * Use the body to explain what and why you have done something
@@ -25,7 +26,7 @@
 ### Example
 Subject line:
 ```
-Fix bugs
+#333 Fix bugs
 ```
 Body:
 ```
@@ -37,5 +38,5 @@ Body:
 1) [Denisov Pavel](https://github.com/Ppasha9)
 2) [Vasiliev Peter](https://github.com/pv6) - **techlead**
 3) [Kononov Pavel](https://github.com/decentNick)
-4) Lavrichenko Olga
+4) [Lavrichenko Olga](https://github.com/OLavrik)
 5) [Kozlov Ilya](https://github.com/ik6cgsg) - **teamlead**

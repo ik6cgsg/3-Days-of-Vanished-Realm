@@ -65,6 +65,10 @@ public class VRCursor : GvrBasePointer
     /// <summary>The material used to render the reticle.</summary>
     public Material MaterialComp { private get; set; }
 
+    /// <summary>Current distance of the reticle (in meters).</summary>
+    /// <remarks>Getter exposed for testing.</remarks>
+    public float ReticleDistanceInMeters { get; private set; }
+
     /// <summary>Returns the max distance from the pointer that
     /// raycast hits will be detected.</summary>
     public override float MaxPointerDistance
@@ -101,9 +105,9 @@ public class VRCursor : GvrBasePointer
 
         #region Tringle Mesh Build
         Vector3[] triVerts = new Vector3[3];
-        triVerts[0] = new Vector3(0.02f * Mathf.Cos(Mathf.PI / 6), -0.02f * Mathf.Sin(Mathf.PI / 2), 1.0f);
-        triVerts[1] = new Vector3(-0.02f * Mathf.Cos(Mathf.PI / 6), -0.02f * Mathf.Sin(Mathf.PI / 2), 1.0f);
-        triVerts[2] = new Vector3(0.0f, 0.02f, 1.0f);
+        triVerts[0] = new Vector3(0.05f * Mathf.Cos(Mathf.PI / 6), -0.05f * Mathf.Sin(Mathf.PI / 2), 1.0f);
+        triVerts[1] = new Vector3(-0.05f * Mathf.Cos(Mathf.PI / 6), -0.05f * Mathf.Sin(Mathf.PI / 2), 1.0f);
+        triVerts[2] = new Vector3(0.0f, 0.03f, 1.0f);
 
         int[] triIndices = new int[3];
 
@@ -156,6 +160,11 @@ public class VRCursor : GvrBasePointer
     /// </summary>
     void Update()
     {
+        ReticleDistanceInMeters = Mathf.Clamp(ReticleDistanceInMeters, RETICLE_DISTANCE_MIN, maxReticleDistance);
+        MaterialComp.SetFloat("_DistanceInMeters", ReticleDistanceInMeters);
+
+        Debug.Log("Raycast distance: " + ReticleDistanceInMeters);
+
         /// Cross state handle
         if (CurrentType == CursorType.CT_CROSS)
             HandleCrossState();
@@ -190,6 +199,9 @@ public class VRCursor : GvrBasePointer
     /// <param name="isInteractive">True if the object being pointed at is interactive</param>
     public override void OnPointerEnter(RaycastResult raycastResult, bool isInteractive)
     {
+        Vector3 targetLocalPosition = base.PointerTransform.InverseTransformPoint(raycastResult.worldPosition);
+        ReticleDistanceInMeters = Mathf.Clamp(targetLocalPosition.z, RETICLE_DISTANCE_MIN, maxReticleDistance);
+
         HandleTriangleRotation(isInteractive);
     }
 
@@ -200,6 +212,9 @@ public class VRCursor : GvrBasePointer
     /// <param name="isInteractive">True if the object being pointed at is interactive</param>
     public override void OnPointerHover(RaycastResult raycastResult, bool isInteractive)
     {
+        Vector3 targetLocalPosition = base.PointerTransform.InverseTransformPoint(raycastResult.worldPosition);
+        ReticleDistanceInMeters = Mathf.Clamp(targetLocalPosition.z, RETICLE_DISTANCE_MIN, maxReticleDistance);
+
         HandleTriangleRotation(isInteractive);
     }
 
@@ -209,6 +224,8 @@ public class VRCursor : GvrBasePointer
     /// <param name="previousObject">Object that was being pointed at the previous frame</param>
     public override void OnPointerExit(GameObject previousObject)
     {
+        ReticleDistanceInMeters = maxReticleDistance;
+
         HandleTriangleRotation(false);
     }
 

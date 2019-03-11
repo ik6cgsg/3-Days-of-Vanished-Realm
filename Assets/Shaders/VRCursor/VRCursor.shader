@@ -49,29 +49,12 @@ Shader "Custom/VR Cursor Shader" {
         return o;
       }
 
-      half4 frag(OutV i) : COLOR
+      fixed4 frag(OutV i) : COLOR
       {
         float4 col = _Color;
         return tex2D(_MainTex, i.texcoord) * col;
       }
       ENDCG
-    }
-  }
-
-  SubShader
-  {
-    Tags { "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
-    Lighting Off
-    Cull Off
-    ZTest Always
-    ZWrite Off
-    Fog { Mode Off }
-    Blend SrcAlpha OneMinusSrcAlpha
-    Pass {
-        Color[_Color]
-        SetTexture[_MainTex] {
-          combine primary, texture * primary
-        }
     }
   }
 }

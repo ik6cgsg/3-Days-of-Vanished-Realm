@@ -1,5 +1,5 @@
 # Release Notes
-## Version 1.0 (13.03.2019)
+## Version 0.1 (13.03.2019)
 ### What's new
 * We've got our own first interactive object
 * You can enjoy basic and simple scene now

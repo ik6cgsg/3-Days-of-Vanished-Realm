@@ -119,9 +119,6 @@ enum tag_Days
 
 ## Naming
 * Use \_PascalCasing for properties
-* Use camelCasing for member variables, parameters and local variables
-* Use PascalCasing for function, property, event, and class names
-* Use UPPER\_CASE for constants
 
 ## Other
 * All other information you can read in upper paragraph **Code Style**

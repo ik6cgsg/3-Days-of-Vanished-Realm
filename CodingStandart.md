@@ -115,3 +115,10 @@ private const int WindowSize
 interface movableInterface
 enum tag_Days
 ```
+# Shaders code style
+
+## Naming
+* Use \_PascalCasing for properties
+
+## Other
+* All other information you can read in upper paragraph **Code Style**

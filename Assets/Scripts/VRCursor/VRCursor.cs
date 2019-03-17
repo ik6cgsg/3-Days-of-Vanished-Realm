@@ -5,10 +5,10 @@ using UnityEngine.EventSystems;
 
 public class VRCursor : GvrBasePointer
 {
-    /// Minimum distance of the reticle (in meters).
+    // Minimum distance of the reticle (in meters).
     public const float RETICLE_DISTANCE_MIN = 0.45f;
 
-    /// Current type of cursor
+    // Current type of cursor
     public enum CursorType
     {
         CT_NONE,
@@ -16,72 +16,81 @@ public class VRCursor : GvrBasePointer
         CT_CROSS,       // 'cross' state
     }
 
-    /// Maximum distance of the cursor raycasting (in meters).
+    // Maximum distance of the cursor raycasting (in meters).
     public float maxReticleDistance = 20.0f;
 
-    /// Radius of entering detecting intersection with objects.
+    // Radius of entering detecting intersection with objects.
     public float enterRadius = 0.5f;
 
-    /// Radius of stopping detecting intersection with objects.
+    // Radius of stopping detecting intersection with objects.
     public float exitRadius = 0.5f;
 
-    /// Growth speed multiplier for the reticle
+    // Growth speed multiplier for the reticle
     public float growthSpeed = 8.0f;
 
-    /// Length of reticle triangle in disactive mode
+    // Length of reticle triangle in disactive mode
     public float minTriRad = 0.1f;
 
-    /// Length of reticle triangle in active mode
+    // Length of reticle triangle in active mode
     public float maxTriRad = 0.2f;
 
-    /// Cross mesh height
+    // Cross mesh height
     public float crossHeight = 0.1f;
 
-    /// Cross color
+    // Cross color
     public Color crossColor = new Color(0, 0, 1, 0.5f);
 
-    /// Triangle color
+    // Triangle color
     public Color triangleColor = new Color(1, 1, 0, 0.5f);
 
-    /// Sorting order to use for the reticle's renderer.
-    /// Range values come from https://docs.unity3d.com/ScriptReference/Renderer-sortingOrder.html.
-    /// Default value 32767 ensures gaze reticle is always rendered on top.
+    // Sorting order to use for the reticle's renderer.
+    // Default value 32767 ensures gaze reticle is always rendered on top.
     [Range(-32767, 32767)]
     public int sortingOrder = 32767;
 
-    /// Speed of triangle rotation
+    // Speed of triangle rotation
     public float rotationSpeed = 45.0f;
 
-    /// Time settings for 'cross' figure of cursor
+    // Time settings for 'cross' figure of cursor
     private float crossTime = 0.2f;
     private float crossTimer = 0.0f;
 
-    /// Prebuilded triangle mesh
+    // Prebuilded triangle mesh
     private Mesh triangleMesh;
 
-    /// Current rotation angle of triangle
+    // Current rotation angle of triangle
     private float curRotAngle = 0.0f;
 
-    /// <summary>The material used to render the reticle.</summary>
-    public Material MaterialComp { private get; set; }
-
-    /// <summary>Current distance of the reticle (in meters).</summary>
-    /// <remarks>Getter exposed for testing.</remarks>
-    public float ReticleDistanceInMeters { get; private set; }
-
-    /// <summary>Returns the max distance from the pointer that
-    /// raycast hits will be detected.</summary>
-    public override float MaxPointerDistance
+    // The material used to render the reticle.
+    public Material MaterialComp
     {
-        get { return maxReticleDistance; }
+        private get;
+        set;
     }
 
-    /// <summary> Current state of cursor </summary>
-    private CursorType CurrentType { get; set; }
+    // Current distance of the reticle (in meters).
+    public float ReticleDistanceInMeters
+    {
+        get;
+        private set;
+    }
 
-    /// <summary>
-    /// Start is called before the first frame update.
-    /// </summary>
+    // Returns the max distance from the pointer that raycast hits will be detected.
+    public override float MaxPointerDistance
+    {
+        get
+        {
+            return maxReticleDistance;
+        }
+    }
+
+    // <summary> Current state of cursor </summary>
+    private CursorType CurrentType
+    {
+        get;
+        set;
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -90,14 +99,11 @@ public class VRCursor : GvrBasePointer
         rendComponent.sortingOrder = sortingOrder;
         MaterialComp = rendComponent.material;
 
-        BuildMeshes();
+        BuildMesh();
         SetCurrentMesh(CursorType.CT_TRIANGLE);
     }
 
-    /// <summary>
-    /// Building meshes
-    /// </summary>
-    private void BuildMeshes()
+    private void BuildMesh()
     {
         gameObject.AddComponent<MeshFilter>();
         triangleMesh = new Mesh();
@@ -121,13 +127,13 @@ public class VRCursor : GvrBasePointer
         #endregion
     }
 
-    /// <summary>
-    /// Setting current mesh to MeshFilter component
-    /// </summary>
+    // Setting current mesh to MeshFilter component
     public void SetCurrentMesh(CursorType newType)
     {
         if (CurrentType == newType)
+        {
             return;
+        }
 
         CurrentType = newType;
         if (CurrentType == CursorType.CT_CROSS)
@@ -140,9 +146,7 @@ public class VRCursor : GvrBasePointer
         }
     }
 
-    /// <summary>
-    /// Handle the cross figure of cursor
-    /// </summary>
+    // Handle the cross figure of cursor
     private void HandleCrossState()
     {
         if (crossTimer >= crossTime)
@@ -155,9 +159,6 @@ public class VRCursor : GvrBasePointer
         crossTimer += Time.deltaTime;
     }
 
-    /// <summary>
-    /// Update is called once per frame.
-    /// </summary>
     void Update()
     {
         ReticleDistanceInMeters = Mathf.Clamp(ReticleDistanceInMeters, RETICLE_DISTANCE_MIN, maxReticleDistance);
@@ -165,19 +166,20 @@ public class VRCursor : GvrBasePointer
 
         Debug.Log("Raycast distance: " + ReticleDistanceInMeters);
 
-        /// Cross state handle
+        // Cross state handle
         if (CurrentType == CursorType.CT_CROSS)
+        {
             HandleCrossState();
+        }
     }
 
-    /// <summary>
-    /// Rotate the triangle cursor, if it is pointing to interactive object
-    /// </summary>
-    /// <param name="isInteractive"></param>
+    // Rotate the triangle cursor, if it is pointing to interactive object
     private void HandleTriangleRotation(bool isInteractive)
     {
         if (CurrentType == CursorType.CT_CROSS)
+        {
             return;
+        }
 
         if (isInteractive)
         {
@@ -192,11 +194,7 @@ public class VRCursor : GvrBasePointer
         }
     }
 
-    /// <summary>
-    /// Called when the pointer is facing a valid GameObject.
-    /// </summary>
-    /// <param name="raycastResult">Hit detection result for the object being pointed at</param>
-    /// <param name="isInteractive">True if the object being pointed at is interactive</param>
+    // Called when the pointer is facing a valid GameObject.
     public override void OnPointerEnter(RaycastResult raycastResult, bool isInteractive)
     {
         Vector3 targetLocalPosition = base.PointerTransform.InverseTransformPoint(raycastResult.worldPosition);
@@ -205,11 +203,7 @@ public class VRCursor : GvrBasePointer
         HandleTriangleRotation(isInteractive);
     }
 
-    /// <summary>
-    /// Called every frame the user is still pointing at a valid GameObject.
-    /// </summary>
-    /// <param name="raycastResult">Hit detection result for the object being pointed at</param>
-    /// <param name="isInteractive">True if the object being pointed at is interactive</param>
+    // Called every frame the user is still pointing at a valid GameObject.
     public override void OnPointerHover(RaycastResult raycastResult, bool isInteractive)
     {
         Vector3 targetLocalPosition = base.PointerTransform.InverseTransformPoint(raycastResult.worldPosition);
@@ -218,10 +212,7 @@ public class VRCursor : GvrBasePointer
         HandleTriangleRotation(isInteractive);
     }
 
-    /// <summary>
-    /// Called when the pointer no longer faces an object previously intersected with a ray projected from the camera.
-    /// </summary>
-    /// <param name="previousObject">Object that was being pointed at the previous frame</param>
+    // Called when the pointer no longer faces an object previously intersected with a ray projected from the camera.
     public override void OnPointerExit(GameObject previousObject)
     {
         ReticleDistanceInMeters = maxReticleDistance;
@@ -229,27 +220,14 @@ public class VRCursor : GvrBasePointer
         HandleTriangleRotation(false);
     }
 
-    /// <summary>
-    /// Called when a click is initiated.
-    /// </summary>
     public override void OnPointerClickDown()
     {
     }
 
-    /// <summary>
-    /// Called when click is finished.
-    /// </summary>
     public override void OnPointerClickUp()
     {
     }
 
-    /// <summary>
-    /// Return the radius of the pointer.
-    /// </summary>
-    /// <param name="enterRadius">Is used for finding new targets</param>
-    /// <param name="exitRadius">Is used to see if you are still nearby the object currently pointed at
-    ///                          to avoid a flickering effect when just at the border of the intersection
-    /// </param>
     public override void GetPointerRadius(out float enterRadius, out float exitRadius)
     {
         enterRadius = this.enterRadius;

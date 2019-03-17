@@ -1,4 +1,21 @@
 # 3-Days-of-Vanished-Realm
+Interactive VR game for mobile phones (Android/iOS). Full immersion in the world of quest adventures, for the age of 6+. Everyone will have to strain their brains.
+
+# Getting Started
+Development environment under C# + Unity sdk.
+Load Google VR sdk and Android/iOS sdk.
+Clone repository:
+```
+$ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm
+```
+
+# Game Experience 
+The game is first-person, you will:
+1) Travel around the map by teleportation (without sharp jumps, so as not to turn the head).
+2) Interact with map's objects, using them to solve puzzles.
+3) Get a new level with different complexity.
+
+Difficulty will grow with geometric speed. As the result, dive into the world of mysteries with pleasant music in the background.
 
 # Git workflow
 * Main branch for demonstrations - *master*
@@ -34,38 +51,12 @@ Body:
 - Remove UI button missclick bug.
 ```
 
-# Code style
-
-## Bracing
-* Open braces should always be at the beginning of the line after the statement that begins the block
-* Contents of the brace should be indented by 4 spaces
-* Braces should never be considered optional
-
-## Single line statement
-* **Don't** use single line statement blocks
-
-## Commenting
-* Use the // (two slashes) style of comment tags
-
-## Spacing
-* Use a single space after a comma between function arguments
-* **Don't** use a space after the parenthesis
-* **Don't** use spaces between a function name and parenthesis
-* **Don't** use spaces inside brackets
-* Use a single space before flow control statements
-* Use a single space before and after binary operators
-
-## Naming
-* **Don't** use Hungarian notation
-* **Don't** use a prefix for member variables
-* Use camelCasing for member variables, parameters and local variables
-* Use PascalCasing for function, property, event, and class names
-* Prefix interfaces names with “I”
-* **Don't** prefix enums, classes, or delegates with any letter
+# Code Style
+Detailed description is in [CodingStandart.md](https://github.com/ik6cgsg/3-Days-of-Vanished-Realm/blob/master/CodingStandart.md)
 
 # Development team
-1) [Denisov Pavel](https://github.com/Ppasha9)
+1) [Denisov Pavel](https://github.com/Ppasha9) - **software engineer**
 2) [Vasiliev Peter](https://github.com/pv6) - **techlead**
-3) [Kononov Pavel](https://github.com/decentNick)
-4) [Lavrichenko Olga](https://github.com/OLavrik)
+3) [Kononov Pavel](https://github.com/decentNick) - **software engineer**
+4) [Lavrichenko Olga](https://github.com/OLavrik) - **software engineer**
 5) [Kozlov Ilya](https://github.com/ik6cgsg) - **teamlead**

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4083445045818890641}
   - component: {fileID: 4083445045818890642}
   - component: {fileID: 4083445045818890643}
+  - component: {fileID: 4083445045213166638}
   m_Layer: 2
   m_Name: VRCursorPointer
   m_TagString: Untagged
@@ -95,3 +96,15 @@ MonoBehaviour:
   triangleColor: {r: 0.9758564, g: 1, b: 0, a: 1}
   sortingOrder: 32767
   rotationSpeed: 45
+--- !u!114 &4083445045213166638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4083445045818890640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0650e1bc376848c4b9f4a826e04fff8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -49,12 +49,12 @@ for (int i=0; i<100; i++) { DoSomething(i); }
 ### Example
 * Yes
 ```csharp
-// Creare a new ray against the ground
+// Create a new ray against the ground
 ```
 * No
 ```csharp
-/// Creare a new ray against the ground
-/* Creare a new ray against the ground */
+/// Create a new ray against the ground
+/* Create a new ray against the ground */
 ```
 
 ## Spacing
@@ -97,7 +97,7 @@ int a=17 +52   -23*3
 * Yes
 ```csharp
 String fileName
-int _count
+int count
 double veryLongNumber
 public class MyClass
 interface IMovable
@@ -106,7 +106,7 @@ enum Days
 * No
 ```csharp
 String sName
-int count
+int _count
 double Very_Long_number
 public class my_class
 interface movableInterface

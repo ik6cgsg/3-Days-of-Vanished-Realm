@@ -24,7 +24,7 @@ public class VRCursor : GvrBasePointer
 
     /// Radius of stopping detecting intersection with objects.
     public float exitRadius = 0.5f;
-
+                                                    
     /// Growth speed multiplier for the reticle
     public float growthSpeed = 8.0f;
 
@@ -254,5 +254,13 @@ public class VRCursor : GvrBasePointer
     {
         enterRadius = this.enterRadius;
         exitRadius = this.exitRadius;
+    }
+
+    public override bool TriggerDown
+    {
+        get
+        {
+            return base.TriggerDown || MagnetTrigger.TriggerDown;
+        }
     }
 }

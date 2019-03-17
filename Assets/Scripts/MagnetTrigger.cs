@@ -7,7 +7,9 @@ public class MagnetTrigger : MonoBehaviour
     private const int WINDOW_SIZE = 40;
     private const int NUM_SEGMENTS = 2;
     private const int SEGMENT_SIZE = WINDOW_SIZE / NUM_SEGMENTS;
-    private const int T1 = 30, T2 = 130;
+
+    public int LowLimit = 30;
+    public int HighLimit = 130;
 
     private List<Vector3> sensorData;
     private float[] offsets;
@@ -52,6 +54,7 @@ public class MagnetTrigger : MonoBehaviour
         }
 
         sensorData.Add(currentVector);
+        EvaluateModel();
     }
 
     private void EvaluateModel()
@@ -62,72 +65,70 @@ public class MagnetTrigger : MonoBehaviour
             return;
         }
 
-        float[] means = new float[2];
-        float[] maximums = new float[2];
-        float[] minimums = new float[2];
+        float[] means = new float[NUM_SEGMENTS];
+        float[] maximums = new float[NUM_SEGMENTS];
+        float[] minimums = new float[NUM_SEGMENTS];
 
         Vector3 baseline = sensorData[sensorData.Count - 1];
 
         for (int i = 0; i < NUM_SEGMENTS; i++)
         {
-            int segmentStart = 20 * i;
-            offsets = ComputeOffsets(segmentStart, baseline);
+            int segmentStart = SEGMENT_SIZE * i;
+            ComputeOffsets(segmentStart, baseline);
 
-            means[i] = ComputeMean(offsets);
-            maximums[i] = ComputeMaximum(offsets);
-            minimums[i] = ComputeMinimum(offsets);
+            means[i] = ComputeAverage();
+            maximums[i] = ComputeMaximum();
+            minimums[i] = ComputeMinimum();
         }
 
         float min1 = minimums[0];
         float max2 = maximums[1];
 
-        if (min1 < T1 && max2 > T2)
+        if (min1 < LowLimit && max2 > HighLimit)
         {
             sensorData.Clear();
             triggerDown = true;
         }
     }
 
-    private float[] ComputeOffsets(int start, Vector3 baseline)
+    private void ComputeOffsets(int start, Vector3 baseline)
     {
         for (int i = 0; i < SEGMENT_SIZE; i++)
         {
             Vector3 point = sensorData[start + i];
-            Vector3 o = new Vector3(point.x - baseline.x, point.y - baseline.y, point.z - baseline.z);
-            offsets[i] = o.magnitude;
+            Vector3 offset = new Vector3(point.x - baseline.x, point.y - baseline.y, point.z - baseline.z);
+            offsets[i] = offset.magnitude;
         }
-
-        return offsets;
     }
 
-    private float ComputeMean(float[] offsets)
+    private float ComputeAverage()
     {
         float sum = 0;
-        foreach (float o in offsets)
+        foreach (float offset in offsets)
         {
-            sum += o;
+            sum += offset;
         }
 
         return sum / offsets.Length;
     }
 
-    private float ComputeMaximum(float[] offsets)
+    private float ComputeMaximum()
     {
         float max = float.MinValue;
-        foreach (float o in offsets)
+        foreach (float offset in offsets)
         {
-            max = Mathf.Max(o, max);
+            max = Mathf.Max(offset, max);
         }
 
         return max;
     }
 
-    private float ComputeMinimum(float[] offsets)
+    private float ComputeMinimum()
     {
         float min = float.MaxValue;
-        foreach (float o in offsets)
+        foreach (float offset in offsets)
         {
-            min = Mathf.Min(o, min);
+            min = Mathf.Min(offset, min);
         }
 
         return min;

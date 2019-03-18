@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemoDoorController : MonoBehaviour
+public class DemoDoorController : IInteractiveObject
 {
     public float openTime;
     public float openHeight;
@@ -19,7 +19,7 @@ public class DemoDoorController : MonoBehaviour
         targetPos = transform.position + new Vector3(0, openHeight, 0);
     }
 
-    public void Interact()
+    public override void Interact()
     {
         if (!isMoving)
         {

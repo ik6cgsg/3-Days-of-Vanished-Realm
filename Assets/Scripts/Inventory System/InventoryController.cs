@@ -1,5 +1,6 @@
-﻿
-public static class InventoryController
+﻿using UnityEngine;
+
+public class InventoryController: MonoBehaviour
 {
     private static int maxSize;
     private static int maxAvailableSize;
@@ -41,16 +42,6 @@ public static class InventoryController
         return false;
     }
 
-    public static void SetSize(int size)
-    {
-        maxSize = size;
-    }
-
-    public static void SetAvailableSize(int size)
-    {
-        maxAvailableSize = size;
-    }
-
     // Increasing the maximum amount of items in inventory
     public static void IncreaseSize(int increaseRate)
     {
@@ -59,6 +50,11 @@ public static class InventoryController
 
     // Increasing the maximum amount of available items in inventory
     public static void IncreaseAvailableSize(int increaseRate)
+    {
+
+    }
+
+    public void Start()
     {
 
     }

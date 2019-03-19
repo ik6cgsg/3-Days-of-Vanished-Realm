@@ -17,11 +17,4 @@ public class EmptyItem : IItem
             return Texture2D.whiteTexture;
         }
     }
-
-    // Action function of current item
-    public override void Use()
-    {
-        // TODO: maybe some more action
-        return;
-    }
 }

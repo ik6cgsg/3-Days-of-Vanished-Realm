@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public abstract class IItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public abstract class IItem : MonoBehaviour
 {
     public abstract string Name
     {
@@ -21,21 +21,6 @@ public abstract class IItem : MonoBehaviour, IPointerClickHandler, IPointerEnter
 
     // Action function of current item
     public virtual void Use()
-    {
-
-    }
-
-    public virtual void OnPointerClick(PointerEventData pointerEventData)
-    {
-
-    }
-
-    public virtual void OnPointerEnter(PointerEventData pointerEventData)
-    {
-
-    }
-
-    public virtual void OnPointerExit(PointerEventData pointerEventData)
     {
 
     }

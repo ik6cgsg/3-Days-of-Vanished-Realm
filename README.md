@@ -3,19 +3,6 @@
 
 Interactive VR game for mobile phones, Android and iOS systems. Full immersion in the world of quest adventures, for the age of 6+. Everyone will have to strain their brains.
 
-# Getting Started
-Development environment under C# + Unity sdk.
-
-Load Google  VR sdk and android sdk.
-
-Clone repository:
-
-$ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm
-
-
-
-
-# Functionality 
 The game is first-person, you will:
 
 1) Travel around the map by teleportation (without sharp jumps, so as not to turn the head).
@@ -25,6 +12,28 @@ The game is first-person, you will:
 3) Get a new level with different complexity.
 
 Difficulty will grow with geometric speed. As the result, dive into the world of mysteries with pleasant music in the background.
+
+# Getting Started
+Development environment under C# + Unity sdk.
+
+ [Unity sdk (minimum version: 5.6) ](https://store.unity.com)
+
+Open project using your IDEA (preferred [XCode](https://developer.apple.com/xcode/) for Mac Os / [Visual Studio](https://visualstudio.microsoft.com/ru/?rr=https%3A%2F%2Fwww.google.com%2F) for Windows). 
+
+Clone repository:
+
+$ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm
+
+To compile and build project you need to go library and 
+
+
+
+# Users installation guide
+
+You need phone with iOS (minimum version 9.0) or Android (minimum version 4.4) softwere.
+
+Go to Play Market (or AppStore), enter in search line "3 Days of Vanished-Realm" and click download. Have fun!
+
 # Git workflow
 * Main branch for demonstrations - *master*
 * Main branch for coding - *develop*

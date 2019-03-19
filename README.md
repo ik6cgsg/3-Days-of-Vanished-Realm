@@ -17,6 +17,12 @@ The game is first-person, you will:
 
 Difficulty will grow with geometric speed. As the result, dive into the world of mysteries with pleasant music in the background.
 
+# Users installation guide
+
+You need a mobile phone with iOS (minimum version 9.0) or Angroid (minimum version 4.4) software.
+
+Go to Play Market (or AppStore), enter in serach line "3 Days of Vanished Realm" and click download. Have fun!
+
 # Git workflow
 * Main branch for demonstrations - *master*
 * Main branch for coding - *develop*

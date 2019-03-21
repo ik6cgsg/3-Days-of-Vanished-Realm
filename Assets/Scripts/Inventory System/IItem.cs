@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
-public abstract class IItem : MonoBehaviour
+public abstract class IItem : ScriptableObject
 {
     public abstract string Name
     {

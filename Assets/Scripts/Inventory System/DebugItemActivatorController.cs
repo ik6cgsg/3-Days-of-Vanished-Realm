@@ -3,7 +3,22 @@ using UnityEngine;
 
 public class DebugItemActivatorController : MonoBehaviour
 {
-    public IItem[] debugItems = new IItem[10];
+    public string[] debugItemNames = new string[10];
+
+    private IItem[] debugItems;
+
+    private void Start()
+    {
+        debugItems = new IItem[debugItemNames.Length];
+
+        for (int i = 0; i < Math.Min(debugItems.Length, 10); i++)
+        {
+            if (debugItemNames[i] != "")
+            {
+                debugItems[i] = (IItem)ScriptableObject.CreateInstance(debugItemNames[i] + "Item");
+            }
+        }
+    }
 
     void Update()
     {

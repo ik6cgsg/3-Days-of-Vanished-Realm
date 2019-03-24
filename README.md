@@ -1,30 +1,22 @@
 # 3-Days-of-Vanished-Realm
-# SpbPU
-
-Interactive VR game for mobile phones, Android and iOS systems. Full immersion in the world of quest adventures, for the age of 6+. Everyone will have to strain their brains.
+Interactive VR game for mobile phones (Android/iOS). Full immersion in the world of quest adventures, for the age of 6+. Everyone will have to strain their brains.
 
 # Getting Started
 Development environment under C# + Unity sdk.
-
-Load Google  VR sdk and android sdk.
-
+Load Google VR sdk and Android/iOS sdk.
 Clone repository:
-
+```
 $ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm
+```
 
-
-
-
-# Functionality 
+# Game Experience 
 The game is first-person, you will:
-
 1) Travel around the map by teleportation (without sharp jumps, so as not to turn the head).
-
 2) Interact with map's objects, using them to solve puzzles.
-
 3) Get a new level with different complexity.
 
 Difficulty will grow with geometric speed. As the result, dive into the world of mysteries with pleasant music in the background.
+
 # Git workflow
 * Main branch for demonstrations - *master*
 * Main branch for coding - *develop*

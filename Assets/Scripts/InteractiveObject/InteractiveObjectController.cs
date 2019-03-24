@@ -5,12 +5,11 @@ using UnityEngine.EventSystems;
 
 public class InteractiveObjectController : MonoBehaviour
 {
-    public EventTrigger.TriggerEvent interactionCallback;
+    public IInteractiveObject interactiveObject;
+
     public float maxDistance;
-    public bool canInteractTwice;
 
     private bool isWatched;
-    private bool canInteract = true;
 
     void Start()
     {
@@ -43,7 +42,7 @@ public class InteractiveObjectController : MonoBehaviour
         isWatched = true;
 
         // Set up cursor mode
-        if (canInteract) // don't change from neutral if can't interact
+        if (interactiveObject.CanInteract())
         {
             if (GvrPointerInputModule.CurrentRaycastResult.distance <= maxDistance)
             {
@@ -51,8 +50,12 @@ public class InteractiveObjectController : MonoBehaviour
             }
             else
             {
-                ; // Set cursor to can't interact
+                ; // Set cursor to too far to interact
             }
+        }
+        else
+        {
+            ; // Set cursor to can't interact
         }
     }
 
@@ -64,13 +67,10 @@ public class InteractiveObjectController : MonoBehaviour
 
     private void OnPointerClick(BaseEventData eventData)
     {
-        if (canInteract && GvrPointerInputModule.CurrentRaycastResult.distance <= maxDistance)
+        if (GvrPointerInputModule.CurrentRaycastResult.distance <= maxDistance
+            && interactiveObject.CanInteract())
         {
-            interactionCallback.Invoke(eventData);
-            if (!canInteractTwice)
-            {
-                canInteract = false;
-            }
+            interactiveObject.Interact();
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7750622830430588411}
   - component: {fileID: 3095081658412487512}
   m_Layer: 0
-  m_Name: PageTracker
+  m_Name: GuiPageTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageTrackerCirclePrefab: {fileID: 7723208688643903278, guid: e2a3f2aa289cad54a836c3ce065f0bbb,
     type: 3}
+  passiveScale: 0.1
+  activeScale: 0.15

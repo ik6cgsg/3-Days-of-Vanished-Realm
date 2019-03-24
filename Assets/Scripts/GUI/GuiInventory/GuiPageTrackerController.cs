@@ -8,7 +8,7 @@ public class GuiPageTrackerController : MonoBehaviour
     public float passiveScale = 0.1F;
     public float activeScale = 0.2F;
 
-    private int noofPages = 1;
+    private int noofPages = 3;
     private int currentPage = 0;
     private const float SELF_T = 0;
     private const float SELF_T1 = 1;

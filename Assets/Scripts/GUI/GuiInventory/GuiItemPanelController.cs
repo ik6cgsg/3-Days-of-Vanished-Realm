@@ -11,7 +11,7 @@ public class GuiItemPanelController : MonoBehaviour
     public int pageSize = 5;
 
     private int currentPage = 0;
-    private int noofPages = 1;
+    private int noofPages = 3;
     private List<GameObject> itemIcons = new List<GameObject>();
     private List<GuiItemIconController> itemIconControllers = new List<GuiItemIconController>();
     private GameObject pageTrackerInstance;

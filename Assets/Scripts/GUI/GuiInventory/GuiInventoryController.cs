@@ -17,9 +17,8 @@ public class GuiInventoryController : MonoBehaviour
 
     public Transform mainCameraTransform;
 
-    private float COLLAPSE_T = 0;
+    private float COLLAPSE_T = 0.075F;
     private float PREV_PAGE_T = 0.15F;
-    private float ITEM_PANEL_T = 0.5F;
     private float NEXT_PAGE_T = 0.85F;
 
     private bool isShown = false;

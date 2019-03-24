@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GuiCollapseButtonController : IInteractiveObject
+﻿public class GuiCollapseButtonController : IInteractiveObject
 {
-    public GuiInventoryController inventoryController;
+    private GuiInventoryController inventoryController;
 
     public override void Interact()
     {
@@ -13,6 +9,7 @@ public class GuiCollapseButtonController : IInteractiveObject
 
     void Start()
     {
+        inventoryController = transform.parent.GetComponent<GuiInventoryController>();
     }
 
     void Update()

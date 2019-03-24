@@ -47,6 +47,8 @@ MonoBehaviour:
     type: 3}
   pageTrackerPrefab: {fileID: 7824365269881186119, guid: db6c440bbc94b224d8da1f3c8412aacb,
     type: 3}
+  iconScale: 0.45
+  width: 0.5
   pageSize: 5
 --- !u!1 &930824958612130702
 GameObject:
@@ -220,6 +222,7 @@ MonoBehaviour:
   prevPageButton: {fileID: 2822749967438282191}
   itemPanel: {fileID: 748775787153849226}
   nextPageButton: {fileID: 930824958612130702}
+  recenterButton: {fileID: 0}
   distance: 3
   lookUpAngle: 20
   heightAngle: 45

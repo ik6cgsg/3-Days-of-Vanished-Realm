@@ -13,6 +13,7 @@ public class GuiInventoryController : MonoBehaviour
     public float lookUpAngle = 20;
     public float heightAngle = 45;
     public float widthAngle = 90;
+    public float thickAngle = 20;
 
     public Transform mainCameraTransform;
 
@@ -24,10 +25,12 @@ public class GuiInventoryController : MonoBehaviour
     private bool isShown = false;
     private bool isCollapsed = false;
 
-    public void UpdateChildTransform(Transform transform, float t)
+    public void UpdateChildTransform(Transform transform, float t, float t1 = 0.5F)
     {
         Vector3 pos = new Vector3(0, 0, distance);
-        Quaternion rotate = Quaternion.Euler(0, widthAngle * (t - 0.5F), 0);
+        Quaternion rotate = Quaternion.Euler(thickAngle * (t1 - 0.5F),
+                                             widthAngle * (t - 0.5F),
+                                             0);
 
         pos = rotate * pos;
 
@@ -98,25 +101,12 @@ public class GuiInventoryController : MonoBehaviour
     {
         UpdateChildTransform(collapseButton.transform, COLLAPSE_T);
         UpdateChildTransform(prevPageButton.transform, PREV_PAGE_T);
-        UpdateChildTransform(itemPanel.transform, ITEM_PANEL_T);
+        //UpdateChildTransform(itemPanel.transform, ITEM_PANEL_T);
         UpdateChildTransform(nextPageButton.transform, NEXT_PAGE_T);
     }
 
     private void EnableChild(GameObject child, bool enabled)
     {
-        /*
-        Renderer rnd = child.GetComponent<Renderer>();
-        if (rnd != null)
-        {
-            rnd.enabled = enabled;
-        }
-
-        Collider collider = child.GetComponent<Collider>();
-        if (collider != null)
-        {
-            collider.enabled = enabled;
-        }
-        */
         child.SetActive(enabled);
     }
 

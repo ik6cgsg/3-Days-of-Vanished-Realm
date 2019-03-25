@@ -176,12 +176,14 @@ public class VRCursor : GvrBasePointer
     {
         ReticleDistanceInMeters = Mathf.Clamp(ReticleDistanceInMeters, RETICLE_DISTANCE_MIN, maxReticleDistance);
         MaterialComp.SetFloat("_DistanceInMeters", ReticleDistanceInMeters);
+
+        HandleRotation();
     }
 
     // Rotate the cursor, if it is pointing to interactive object
-    private void HandleRotation(bool isInteractive)
+    private void HandleRotation()
     {
-        if (CurrentType == CursorType.CAN_INTERACT && isInteractive)
+        if (CurrentType == CursorType.CAN_INTERACT)
         {
             curRotAngle += Time.deltaTime * rotationSpeed;
             transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), Time.deltaTime * rotationSpeed);
@@ -199,8 +201,6 @@ public class VRCursor : GvrBasePointer
     {
         Vector3 targetLocalPosition = base.PointerTransform.InverseTransformPoint(raycastResult.worldPosition);
         ReticleDistanceInMeters = Mathf.Clamp(targetLocalPosition.z, RETICLE_DISTANCE_MIN, maxReticleDistance);
-
-        HandleRotation(isInteractive);
     }
 
     // Called every frame the user is still pointing at a valid GameObject.
@@ -208,16 +208,12 @@ public class VRCursor : GvrBasePointer
     {
         Vector3 targetLocalPosition = base.PointerTransform.InverseTransformPoint(raycastResult.worldPosition);
         ReticleDistanceInMeters = Mathf.Clamp(targetLocalPosition.z, RETICLE_DISTANCE_MIN, maxReticleDistance);
-
-        HandleRotation(isInteractive);
     }
 
     // Called when the pointer no longer faces an object previously intersected with a ray projected from the camera.
     public override void OnPointerExit(GameObject previousObject)
     {
         ReticleDistanceInMeters = maxReticleDistance;
-
-        HandleRotation(false);
     }
 
     // Called when a click is initiated.

@@ -11,14 +11,14 @@ public class VRCursor : GvrBasePointer
     // Current type of cursor
     public enum CursorType
     {
-        CT_NEUTRAL,
-        CT_CAN_INTERACT,
-        CT_CANNOT_INTERACT,
-        CT_TOO_FAR,
-        CT_CAN_STEP,
-        CT_CANNOT_STEP,
-        CT_NUM_OF_STATES,   // please, if you would add new states,
-        CT_NONE             // put them before CT_NUM_OF_STATES
+        NEUTRAL,
+        CAN_INTERACT,
+        CANNOT_INTERACT,
+        TOO_FAR,
+        CAN_STEP,
+        CANNOT_STEP,
+        NUM_OF_STATES,   // please, if you would add new states,
+        NONE             // put them before NUM_OF_STATES
     }
 
     // Maximum distance of the cursor raycasting (in meters).
@@ -103,23 +103,23 @@ public class VRCursor : GvrBasePointer
         Renderer rendComponent = GetComponent<Renderer>();
         rendComponent.sortingOrder = sortingOrder;
         MaterialComp = rendComponent.material;
-        CurrentType = CursorType.CT_NONE;
+        CurrentType = CursorType.NONE;
 
         BuildMesh();
         InitTextures();
-        SetState(CursorType.CT_NEUTRAL);
+        SetState(CursorType.NEUTRAL);
     }
 
     // Initing the array of textures references
     private void InitTextures()
     {
-        stateTextures = new Texture[(int)CursorType.CT_NUM_OF_STATES];
-        stateTextures[(int)CursorType.CT_NEUTRAL] = neutralTex;
-        stateTextures[(int)CursorType.CT_CAN_INTERACT] = canInteractTex;
-        stateTextures[(int)CursorType.CT_CANNOT_INTERACT] = cannotInteractTex;
-        stateTextures[(int)CursorType.CT_TOO_FAR] = tooFarTex;
-        stateTextures[(int)CursorType.CT_CAN_STEP] = canStepTex;
-        stateTextures[(int)CursorType.CT_CANNOT_STEP] = cannotStepTex;
+        stateTextures = new Texture[(int)CursorType.NUM_OF_STATES];
+        stateTextures[(int)CursorType.NEUTRAL] = neutralTex;
+        stateTextures[(int)CursorType.CAN_INTERACT] = canInteractTex;
+        stateTextures[(int)CursorType.CANNOT_INTERACT] = cannotInteractTex;
+        stateTextures[(int)CursorType.TOO_FAR] = tooFarTex;
+        stateTextures[(int)CursorType.CAN_STEP] = canStepTex;
+        stateTextures[(int)CursorType.CANNOT_STEP] = cannotStepTex;
     }
 
     // Building meshes
@@ -178,10 +178,10 @@ public class VRCursor : GvrBasePointer
         MaterialComp.SetFloat("_DistanceInMeters", ReticleDistanceInMeters);
     }
 
-    // Rotate the triangle cursor, if it is pointing to interactive object
-    private void HandleTriangleRotation(bool isInteractive)
+    // Rotate the cursor, if it is pointing to interactive object
+    private void HandleRotation(bool isInteractive)
     {
-        if (isInteractive)
+        if (CurrentType == CursorType.CAN_INTERACT && isInteractive)
         {
             curRotAngle += Time.deltaTime * rotationSpeed;
             transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), Time.deltaTime * rotationSpeed);
@@ -200,7 +200,7 @@ public class VRCursor : GvrBasePointer
         Vector3 targetLocalPosition = base.PointerTransform.InverseTransformPoint(raycastResult.worldPosition);
         ReticleDistanceInMeters = Mathf.Clamp(targetLocalPosition.z, RETICLE_DISTANCE_MIN, maxReticleDistance);
 
-        HandleTriangleRotation(isInteractive);
+        HandleRotation(isInteractive);
     }
 
     // Called every frame the user is still pointing at a valid GameObject.
@@ -209,7 +209,7 @@ public class VRCursor : GvrBasePointer
         Vector3 targetLocalPosition = base.PointerTransform.InverseTransformPoint(raycastResult.worldPosition);
         ReticleDistanceInMeters = Mathf.Clamp(targetLocalPosition.z, RETICLE_DISTANCE_MIN, maxReticleDistance);
 
-        HandleTriangleRotation(isInteractive);
+        HandleRotation(isInteractive);
     }
 
     // Called when the pointer no longer faces an object previously intersected with a ray projected from the camera.
@@ -217,7 +217,7 @@ public class VRCursor : GvrBasePointer
     {
         ReticleDistanceInMeters = maxReticleDistance;
 
-        HandleTriangleRotation(false);
+        HandleRotation(false);
     }
 
     // Called when a click is initiated.

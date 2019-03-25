@@ -11,13 +11,14 @@ public class VRCursor : GvrBasePointer
     // Current type of cursor
     public enum CursorType
     {
-        CT_NONE,
         CT_NEUTRAL,
         CT_CAN_INTERACT,
         CT_CANNOT_INTERACT,
         CT_TOO_FAR,
         CT_CAN_STEP,
-        CT_CANNOT_STEP
+        CT_CANNOT_STEP,
+        CT_NUM_OF_STATES,   // please, if you would add new states,
+        CT_NONE             // put them before CT_NUM_OF_STATES
     }
 
     // Maximum distance of the cursor raycasting (in meters).
@@ -46,6 +47,23 @@ public class VRCursor : GvrBasePointer
 
     // Current rotation angle of triangle
     private float curRotAngle = 0.0f;
+
+    // Textures
+    [SerializeField]
+    private Texture neutralTex;
+    [SerializeField]
+    private Texture canInteractTex;
+    [SerializeField]
+    private Texture cannotInteractTex;
+    [SerializeField]
+    private Texture tooFarTex;
+    [SerializeField]
+    private Texture canStepTex;
+    [SerializeField]
+    private Texture cannotStepTex;
+
+    // Array of references to above state textures
+    private static Texture[] stateTextures;
 
     // Current distance of the reticle (in meters).
     public float ReticleDistanceInMeters
@@ -85,9 +103,23 @@ public class VRCursor : GvrBasePointer
         Renderer rendComponent = GetComponent<Renderer>();
         rendComponent.sortingOrder = sortingOrder;
         MaterialComp = rendComponent.material;
+        CurrentType = CursorType.CT_NONE;
 
         BuildMesh();
+        InitTextures();
         SetState(CursorType.CT_NEUTRAL);
+    }
+
+    // Initing the array of textures references
+    private void InitTextures()
+    {
+        stateTextures = new Texture[(int)CursorType.CT_NUM_OF_STATES];
+        stateTextures[(int)CursorType.CT_NEUTRAL] = neutralTex;
+        stateTextures[(int)CursorType.CT_CAN_INTERACT] = canInteractTex;
+        stateTextures[(int)CursorType.CT_CANNOT_INTERACT] = cannotInteractTex;
+        stateTextures[(int)CursorType.CT_TOO_FAR] = tooFarTex;
+        stateTextures[(int)CursorType.CT_CAN_STEP] = canStepTex;
+        stateTextures[(int)CursorType.CT_CANNOT_STEP] = cannotStepTex;
     }
 
     // Building meshes
@@ -136,6 +168,7 @@ public class VRCursor : GvrBasePointer
         }
 
         CurrentType = newType;
+        MaterialComp.SetTexture("_MainTex", stateTextures[(int)CurrentType]);
     }
 
     // Update is called once per frame.

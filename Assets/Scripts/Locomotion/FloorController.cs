@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections;
-using System.Collections.Generic;
 
 public class FloorController : MonoBehaviour
 {
     private bool isWatched = false;
 
-    /// Public variables
+    // Public variables
     public GameObject targetCircle;
     public GameObject blackScreen;
 
@@ -21,7 +19,7 @@ public class FloorController : MonoBehaviour
     public Color canJumpColor = new Color(0, 1, 0, 0.30F);
     public Color cannotJumpColor = new Color(1, 0, 0, 0.30F);
 
-    /// Private variables
+    // Private variables
     private Transform playerTransform;
     private bool canJump;
     private bool isJumping;
@@ -78,16 +76,24 @@ public class FloorController : MonoBehaviour
     {
         // Continue jumping if already in progress
         if (isJumping)
+        {
             Jump();
+        }
 
         if (isWatched)
         {
             UpdateCircleTransform();
             UpdateCanJump();
             if (canJump)
+            {
+                VRCursor.SetState(VRCursor.CursorState.CAN_STEP);
                 targetCircleController.SetColor(canJumpColor);
+            }
             else
+            {
+                VRCursor.SetState(VRCursor.CursorState.CANNOT_STEP);
                 targetCircleController.SetColor(cannotJumpColor);
+            }
         }
     }
 
@@ -111,7 +117,6 @@ public class FloorController : MonoBehaviour
 
         // Perform collision check with scene at jump target
         Vector3 lookAt = raycast.worldPosition;
-        Debug.Log(lookAt);
         float thresh = 0.001F;
         Vector3 p1 = lookAt + new Vector3(0, playerRadius + thresh, 0);
         Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh, 0);

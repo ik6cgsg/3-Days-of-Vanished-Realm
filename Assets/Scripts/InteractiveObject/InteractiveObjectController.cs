@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,10 +6,7 @@ using UnityEngine.EventSystems;
 public class InteractiveObjectController : MonoBehaviour
 {
     public IInteractiveObject interactiveObject;
-
     public float maxDistance;
-
-    private bool isWatched;
 
     void Start()
     {
@@ -35,34 +32,38 @@ public class InteractiveObjectController : MonoBehaviour
 
     void Update()
     {
-    }
-
-    private void OnPointerEnter()
-    {
-        isWatched = true;
+        if (!isWatched)
+            return;
 
         // Set up cursor mode
         if (interactiveObject.CanInteract())
         {
             if (GvrPointerInputModule.CurrentRaycastResult.distance <= maxDistance)
             {
-                ; // Set cursor to can interact
+                // Set cursor to can interact
+                VRCursor.SetState(VRCursor.CursorState.CAN_INTERACT);
             }
             else
             {
-                ; // Set cursor to too far to interact
+                // Set cursor to too far to interact
+                VRCursor.SetState(VRCursor.CursorState.TOO_FAR);
             }
         }
         else
         {
-            ; // Set cursor to can't interact
+            // Set cursor to can't interact
+            VRCursor.SetState(VRCursor.CursorState.CANNOT_INTERACT);
         }
+    }
+
+    private void OnPointerEnter()
+    {
+        isWatched = true;
     }
 
     private void OnPointerExit()
     {
         isWatched = false;
-        ; // Set cursor as neutral
     }
 
     private void OnPointerClick(BaseEventData eventData)

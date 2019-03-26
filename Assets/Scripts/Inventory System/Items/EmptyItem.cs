@@ -10,7 +10,13 @@ public class EmptyItem : IItem
         }
     }
 
-    private Texture iconTex = Resources.Load<Texture>("Textures/GUI/GuiInventory/GuiBlankItemIcon");
+    private Texture iconTex;
+
+    private void OnEnable()
+    {
+        iconTex = Resources.Load<Texture>("Textures/GUI/GuiInventory/GuiBlankItemIcon");
+    }
+
     public override Texture IconTexture
     {
         get

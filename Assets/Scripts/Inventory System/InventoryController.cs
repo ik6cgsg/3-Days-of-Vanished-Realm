@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class InventoryController: MonoBehaviour
 {
     public static UnityEvent addItemEvent;
+    public static UnityEvent removeItemEvent;
     public static UnityEvent increaseSizeEvent;
 
     private static int maxSize;
@@ -28,6 +29,7 @@ public class InventoryController: MonoBehaviour
     public static void RemoveItem(int index)
     {
         items.RemoveAt(index);
+        removeItemEvent.Invoke();
     }
 
     // Getting item from array by its index

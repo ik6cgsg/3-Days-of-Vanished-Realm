@@ -4,12 +4,12 @@ using UnityEngine.Events;
 
 public class InventoryController: MonoBehaviour
 {
-    public static UnityEvent addItemEvent;
-    public static UnityEvent removeItemEvent;
-    public static UnityEvent increaseSizeEvent;
+    public static UnityEvent addItemEvent = new UnityEvent();
+    public static UnityEvent removeItemEvent = new UnityEvent();
+    public static UnityEvent increaseSizeEvent = new UnityEvent();
 
     private static int maxSize;
-    private static List<IItem> items;
+    private static List<IItem> items = new List<IItem>();
 
     // Adding new item to array
     // Returns false if inventory is full, true otherwise
@@ -85,9 +85,5 @@ public class InventoryController: MonoBehaviour
         // --- For test ---
         maxSize = 5;
         // ------
-
-        items = new List<IItem>();
-        addItemEvent = new UnityEvent();
-        increaseSizeEvent = new UnityEvent();
     }
 }

@@ -8,8 +8,8 @@ public class VRCursor : GvrBasePointer
     // Minimum distance of the reticle (in meters).
     public const float RETICLE_DISTANCE_MIN = 0.45f;
 
-    // Current type of cursor
-    public enum CursorType
+    // Current state of cursor
+    public enum CursorState
     {
         NEUTRAL,
         CAN_INTERACT,
@@ -82,7 +82,7 @@ public class VRCursor : GvrBasePointer
     }
 
     // Current state of cursor
-    private static CursorType CurrentType
+    private static CursorState CurrentState
     {
         get;
         set;
@@ -103,23 +103,23 @@ public class VRCursor : GvrBasePointer
         Renderer rendComponent = GetComponent<Renderer>();
         rendComponent.sortingOrder = sortingOrder;
         MaterialComp = rendComponent.material;
-        CurrentType = CursorType.NONE;
+        CurrentState = CursorState.NONE;
 
         BuildMesh();
         InitTextures();
-        SetState(CursorType.NEUTRAL);
+        SetState(CursorState.NEUTRAL);
     }
 
     // Initing the array of textures references
     private void InitTextures()
     {
-        stateTextures = new Texture[(int)CursorType.NUM_OF_STATES];
-        stateTextures[(int)CursorType.NEUTRAL] = neutralTex;
-        stateTextures[(int)CursorType.CAN_INTERACT] = canInteractTex;
-        stateTextures[(int)CursorType.CANNOT_INTERACT] = cannotInteractTex;
-        stateTextures[(int)CursorType.TOO_FAR] = tooFarTex;
-        stateTextures[(int)CursorType.CAN_STEP] = canStepTex;
-        stateTextures[(int)CursorType.CANNOT_STEP] = cannotStepTex;
+        stateTextures = new Texture[(int)CursorState.NUM_OF_STATES];
+        stateTextures[(int)CursorState.NEUTRAL] = neutralTex;
+        stateTextures[(int)CursorState.CAN_INTERACT] = canInteractTex;
+        stateTextures[(int)CursorState.CANNOT_INTERACT] = cannotInteractTex;
+        stateTextures[(int)CursorState.TOO_FAR] = tooFarTex;
+        stateTextures[(int)CursorState.CAN_STEP] = canStepTex;
+        stateTextures[(int)CursorState.CANNOT_STEP] = cannotStepTex;
     }
 
     // Building meshes
@@ -160,15 +160,15 @@ public class VRCursor : GvrBasePointer
     }
 
     // Setting current state of cursor
-    public static void SetState(CursorType newType)
+    public static void SetState(CursorState newState)
     {
-        if (CurrentType == newType)
+        if (CurrentState == newState)
         {
             return;
         }
 
-        CurrentType = newType;
-        MaterialComp.SetTexture("_MainTex", stateTextures[(int)CurrentType]);
+        CurrentState = newState;
+        MaterialComp.SetTexture("_MainTex", stateTextures[(int)CurrentState]);
     }
 
     // Update is called once per frame.
@@ -183,7 +183,7 @@ public class VRCursor : GvrBasePointer
     // Rotate the cursor, if it is pointing to interactive object
     private void HandleRotation()
     {
-        if (CurrentType == CursorType.CAN_INTERACT)
+        if (CurrentState == CursorState.CAN_INTERACT)
         {
             curRotAngle += Time.deltaTime * rotationSpeed;
             transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), Time.deltaTime * rotationSpeed);
@@ -214,6 +214,7 @@ public class VRCursor : GvrBasePointer
     public override void OnPointerExit(GameObject previousObject)
     {
         ReticleDistanceInMeters = maxReticleDistance;
+        SetState(CursorState.NEUTRAL);
     }
 
     // Called when a click is initiated.

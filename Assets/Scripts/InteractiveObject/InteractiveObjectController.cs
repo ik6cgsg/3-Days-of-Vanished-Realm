@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,10 +6,7 @@ using UnityEngine.EventSystems;
 public class InteractiveObjectController : MonoBehaviour
 {
     public IInteractiveObject interactiveObject;
-
     public float maxDistance;
-
-    private bool isWatched;
 
     void Start()
     {

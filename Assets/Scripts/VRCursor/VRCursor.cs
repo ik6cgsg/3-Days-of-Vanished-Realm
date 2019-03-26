@@ -164,6 +164,7 @@ public class VRCursor : GvrBasePointer
         ReticleDistanceInMeters = Mathf.Clamp(ReticleDistanceInMeters, RETICLE_DISTANCE_MIN, maxReticleDistance);
         MaterialComp.SetFloat("_DistanceInMeters", ReticleDistanceInMeters);
 
+ 
         // Cross state handle
         if (CurrentType == CursorType.CT_CROSS)
         {

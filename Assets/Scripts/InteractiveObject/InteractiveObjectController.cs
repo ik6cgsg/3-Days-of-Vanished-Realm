@@ -6,10 +6,7 @@ using UnityEngine.EventSystems;
 public class InteractiveObjectController : MonoBehaviour
 {
     public IInteractiveObject interactiveObject;
-
     public float maxDistance;
-
-    private bool isWatched;
 
     void Start()
     {
@@ -33,14 +30,8 @@ public class InteractiveObjectController : MonoBehaviour
         trigger.triggers.Add(entryClick);
     }
 
-    void Update()
-    {
-    }
-
     private void OnPointerEnter()
     {
-        isWatched = true;
-
         // Set up cursor mode
         if (interactiveObject.CanInteract())
         {
@@ -61,7 +52,6 @@ public class InteractiveObjectController : MonoBehaviour
 
     private void OnPointerExit()
     {
-        isWatched = false;
         ; // Set cursor as neutral
     }
 

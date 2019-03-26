@@ -21,6 +21,14 @@ public class VRCursor : GvrBasePointer
         NONE             // put them before NUM_OF_STATES
     }
 
+    // Current mode of drawing
+    public enum CursorDrawMode
+    {
+        NONE,
+        FIXED,
+        VARIABLE
+    }
+
     // Maximum distance of the cursor raycasting (in meters).
     public float maxReticleDistance = 20.0f;
 
@@ -88,6 +96,13 @@ public class VRCursor : GvrBasePointer
         set;
     }
 
+    // Current mode of drawing
+    private static CursorDrawMode CurrentDrawMode
+    {
+        get;
+        set;
+    }
+
     // The material used to render the reticle.
     private static Material MaterialComp
     {
@@ -104,10 +119,12 @@ public class VRCursor : GvrBasePointer
         rendComponent.sortingOrder = sortingOrder;
         MaterialComp = rendComponent.material;
         CurrentState = CursorState.NONE;
+        CurrentDrawMode = CursorDrawMode.NONE;
 
         BuildMesh();
         InitTextures();
         SetState(CursorState.NEUTRAL);
+        SetDrawMode(CursorDrawMode.VARIABLE);
     }
 
     // Initing the array of textures references
@@ -169,6 +186,18 @@ public class VRCursor : GvrBasePointer
 
         CurrentState = newState;
         MaterialComp.SetTexture("_MainTex", stateTextures[(int)CurrentState]);
+    }
+
+    // Setting current mode of drawing
+    public static void SetDrawMode(CursorDrawMode newMode)
+    {
+        if (CurrentDrawMode == newMode)
+        {
+            return;
+        }
+
+        CurrentDrawMode = newMode;
+        MaterialComp.SetInt("_DrawingMode", (int)CurrentDrawMode);
     }
 
     // Update is called once per frame.

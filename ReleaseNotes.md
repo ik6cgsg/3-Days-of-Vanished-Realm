@@ -1,13 +1,13 @@
 # Release Notes
-## Version 0.2.1 (28.03.2019)
+## Version 0.2.1 (27.03.2019)
 ### Build link
-https://drive.google.com/open?id=1yOupczrJicYD--90RuuiEhvM2E-GVuur
+[3DVR-0.2.1.apk](https://drive.google.com/open?id=1yOupczrJicYD--90RuuiEhvM2E-GVuur)
 ### What's new
-* We've got 2 pickupable objects now (key and torch)
+* We've got 2 pick-upable objects now (key and torch)
 * Look up and dive into comfortable and user-friendly UI
-* You can pick torch, hide and get it back from inventory, using his light in the name of light
-* You can pick key and use it to open some doors
-* Brand new textures for cursor (for all 6 types)
+* You can pick up a torch, hide and get it back from the inventory, using its light in the name of light
+* You can pick up a key and use it to open some doors
+* Brand new textures for cursor (for all 6 states)
 ### What's fixed
 * Teleportation's distance is now much longer
 * No annoying red circle on the floor!

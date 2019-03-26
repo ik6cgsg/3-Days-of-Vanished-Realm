@@ -18,13 +18,23 @@ Development environment under C# + Unity sdk.
 
 [Unity sdk (minimum version: 5.6) ](https://store.unity.com)
 
-Open project using your IDEA (preferred [XCode](https://developer.apple.com/xcode/) for Mac Os / [Visual Studio](https://visualstudio.microsoft.com/ru/?rr=https%3A%2F%2Fwww.google.com%2F) for Windows). 
+Development environment under C# (preferred [XCode](https://developer.apple.com/xcode/) for Mac Os / [Visual Studio](https://visualstudio.microsoft.com/ru/?rr=https%3A%2F%2Fwww.google.com%2F) for Windows). 
 
 Clone repository:
 
 $ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm
 
-You need to open project with Unity and build project .
+You need to open  projects  folder  with Unity .
+
+Set compilations preferences, instruction: for [iOs] (https://developers.google.com/vr/develop/unity/get-started-ios) and for Windows you use automatic settings.
+
+Then click on "Build", and you will get project for developer mode .
+
+In your development environment open file *.workspace or *.workenvironment.
+
+Then you need to connect mobile phone and run project.
+
+
 
 
 # Git workflow

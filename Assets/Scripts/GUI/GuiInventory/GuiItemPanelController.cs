@@ -28,13 +28,19 @@ public class GuiItemPanelController : MonoBehaviour
             itemIcons.Add(Instantiate(itemIconPrefab, transform));
             itemIconControllers.Add(itemIcons[i].GetComponent<GuiItemIconController>());
             inventoryController.UpdateChildTransform(itemIcons[i].transform, 0.5F + ((i + 0.5F) / pageSize - 0.5F) * width);
-            //itemIcons[i].transform.localPosition = Vector3.right * ((i + 0.5F) / pageSize - 0.5F) * width;
             itemIcons[i].transform.localScale *= iconScale;
         }
+
+        UpdateItems();
 
         // Instantiate page tracker
         pageTrackerInstance = Instantiate(pageTrackerPrefab, transform);
         pageTrackerController = pageTrackerInstance.GetComponent<GuiPageTrackerController>();
+
+        // Set up inventory controller event triggers
+        InventoryController.addItemEvent.AddListener(UpdateItems);
+        InventoryController.removeItemEvent.AddListener(UpdateItems);
+        InventoryController.increaseSizeEvent.AddListener(AddPage);
     }
 
     private void UpdateItems()

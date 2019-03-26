@@ -1,7 +1,7 @@
 # Release Notes
 ## Version 0.2.1 (27.03.2019)
 ### Build link
-https://drive.google.com/open?id=1yOupczrJicYD--90RuuiEhvM2E-GVuur
+[3DVR-0.2.1.apk](https://drive.google.com/open?id=1yOupczrJicYD--90RuuiEhvM2E-GVuur)
 ### What's new
 * We've got 2 pick-upable objects now (key and torch)
 * Look up and dive into comfortable and user-friendly UI

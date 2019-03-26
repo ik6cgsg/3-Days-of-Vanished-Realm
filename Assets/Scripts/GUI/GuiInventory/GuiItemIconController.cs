@@ -10,8 +10,6 @@ public class GuiItemIconController : IInteractiveObject
 
     public override void Interact()
     {
-        //Debug.Log("I was pressed");
-        //transform.parent.GetComponent<GuiItemPanelController>().AddPage();
         item.Use();
     }
 
@@ -24,7 +22,6 @@ public class GuiItemIconController : IInteractiveObject
     {
         material = GetComponent<Renderer>().material;
         texturePropertyId = Shader.PropertyToID("_MainTex");
-        SetItem((IItem)ScriptableObject.CreateInstance("EmptyItem"));
     }
 
     void Update()

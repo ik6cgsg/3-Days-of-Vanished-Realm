@@ -168,6 +168,7 @@ public class FloorController : MonoBehaviour
             jumpState = JumpState.FADE_IN;
             jumpTarget = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, playerEyeHeight, 0);
             blackScreen.transform.localScale = new Vector3(2 * playerRadius, 2 * playerRadius, 2 * playerRadius);
+            targetCircleController.EnableRenderer(false);
             return;
         }
 
@@ -209,6 +210,8 @@ public class FloorController : MonoBehaviour
                     Debug.Log("Switch to no jump");
                     mtl.SetColor("_Color", SetFadeColorAlpha(0));
                     isJumping = false;
+                    if (isWatched)
+                        targetCircleController.EnableRenderer(true);
                     return;
                 }
                 mtl.SetColor("_Color", SetFadeColorAlpha(1.0F - timer / fadeTime));

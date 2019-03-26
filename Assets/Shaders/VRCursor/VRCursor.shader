@@ -5,6 +5,7 @@ Shader "Custom/VR Cursor Shader"
         _MainTex("Font Texture", 2D) = "white" {}
         _Color("Text Color", Color) = (1,1,1,1)
         _DistanceInMeters("DistanceInMeters", Range(0.0, 100.0)) = 2.0
+        _DrawingMode("DrawingMode", int) = 0
     }
 
     SubShader
@@ -47,11 +48,18 @@ Shader "Custom/VR Cursor Shader"
             uniform float4 _MainTex_ST;
             uniform float4 _Color;
             uniform float _DistanceInMeters;
+            uniform int _DrawingMode;
 
             OutV Vert(InV v)
             {
                 OutV o;
-                float scale = lerp(2.0, 1.5, v.vertex.z);
+
+                float scale = 1.0;
+                if (_DrawingMode == 2)
+                {
+                    scale = lerp(3.0, 2.8, v.vertex.z);
+                }
+
                 float3 vertOut = float3(v.vertex.x * scale, v.vertex.y * scale, _DistanceInMeters);
                 o.vertex = UnityObjectToClipPos(vertOut);
                 o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);

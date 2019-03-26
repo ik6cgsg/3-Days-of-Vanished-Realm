@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InventoryController: MonoBehaviour
 {
+    public static UnityEvent addItemEvent;
+    public static UnityEvent increaseSizeEvent;
+
     private static int maxSize;
-    private static int maxAvailableSize;
     private static List<IItem> items;
 
     // Adding new item to array
@@ -17,6 +20,7 @@ public class InventoryController: MonoBehaviour
         }
 
         items.Add(item);
+        addItemEvent.Invoke();
         return true;
     }
 
@@ -29,7 +33,9 @@ public class InventoryController: MonoBehaviour
     // Getting item from array by its index
     public static IItem GetItem(int index)
     {
-        return index >= 0 && index < items.Count ? items[index] : new EmptyItem();
+        return index >= 0 && index < items.Count
+            ? items[index]
+            : (IItem)ScriptableObject.CreateInstance("EmptyItem");
     }
 
     // Getting item from array by its name
@@ -43,39 +49,43 @@ public class InventoryController: MonoBehaviour
             }
         }
 
-        return new EmptyItem();
+        return (IItem)ScriptableObject.CreateInstance("EmptyItem");
     }
 
     // Does we have this item in our inventory
-    public static bool HasItem(IItem item)
+    public static bool HasItem(string name)
     {
-        return items.Contains(item);
+        foreach (IItem item in items)
+        {
+            if (item.Name == name)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static bool IsFull()
     {
-        return items.Count == maxAvailableSize;
-    }
-
-    // Increasing the maximum amount of items in inventory
-    public static void IncreaseSize(int increaseRate)
-    {
-        maxSize += increaseRate;
+        return items.Count == maxSize;
     }
 
     // Increasing the maximum amount of available items in inventory
-    public static void IncreaseAvailableSize(int increaseRate)
+    public static void IncreaseSize(int increaseRate)
     {
-        maxAvailableSize += increaseRate;
+        maxSize += increaseRate;
+        increaseSizeEvent.Invoke();
     }
 
     public void Start()
     {
         // --- For test ---
-        maxSize = 4;
-        maxAvailableSize = 1;
+        maxSize = 5;
         // ------
 
         items = new List<IItem>();
+        addItemEvent = new UnityEvent();
+        increaseSizeEvent = new UnityEvent();
     }
 }

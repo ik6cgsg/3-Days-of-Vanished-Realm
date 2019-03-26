@@ -76,16 +76,24 @@ public class FloorController : MonoBehaviour
     {
         // Continue jumping if already in progress
         if (isJumping)
+        {
             Jump();
+        }
 
         if (isWatched)
         {
             UpdateCircleTransform();
             UpdateCanJump();
             if (canJump)
+            {
+                VRCursor.SetState(VRCursor.CursorState.CAN_STEP);
                 targetCircleController.SetColor(canJumpColor);
+            }
             else
+            {
+                VRCursor.SetState(VRCursor.CursorState.CANNOT_STEP);
                 targetCircleController.SetColor(cannotJumpColor);
+            }
         }
     }
 

@@ -27,13 +27,13 @@ public class TorchUsableController : MonoBehaviour
 
     void Start()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     void LateUpdate()
     {
         Vector3 cameraRot = mainCamera.rotation.eulerAngles;
-        Debug.Log(cameraRot);
+        // Debug.Log(cameraRot);
         if (cameraRot.x >= fullRound - maxUpAngle || cameraRot.x <= maxDownAngle)
         {
             transform.rotation = Quaternion.Euler(cameraRot.x, cameraRot.y, 0);

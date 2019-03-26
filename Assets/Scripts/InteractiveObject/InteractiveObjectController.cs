@@ -8,6 +8,8 @@ public class InteractiveObjectController : MonoBehaviour
     public IInteractiveObject interactiveObject;
     public float maxDistance;
 
+    private bool isWatched;
+
     void Start()
     {
         // Add EventTrigger components

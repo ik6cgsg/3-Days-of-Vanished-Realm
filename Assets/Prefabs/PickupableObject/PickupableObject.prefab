@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2447660548242380789}
   - component: {fileID: 5790660076788673228}
   - component: {fileID: 4853898220544369431}
-  - component: {fileID: 2121099926106088648}
   - component: {fileID: 22935505798418031}
+  - component: {fileID: 4627542278197256540}
   m_Layer: 0
-  m_Name: Pickupable Object
+  m_Name: PickupableObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2481406121757796179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.35, y: 0.5, z: 8.79}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,30 +93,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2121099926106088648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2481406121757796179}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e9dba13222fae49b64a5b6b590ef03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetCircle: {fileID: 2338858181355739482, guid: bb7cba0a709f3c646be2eceff8bb31c2,
-    type: 3}
-  blackScreen: {fileID: 7698567339097829918, guid: 55dd997cfe2d00c44b1bb49bae9bd161,
-    type: 3}
-  fadeTime: 0.5
-  waitTime: 0.1
-  maxJumpDistance: 10
-  playerHeight: 2
-  playerEyeHeight: 1.6
-  playerRadius: 0.5
-  canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
-  cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
 --- !u!114 &22935505798418031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +105,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9f45e3817f27749b1527542a3d90b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactiveObject: {fileID: 0}
-  itemName: fuck
-  maxDistance: 100
+  itemName: Empty
+--- !u!114 &4627542278197256540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481406121757796179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1179d83860accde4db8a75d5683dc6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveObject: {fileID: 22935505798418031}
+  maxDistance: 3

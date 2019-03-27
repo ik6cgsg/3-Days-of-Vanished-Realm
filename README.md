@@ -13,6 +13,31 @@ The game is first-person, you will:
 
 Difficulty will grow with geometric speed. As the result, dive into the world of mysteries with pleasant music in the background.
 
+# Getting Started
+Development environment under C# + Unity sdk.
+
+[Unity sdk (minimum version: 5.6) ](https://store.unity.com)
+
+Development environment under C# (preferred):
+1) [XCode](https://developer.apple.com/xcode/) for Mac Os 
+2) [Visual Studio](https://visualstudio.microsoft.com/ru/?rr=https%3A%2F%2Fwww.google.com%2F) for Windows
+
+Clone repository:
+
+`$ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm`
+
+You need to open  projects  folder ***3-Days-of-Vanished-Realm*** with Unity .
+
+Set compilations preferences:
+1) for [iOS instruction](https://developers.google.com/vr/develop/unity/get-started-ios) 
+2) or Windows you use automatic settings.
+
+Then click on "Build", and you will get project for developer mode .
+
+In your development environment open file ***.workspace*** or ***.workenvironment***.
+
+Then you need to connect mobile phone and run project.
+
 # Users installation guide
 1) Download: [Unity sdk (minimum version: 5.6) ](https://store.unity.com)
 

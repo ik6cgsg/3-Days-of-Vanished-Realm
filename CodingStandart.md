@@ -90,6 +90,7 @@ int a=17 +52   -23*3
 * **Don't** use a prefix for member variables
 * Use camelCasing for member variables, parameters and local variables
 * Use PascalCasing for function, property, event, and class names
+* Use UPPER\_CASE for constants
 * Prefix interfaces names with “I”
 * **Don't** prefix enums, classes, or delegates with any letter
 
@@ -100,6 +101,7 @@ String fileName
 int count
 double veryLongNumber
 public class MyClass
+private const int WINDOW_SIZE
 interface IMovable
 enum Days
 ```
@@ -109,6 +111,14 @@ String sName
 int _count
 double Very_Long_number
 public class my_class
+private const int WindowSize
 interface movableInterface
 enum tag_Days
 ```
+# Shaders code style
+
+## Naming
+* Use \_PascalCasing for properties
+
+## Other
+* All other information you can read in upper paragraph **Code Style**

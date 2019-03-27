@@ -88,14 +88,15 @@ MonoBehaviour:
   maxReticleDistance: 5
   enterRadius: 0.04
   exitRadius: 0.04
-  growthSpeed: 8
-  minTriRad: 0
-  maxTriRad: 0.2
-  crossHeight: 0.1
-  crossColor: {r: 1, g: 0, b: 0, a: 0.2784314}
-  triangleColor: {r: 0.9758564, g: 1, b: 0, a: 1}
-  sortingOrder: 32767
   rotationSpeed: 45
+  width: 0.05
+  sortingOrder: 32767
+  neutralTex: {fileID: 2800000, guid: f37687f7dd40e6547b7a12cba860d115, type: 3}
+  canInteractTex: {fileID: 2800000, guid: da4d51c20157877459fb216655f7921d, type: 3}
+  cannotInteractTex: {fileID: 2800000, guid: 7e5fad98fc88f4345a0a3c0fcc1303c7, type: 3}
+  tooFarTex: {fileID: 2800000, guid: de6addbc27dc0a749affcb609b14c805, type: 3}
+  canStepTex: {fileID: 2800000, guid: 8e80f0ec17e7f4d42829d0715ddeea78, type: 3}
+  cannotStepTex: {fileID: 2800000, guid: f19f6094051537a448f39bc84de970db, type: 3}
 --- !u!114 &4083445045213166638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,3 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0650e1bc376848c4b9f4a826e04fff8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LowLimit: 30
+  HighLimit: 130

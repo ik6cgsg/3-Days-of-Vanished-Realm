@@ -17,6 +17,25 @@ The game is first-person, you will:
 
 Difficulty will grow with geometric speed. As the result, dive into the world of mysteries with pleasant music in the background.
 
+# Analogues
+Currently, there are not so many analogues due to underdevelopment of the VR applications market.
+But still there are a few worthy games, which ideas prompt us to implement our own.
+Here is the list of such projects:
+1) ["VR Прятки с Томой"](https://play.google.com/store/apps/details?id=com.garpix.tomavr)
+Beautiful app with detailed textures, BUT:
+	* We don't have any "timing" actions
+	* We implement more interesting level design
+	* We have much more comfortable UI, movement and interaction
+2) ["Cardboard Design Lab"](https://play.google.com/store/apps/details?id=com.google.vr.cardboard.apps.designlab)
+Professional vr demo and development tutorial in one thing, BUT:
+	* It's only a demo, not a full game (can't stand our deep worked game)
+3) ["Virtual Virtual Reality"](https://play.google.com/store/apps/details?id=com.TenderClaws.VVR)
+2017 Google Play Award Winner for “Best VR Experience”,
+Unity Awards finalist "Best VR Game", and so on, BUT:
+	* Not a cheap one (our project is open source and absolutely free!)
+	* Requires complex and expensive toolbox (we need only Cardboard) 
+Other apps on current market are either poor quality or even dangerous 
+
 # Git workflow
 * Main branch for demonstrations - *master*
 * Main branch for coding - *develop*

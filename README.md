@@ -16,13 +16,19 @@ Difficulty will grow with geometric speed. As the result, dive into the world of
 
 
 # Users installation guide
-Download: [Unity sdk (minimum version: 5.6) ](https://store.unity.com)
+1) Download: [Unity sdk (minimum version: 5.6) ](https://store.unity.com)
 
-You need to connect mobile phone, click on "Build" and "Run". 
+2) Clone repository:
 
-(For iOS phone you need Mac or you have to pay for the official license for Windows)
+`$ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm`
 
-Unity will automatically transfer game to phone.
+3) Open  projects  folder ***3-Days-of-Vanished-Realm*** with Unity .
+
+4) Connect mobile phone, click on "Build" and "Run". 
+
+*(For iOS phone you need Mac or you have to pay for the official license for Windows)*
+
+**Unity will automatically transfer game to phone. Have fun!**
 
 
 

@@ -1,21 +1,32 @@
 # 3-Days-of-Vanished-Realm
 Interactive VR game for mobile phones (Android/iOS). Full immersion in the world of quest adventures, for the age of 6+. Everyone will have to strain their brains.
 
-# Getting Started
-Development environment under C# + Unity sdk.
-Load Google VR sdk and Android/iOS sdk.
-Clone repository:
-```
-$ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm
-```
+Interactive VR game for mobile phones, Android and iOS systems. Full immersion in the world of quest adventures, for the age of 6+. Everyone will have to strain their brains.
 
-# Game Experience 
 The game is first-person, you will:
+
 1) Travel around the map by teleportation (without sharp jumps, so as not to turn the head).
+
 2) Interact with map's objects, using them to solve puzzles.
+
 3) Get a new level with different complexity.
 
 Difficulty will grow with geometric speed. As the result, dive into the world of mysteries with pleasant music in the background.
+
+# Users installation guide
+1) Download: [Unity sdk (minimum version: 5.6) ](https://store.unity.com)
+
+2) Clone repository:
+
+`$ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm`
+
+3) Open  projects  folder ***3-Days-of-Vanished-Realm*** with Unity .
+
+4) Connect mobile phone, click on "Build" and "Run". 
+
+*(For iOS phone you need Mac or you have to pay for the official license for Windows)*
+
+**Unity will automatically transfer game to phone. Have fun!**
 
 # Analogues
 Currently, there are not so many analogues due to underdevelopment of the VR applications market.
@@ -56,8 +67,8 @@ Other apps on current market are either poor quality or even dangerous
 * Capitalize the subject line and each paragraph
 * Use the imperative mood in the subject line
 * Use the body to explain what and why you have done something
-  * List with bullet points
-  * Use imperative mood
+* List with bullet points
+* Use imperative mood
 
 ### Example
 Subject line:

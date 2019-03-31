@@ -10,7 +10,7 @@ public class EquipmentController : MonoBehaviour
         TORCH,
         MAGIC_GLASSES,
         // Add more!
-        NUM_OF_ITEMS,
+        NUM_OF_ITEMS
     }
 
     [SerializeField]
@@ -48,6 +48,7 @@ public class EquipmentController : MonoBehaviour
 
         currentEquippedItem.Unequip();
         HandleItemObject();
+        currentEquippedItem = null;
     }
 
     private static void HandleItemObject()

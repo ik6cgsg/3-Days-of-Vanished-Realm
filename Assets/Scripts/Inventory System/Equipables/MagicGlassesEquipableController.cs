@@ -1,22 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class MagicGlassesEquipableController : MonoBehaviour
 {
-    public static UnityEvent magicGlassesOn;
-    public static UnityEvent magicGlassesOff;
+    public static UnityEvent magicGlassesOn = new UnityEvent();
+    public static UnityEvent magicGlassesOff = new UnityEvent();
 
-    public Transform mainCamera;
+    // public Transform mainCamera;
+
     private Material equippedMaterial;
 
     public void Start()
     {
-        magicGlassesOn = new UnityEvent();
-        magicGlassesOff = new UnityEvent();
-
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     public void OnEnable()
@@ -31,6 +27,6 @@ public class MagicGlassesEquipableController : MonoBehaviour
 
     public void LateUpdate()
     {
-        transform.position = mainCamera.position;
+        // transform.position = mainCamera.position;
     }
 }

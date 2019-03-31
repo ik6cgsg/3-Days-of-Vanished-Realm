@@ -4879,9 +4879,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6533814263526424941}
-  - component: {fileID: 1358769467732816893}
+  - component: {fileID: 8671348740099005833}
   m_Layer: 0
-  m_Name: TorchUsable
+  m_Name: TorchEquipable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4902,7 +4902,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1358769467732816893
+--- !u!114 &8671348740099005833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4911,7 +4911,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6533814263526424930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ed07872b546674194a643ef53793a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 01bf02e02b21d114c9a629ecdda3ad83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}

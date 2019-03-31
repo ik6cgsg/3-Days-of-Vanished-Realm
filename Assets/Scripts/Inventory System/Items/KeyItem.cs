@@ -12,11 +12,10 @@ public class KeyItem : IItem
         }
     }
 
-    public override Texture IconTexture
+    private void OnEnable()
     {
-        get
-        {
-            return Texture2D.whiteTexture;
-        }
+        iconEquippedTexture = Texture2D.whiteTexture;
+        iconUnequippedTexture = Texture2D.whiteTexture;
+        IconTexture = iconUnequippedTexture;
     }
 }

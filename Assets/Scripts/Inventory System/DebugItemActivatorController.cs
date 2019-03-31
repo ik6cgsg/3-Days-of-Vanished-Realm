@@ -32,10 +32,10 @@ public class DebugItemActivatorController : MonoBehaviour
                 {
                     Debug.Log("Item is null");
                 }
-                else if (debugItems[i].IsUsable())
+                else if (debugItems[i].IsEquipable())
                 {
                     Debug.Log("Using " + debugItems[i].Name);
-                    debugItems[i].Use();
+                    EquipmentController.EquipItem(debugItems[i]);
                 }
                 else
                 {

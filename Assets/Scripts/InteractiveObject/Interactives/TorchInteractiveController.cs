@@ -23,6 +23,7 @@ public class TorchInteractiveController : IInteractiveObject
         if (EquipmentController.CurrentItem == EquipmentController.EquipableItem.TORCH)
         {
             fire.SetActive(true);
+            Destroy(GetComponent<InteractiveObjectController>());
         }
     }
 

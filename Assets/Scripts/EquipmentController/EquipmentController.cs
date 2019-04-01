@@ -23,7 +23,9 @@ public class EquipmentController : MonoBehaviour
         get
         {
             if (currentEquippedItem == null)
+            {
                 return EquipableItem.NONE;
+            }
             return currentEquippedItem.EquipableItem;
         }
     }

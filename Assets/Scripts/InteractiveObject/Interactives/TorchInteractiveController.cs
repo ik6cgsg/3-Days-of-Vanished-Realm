@@ -24,6 +24,7 @@ public class TorchInteractiveController : IInteractiveObject
         {
             fire.SetActive(true);
             Destroy(GetComponent<InteractiveObjectController>());
+            VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
         }
     }
 

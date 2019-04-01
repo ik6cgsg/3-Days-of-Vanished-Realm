@@ -18,6 +18,15 @@ public class EquipmentController : MonoBehaviour
 
     private static GameObject[] staticItems;
     private static IItem currentEquippedItem;
+    public static EquipableItem CurrentItem
+    {
+        get
+        {
+            if (currentEquippedItem == null)
+                return EquipableItem.NONE;
+            return currentEquippedItem.EquipableItem;
+        }
+    }
 
     public void Start()
     {

@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 public class MagicGlassesEquipableController : MonoBehaviour
 {
-    public static UnityEvent magicGlassesOn = new UnityEvent();
-    public static UnityEvent magicGlassesOff = new UnityEvent();
+    public static UnityEvent glassesOn = new UnityEvent();
+    public static UnityEvent glassesOff = new UnityEvent();
 
     // public Transform mainCamera;
 
@@ -17,12 +17,12 @@ public class MagicGlassesEquipableController : MonoBehaviour
 
     public void OnEnable()
     {
-        magicGlassesOn.Invoke();
+        glassesOn.Invoke();
     }
 
     public void OnDisable()
     {
-        magicGlassesOff.Invoke();
+        glassesOff.Invoke();
     }
 
     public void LateUpdate()

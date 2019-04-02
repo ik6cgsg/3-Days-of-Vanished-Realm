@@ -13,7 +13,7 @@ public class TorchEquipableController : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     void LateUpdate()

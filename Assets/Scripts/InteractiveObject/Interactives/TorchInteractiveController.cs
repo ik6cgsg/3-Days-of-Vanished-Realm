@@ -6,16 +6,14 @@ public class TorchInteractiveController : IInteractiveObject
 {
     private GameObject fire;
 
+    public bool IsLit { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
         fire = GameObject.Find("Cylinder/Fire");
         fire.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        IsLit = false;
     }
 
     public override void Interact()
@@ -23,6 +21,7 @@ public class TorchInteractiveController : IInteractiveObject
         if (EquipmentController.CurrentItem == EquipmentController.EquipableItem.TORCH)
         {
             fire.SetActive(true);
+            IsLit = true;
             Destroy(GetComponent<InteractiveObjectController>());
             VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
         }

@@ -2,32 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorchUsableController : MonoBehaviour
+public class TorchEquipableController : MonoBehaviour
 {
     public Transform mainCamera;
-    private static GameObject instance;
     private int maxUpAngle = 15;
     private int maxDownAngle = 70;
     private int fullRound = 360;
     private int upLimit = 270;
     private int downLimit = 90;
 
-    public static GameObject Instance
-    {
-        get
-        {
-            return instance;
-        }
-    }
-
-    void Awake()
-    {
-        instance = gameObject;
-    }
-
     void Start()
     {
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 
     void LateUpdate()

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorchItem : IItem
+public class MagicGlassesItem : IItem
 {
     public override string Name
     {
         get
         {
-            return "Tourch";
+            return "MagicGlasses";
         }
     }
 
@@ -16,14 +16,15 @@ public class TorchItem : IItem
     {
         get
         {
-            return EquipmentController.EquipableItem.TORCH;
+            return EquipmentController.EquipableItem.MAGIC_GLASSES;
         }
     }
 
     private void OnEnable()
     {
-        iconEquippedTexture = Texture2D.blackTexture;
-        iconUnequippedTexture = Texture2D.blackTexture;
+        Texture iconTex = Resources.Load<Texture>("Textures/Items/MagicGlassesTex");
+        iconEquippedTexture = iconTex;
+        iconUnequippedTexture = iconTex;
         IconTexture = iconUnequippedTexture;
     }
 

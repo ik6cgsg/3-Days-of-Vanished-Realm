@@ -2,25 +2,42 @@
 
 public abstract class IItem : ScriptableObject
 {
+    [SerializeField]
+    protected Texture iconEquippedTexture;
+    [SerializeField]
+    protected Texture iconUnequippedTexture;
+
+    public virtual EquipmentController.EquipableItem EquipableItem
+    {
+        get
+        {
+            return EquipmentController.EquipableItem.NONE;
+        }
+    }
+
     public abstract string Name
     {
         get;
     }
 
-    public abstract Texture IconTexture
+    public Texture IconTexture
     {
         get;
+        set;
     }
 
-    // Can we use current item
-    public virtual bool IsUsable()
+    public virtual bool IsEquipable()
     {
         return false;
     }
 
-    // Action function of current item
-    public virtual void Use()
+    public void Equip()
     {
+        IconTexture = iconEquippedTexture;
+    }
 
+    public void Unequip()
+    {
+        IconTexture = iconUnequippedTexture;
     }
 }

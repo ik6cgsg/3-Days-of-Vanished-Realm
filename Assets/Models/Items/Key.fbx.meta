@@ -1,17 +1,43 @@
 fileFormatVersion: 2
-guid: e058efebc32069943a2edbdceb02278d
+guid: aaf7a30d5f29a0348a996f5a814ce4fd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Circle
+    100000: Camera
+    100002: Key
+    100004: //RootNode
+    100006: Lamp
+    100008: node_id4
+    100010: node_id4 1
+    100012: node_id7
+    100014: node_id8
+    400000: Camera
+    400002: Key
+    400004: //RootNode
+    400006: Lamp
+    400008: node_id4
+    400010: node_id4 1
+    400012: node_id7
+    400014: node_id8
+    2000000: Camera
+    2100000: Material.001
+    2100002: Material.002
+    2100004: Material_53
+    2100006: Material_55
+    2100008: No Name
+    2300000: Key
+    2300002: node_id4
+    2300004: node_id4 1
+    3300000: Key
+    3300002: node_id4
+    3300004: node_id4 1
+    4300000: Key
+    4300002: node_id4
+    4300004: node_id4
+    10800000: Lamp
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -40,14 +66,14 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -60,7 +86,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:

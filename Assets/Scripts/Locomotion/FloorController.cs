@@ -167,7 +167,7 @@ public class FloorController : MonoBehaviour
             timer = 0;
             jumpState = JumpState.FADE_IN;
             jumpTarget = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, playerEyeHeight, 0);
-            blackScreen.transform.localScale = new Vector3(2 * playerRadius, 2 * playerRadius, 2 * playerRadius);
+            blackScreen.transform.localScale = new Vector3(playerRadius, playerRadius, playerRadius);
             targetCircleController.EnableRenderer(false);
             return;
         }

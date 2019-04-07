@@ -88,11 +88,12 @@ Other apps on current market are either poor quality or even dangerous
 ## Commit
 * Subject line is **short** summary
 * Do not end the subject line with a period
+* Do not end the body lines with a period
 * Start subject line with issue number after *#*
-* Capitalize the subject line and each paragraph
+* Capitalize the subject and the body lines 
 * Use the imperative mood in the subject line
 * Use the body to explain what and why you have done something
-* List with bullet points
+* List with bullet points (use "-" with one space afterwards)
 * Use imperative mood
 
 ### Example
@@ -102,8 +103,8 @@ Subject line:
 ```
 Body:
 ```
-- Remove "+" operator bug.
-- Remove UI button missclick bug.
+- Remove "+" operator bug
+- Remove UI button missclick bug
 ```
 
 # Code Style

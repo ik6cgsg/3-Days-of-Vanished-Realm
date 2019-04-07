@@ -6,12 +6,25 @@ public class TorchInteractiveController : IInteractiveObject
 {
     private GameObject fire;
 
-    public bool IsLit { get; private set; }
+    public bool IsLit
+    {
+        get;
+        private set;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        fire = GameObject.Find("Cylinder/Fire");
+        Transform[] children = GetComponentsInChildren<Transform>();
+        Debug.Log(children);
+        foreach (Transform child in children)
+        {
+            if (child.name.Equals("Fire"))
+            {
+                fire = child.gameObject;
+                break;
+            }
+        }
         fire.SetActive(false);
         IsLit = false;
     }

@@ -19,7 +19,7 @@ public class FloorController : MonoBehaviour
     public Color canJumpColor = new Color(0, 1, 0, 0.30F);
     public Color cannotJumpColor = new Color(1, 0, 0, 0.30F);
 
-    public float maxTiltAngleInDegrees = 35;
+    public float maxTiltAngleInDegrees = 90;
 
     // Private variables
     private Transform playerTransform;
@@ -40,7 +40,9 @@ public class FloorController : MonoBehaviour
         FADE_OUT
     }
 
-    JumpState jumpState;
+    private JumpState jumpState;
+    private int floorLayerMask;
+
 
     private void Start()
     {
@@ -74,6 +76,8 @@ public class FloorController : MonoBehaviour
 
         isJumping = false;
         timer = 0;
+
+        floorLayerMask = LayerMask.NameToLayer("Floor");
     }
 
     private void Update()
@@ -122,9 +126,9 @@ public class FloorController : MonoBehaviour
         // Perform collision check with scene at jump target
         Vector3 lookAt = raycast.worldPosition;
         float thresh = 0.001F;
-        Vector3 p1 = lookAt + new Vector3(0, playerRadius + thresh + raycast.worldPosition.y, 0);
-        Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh + raycast.worldPosition.y, 0);
-        bool canJump1 = !Physics.CheckCapsule(p1, p2, playerRadius);
+        Vector3 p1 = lookAt + new Vector3(0, playerRadius + thresh, 0);
+        Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh, 0);
+        bool canJump1 = !Physics.CheckCapsule(p1, p2, playerRadius, floorLayerMask);
 
         Vector3 normal = raycast.worldNormal;
         Vector3 up = new Vector3(0, 1, 0);

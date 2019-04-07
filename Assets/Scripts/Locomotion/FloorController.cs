@@ -19,6 +19,8 @@ public class FloorController : MonoBehaviour
     public Color canJumpColor = new Color(0, 1, 0, 0.30F);
     public Color cannotJumpColor = new Color(1, 0, 0, 0.30F);
 
+    public float maxTiltAngleInDegrees = 35;
+
     // Private variables
     private Transform playerTransform;
     private bool canJump;
@@ -28,6 +30,8 @@ public class FloorController : MonoBehaviour
     private TargetCircleController targetCircleController;
 
     private Color fadeColor = new Color(0, 0, 0, 0);
+
+    private float currentAngle;
 
     private enum JumpState
     {
@@ -118,9 +122,16 @@ public class FloorController : MonoBehaviour
         // Perform collision check with scene at jump target
         Vector3 lookAt = raycast.worldPosition;
         float thresh = 0.001F;
-        Vector3 p1 = lookAt + new Vector3(0, playerRadius + thresh, 0);
-        Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh, 0);
-        canJump = !Physics.CheckCapsule(p1, p2, playerRadius);
+        Vector3 p1 = lookAt + new Vector3(0, playerRadius + thresh + raycast.worldPosition.y, 0);
+        Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh + raycast.worldPosition.y, 0);
+        bool canJump1 = !Physics.CheckCapsule(p1, p2, playerRadius);
+
+        Vector3 normal = raycast.worldNormal;
+        Vector3 up = new Vector3(0, 1, 0);
+        currentAngle = Vector3.Angle(up, normal);
+        bool canJump2 = currentAngle <= maxTiltAngleInDegrees;
+
+        canJump = canJump1 && canJump2;
     }
 
     private void UpdateCircleTransform()
@@ -128,6 +139,7 @@ public class FloorController : MonoBehaviour
         //circle.transform.position = Vector3.Lerp(circle.transform.position, GvrPointerInputModule.CurrentRaycastResult.worldPosition, 1000 * Time.deltaTime);
         //targetCircle.transform.position = Vector3.Lerp(targetCircle.transform.position, GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, 1, 0), Time.deltaTime / (Time.deltaTime + 0.30F));
         targetCircle.transform.position = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, 0.001F, 0);
+        targetCircle.transform.rotation = Quaternion.Euler(currentAngle, 0, 0);
         targetCircle.transform.localScale = new Vector3(2 * playerRadius, 1, 2 * playerRadius);
     }
 

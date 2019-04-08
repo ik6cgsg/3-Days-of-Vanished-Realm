@@ -148,6 +148,7 @@ Transform:
   - {fileID: 1336373082}
   - {fileID: 1648222098}
   - {fileID: 469797079}
+
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2043,6 +2044,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxReticleDistance
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2481406120381461099, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
+        type: 3}
+      propertyPath: fixedScale
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1538354031, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb, type: 3}
       propertyPath: m_Name

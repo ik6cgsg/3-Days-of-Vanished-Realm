@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BurnableItemController : IInteractiveObject
 {
-    public GameObject burnableObject;
     public float burnTime;
     public bool IsOnFire
     {
@@ -13,7 +12,6 @@ public class BurnableItemController : IInteractiveObject
     }
 
     private GameObject fire;
-    private float fireStartTime;
 
     void Start()
     {
@@ -30,22 +28,15 @@ public class BurnableItemController : IInteractiveObject
         fire.SetActive(false);
     }
 
-    void Update()
-    {
-        if (IsOnFire && Time.time - fireStartTime >= burnTime)
-        {
-            Destroy(burnableObject);
-            IsOnFire = false;
-        }
-    }
-
     public override void Interact()
     {
         if (EquipmentController.CurrentItem == EquipmentController.EquipableItem.TORCH)
         {
             IsOnFire = true;
             fire.SetActive(true);
-            fireStartTime = Time.time;
+            VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
+            Destroy(GetComponent<InteractiveObjectController>());
+            Destroy(gameObject, burnTime);
         }
     }
 

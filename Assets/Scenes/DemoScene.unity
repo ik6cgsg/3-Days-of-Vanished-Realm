@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnableObject: {fileID: 184080284}
-  burnTime: 1
+  burnTime: 2
 --- !u!114 &184080290
 MonoBehaviour:
   m_ObjectHideFlags: 0

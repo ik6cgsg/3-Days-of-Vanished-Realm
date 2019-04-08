@@ -58,3 +58,6 @@ crashlytics-build.properties
 
 
 # End of https://www.gitignore.io/api/unity
+*.meta~HEAD
+Assets/Scenes/DemoScene.meta~HEAD.meta
+ProjectSettings/ProjectVersion.txt

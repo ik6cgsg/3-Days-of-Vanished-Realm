@@ -141,10 +141,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 184080288}
   - {fileID: 1112766481}
   - {fileID: 1926512112}
   - {fileID: 80392567}
+  - {fileID: 184080288}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -581,7 +581,7 @@ Transform:
   m_Children:
   - {fileID: 1000235909}
   m_Father: {fileID: 68409358}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &184080289
 MonoBehaviour:
@@ -595,7 +595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe14c04ce23d45479ab89af621c8219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnableObject: {fileID: 184080284}
   burnTime: 2
 --- !u!114 &184080290
 MonoBehaviour:
@@ -1892,6 +1891,11 @@ PrefabInstance:
       propertyPath: maxReticleDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2481406120381461099, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
+        type: 3}
+      propertyPath: fixedScale
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1538354031, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb, type: 3}
       propertyPath: m_Name
       value: Equipables
@@ -2213,6 +2217,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47addd86a1aa1064bb29bf9463ced277, type: 3}
+--- !u!114 &1892645557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1401566432, guid: 8353ac64477ef8449ad8b753d29dc470,
+    type: 3}
+  m_PrefabInstance: {fileID: 1112766480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56199d2d48ee4b545a38351b0dba98ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1902180698
 GameObject:
   m_ObjectHideFlags: 0
@@ -6920,18 +6936,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &1892645557 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1401566432, guid: 8353ac64477ef8449ad8b753d29dc470,
-    type: 3}
-  m_PrefabInstance: {fileID: 1112766480}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56199d2d48ee4b545a38351b0dba98ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1926512111
 PrefabInstance:
   m_ObjectHideFlags: 0

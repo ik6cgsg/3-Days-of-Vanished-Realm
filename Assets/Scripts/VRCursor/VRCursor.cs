@@ -44,6 +44,12 @@ public class VRCursor : GvrBasePointer
     // Width of cursor
     public float width = 0.05f;
 
+    // Fixed distance in 3D to cursor in FIXED draw mode
+    public float fixedDistanceToCursor = 1.0f;
+
+    // Fixed scale of cursor in FIXED draw mode
+    public float fixedScale = 0.5f;
+
     // Sorting order to use for the reticle's renderer.
     // Range values come from https://docs.unity3d.com/ScriptReference/Renderer-sortingOrder.html.
     // Default value 32767 ensures gaze reticle is always rendered on top.
@@ -124,7 +130,10 @@ public class VRCursor : GvrBasePointer
         BuildMesh();
         InitTextures();
         SetState(CursorState.NEUTRAL);
-        SetDrawMode(CursorDrawMode.VARIABLE);
+        SetDrawMode(CursorDrawMode.FIXED);
+
+        MaterialComp.SetFloat("_FixedScale", fixedScale);
+        MaterialComp.SetFloat("_FixedDistanceToCursor", fixedDistanceToCursor);
     }
 
     // Initing the array of textures references
@@ -148,10 +157,10 @@ public class VRCursor : GvrBasePointer
 
         #region Mesh Build
         Vector3[] verts = new Vector3[4];
-        verts[0] = new Vector3(-width, -width, 1.0f);
-        verts[1] = new Vector3(-width, width, 1.0f);
-        verts[2] = new Vector3(width, width, 1.0f);
-        verts[3] = new Vector3(width, -width, 1.0f);
+        verts[0] = new Vector3(-width, -width, fixedDistanceToCursor);
+        verts[1] = new Vector3(-width, width, fixedDistanceToCursor);
+        verts[2] = new Vector3(width, width, fixedDistanceToCursor);
+        verts[3] = new Vector3(width, -width, fixedDistanceToCursor);
 
         int[] indices = new int[6];
 

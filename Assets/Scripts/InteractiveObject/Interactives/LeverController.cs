@@ -14,7 +14,7 @@ public class LeverController : IInteractiveObject
     // Start is called before the first frame update
     void Start()
     {
-        transform.rotation = Quaternion.Euler(startAngle, 0, 0);
+        transform.localRotation = Quaternion.Euler(startAngle, 0, 0);
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class LeverController : IInteractiveObject
                 moveTimer = 0;
                 isMoving = false;
 
-                transform.rotation = Quaternion.Euler(endAngle, 0, 0);
+                transform.localRotation = Quaternion.Euler(endAngle, 0, 0);
 
                 float tmp = startAngle;
                 startAngle = endAngle;
@@ -37,7 +37,7 @@ public class LeverController : IInteractiveObject
             }
 
             float t = moveTimer / changeTime;
-            transform.rotation = Quaternion.Euler(startAngle * (1 - t) + endAngle * t, 0, 0);
+            transform.localRotation = Quaternion.Euler(startAngle * (1 - t) + endAngle * t, 0, 0);
         }
     }
 

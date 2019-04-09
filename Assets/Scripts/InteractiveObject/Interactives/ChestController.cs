@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChestController : IInteractiveObject
 {
@@ -11,35 +9,31 @@ public class ChestController : IInteractiveObject
     private bool isMoving;
     private float moveTimer;
 
-    private Vector3 rotateCentre;
-
-    private void Start()
+    void Start()
     {
-        rotateCentre = transform.position;
-        rotateCentre.z -= transform.localScale.z * 0.5f;
+        transform.localRotation = Quaternion.Euler(0, 0, startAngle);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isMoving)
         {
-            float dt = Time.deltaTime;
-            moveTimer += dt;
+            moveTimer += Time.deltaTime;
 
             if (moveTimer >= changeTime)
             {
                 moveTimer = 0;
                 isMoving = false;
 
+                transform.localRotation = Quaternion.Euler(0, 0, endAngle);
+
                 float tmp = startAngle;
                 startAngle = endAngle;
                 endAngle = tmp;
-
             }
 
-            float ang = (endAngle - startAngle) * dt;
-            transform.RotateAround(rotateCentre, new Vector3(1, 0, 0), ang);
+            float t = moveTimer / changeTime;
+            transform.localRotation = Quaternion.Euler(0, 0, startAngle * (1 - t) + endAngle * t);
         }
     }
 

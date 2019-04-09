@@ -1,7 +1,8 @@
 # 3-Days-of-Vanished-Realm
 Interactive VR game for mobile phones (Android/iOS). Full immersion in the world of quest adventures. Everyone will have to strain their brains.
 
-Interactive VR game for mobile phones, Android and iOS systems. Full immersion in the world of quest adventures, for the age of 6+. Everyone will have to strain their brains.
+Interactive VR game for mobile phones, Android and iOS systems. Full immersion in the world of quest adventures.   
+Everyone will have to strain their brains.
 
 The game is first-person, you will:
 1) Travel around the map by teleportation (without sharp jumps, so as not to turn the head).    

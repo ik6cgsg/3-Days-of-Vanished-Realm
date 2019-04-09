@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-public class LeverController : IInteractiveObject
+public class ChestController : IInteractiveObject
 {
-    public IInteractiveObject controlledObject;
-
     public float changeTime;
     public float startAngle;
     public float endAngle;
@@ -11,13 +9,11 @@ public class LeverController : IInteractiveObject
     private bool isMoving;
     private float moveTimer;
 
-    // Start is called before the first frame update
     void Start()
     {
-        transform.localRotation = Quaternion.Euler(startAngle, 0, 0);
+        transform.localRotation = Quaternion.Euler(0, 0, startAngle);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isMoving)
@@ -29,7 +25,7 @@ public class LeverController : IInteractiveObject
                 moveTimer = 0;
                 isMoving = false;
 
-                transform.localRotation = Quaternion.Euler(endAngle, 0, 0);
+                transform.localRotation = Quaternion.Euler(0, 0, endAngle);
 
                 float tmp = startAngle;
                 startAngle = endAngle;
@@ -37,18 +33,17 @@ public class LeverController : IInteractiveObject
             }
 
             float t = moveTimer / changeTime;
-            transform.localRotation = Quaternion.Euler(startAngle * (1 - t) + endAngle * t, 0, 0);
+            transform.localRotation = Quaternion.Euler(0, 0, startAngle * (1 - t) + endAngle * t);
         }
     }
 
     public override void Interact()
     {
-        controlledObject.Interact();
         isMoving = true;
     }
 
     public override bool CanInteract()
     {
-        return controlledObject.CanInteract();
+        return true;
     }
 }

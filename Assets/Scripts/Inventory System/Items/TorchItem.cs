@@ -22,8 +22,8 @@ public class TorchItem : IItem
 
     private void OnEnable()
     {
-        iconEquippedTexture = Texture2D.blackTexture;
-        iconUnequippedTexture = Texture2D.blackTexture;
+        iconEquippedTexture = Resources.Load<Texture>("Textures/GUI/GuiInventory/Items/GuiTorchStopIcon");
+        iconUnequippedTexture = Resources.Load<Texture>("Textures/GUI/GuiInventory/Items/GuiTorchIcon");
         IconTexture = iconUnequippedTexture;
     }
 

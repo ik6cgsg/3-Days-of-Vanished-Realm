@@ -22,9 +22,8 @@ public class MagicGlassesItem : IItem
 
     private void OnEnable()
     {
-        Texture iconTex = Resources.Load<Texture>("Textures/Items/MagicGlassesTex");
-        iconEquippedTexture = iconTex;
-        iconUnequippedTexture = iconTex;
+        iconEquippedTexture = Resources.Load<Texture>("Textures/GUI/GuiInventory/Items/GuiGlassesStopIcon");
+        iconUnequippedTexture = Resources.Load<Texture>("Textures/GUI/GuiInventory/Items/GuiGlassesIcon");
         IconTexture = iconUnequippedTexture;
     }
 

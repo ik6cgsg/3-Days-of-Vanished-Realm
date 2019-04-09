@@ -26,7 +26,7 @@ If you are a developer:
 - Minimum version for smartphone: 5.6
 
 # Restrictions
-Our game is for almost all ages: 3+.
+Our game is for almost all ages: 3+.    
 It is recommended to take frequent breaks or not play at all if you experience nausea, discomfort, eye strain, disorientation or you are prone to seizures.
 
 # Getting Started

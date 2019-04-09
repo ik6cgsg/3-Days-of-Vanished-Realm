@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LeverController : IInteractiveObject
 {
@@ -13,16 +11,9 @@ public class LeverController : IInteractiveObject
     private bool isMoving;
     private float moveTimer;
 
-    private Vector3 rotateCentre;
-   
     // Start is called before the first frame update
     void Start()
     {
-        float h = transform.localScale.y;
-        rotateCentre = transform.position;
-        rotateCentre.y -= h * Mathf.Cos(startAngle);
-        rotateCentre.z -= h * Mathf.Sin(startAngle);
-
         transform.rotation = Quaternion.Euler(startAngle, 0, 0);
     }
 
@@ -31,22 +22,22 @@ public class LeverController : IInteractiveObject
     {
         if (isMoving)
         {
-            float dt = Time.deltaTime;
-            moveTimer += dt;
+            moveTimer += Time.deltaTime;
 
             if (moveTimer >= changeTime)
             {
                 moveTimer = 0;
                 isMoving = false;
 
+                transform.rotation = Quaternion.Euler(endAngle, 0, 0);
+
                 float tmp = startAngle;
                 startAngle = endAngle;
                 endAngle = tmp;
-
             }
 
-            float ang = (endAngle - startAngle) * dt;
-            transform.RotateAround(rotateCentre, new Vector3(1,0,0), ang);
+            float t = moveTimer / changeTime;
+            transform.rotation = Quaternion.Euler(startAngle * (1 - t) + endAngle * t, 0, 0);
         }
     }
 

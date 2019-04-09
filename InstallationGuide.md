@@ -26,9 +26,9 @@ $ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm
 $ git clone https://github.com/ik6cgsg/3-Days-of-Vanished-Realm
 ```
 2) Open project folder ***3-Days-of-Vanished-Realm*** in Unity.
-3) Follow Unity instructions:
-    - [Instruction](https://developers.google.com/vr/develop/unity/get-started-ios) for iOS
-    - [Instruction](https://developers.google.com/vr/develop/unity/get-started-android) for Android
+3) Follow Unity guides:
+    - [Installation guide](https://developers.google.com/vr/develop/unity/get-started-ios) for iOS
+    - [Installation guide](https://developers.google.com/vr/develop/unity/get-started-android) for Android
 4) After building the project you can start to develop own features
 5) Don't forget to pull last changes from *develop* branch
 

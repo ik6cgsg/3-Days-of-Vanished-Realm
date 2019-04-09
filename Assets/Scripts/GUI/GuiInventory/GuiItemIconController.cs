@@ -10,21 +10,18 @@ public class GuiItemIconController : IInteractiveObject
 
     public override void Interact()
     {
-        //Debug.Log("I was pressed");
-        //transform.parent.GetComponent<GuiItemPanelController>().AddPage();
-        item.Use();
+        EquipmentController.EquipItem(item);
     }
 
     public override bool CanInteract()
     {
-        return item.IsUsable();
+        return item.IsEquipable();
     }
 
     void Awake()
     {
         material = GetComponent<Renderer>().material;
         texturePropertyId = Shader.PropertyToID("_MainTex");
-        SetItem((IItem)ScriptableObject.CreateInstance("EmptyItem"));
     }
 
     void Update()

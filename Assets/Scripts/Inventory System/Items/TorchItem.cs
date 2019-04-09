@@ -12,23 +12,22 @@ public class TorchItem : IItem
         }
     }
 
-    public override Texture IconTexture
+    public override EquipmentController.EquipableItem EquipableItem
     {
         get
         {
-            return Texture2D.blackTexture;
+            return EquipmentController.EquipableItem.TORCH;
         }
     }
 
-    public override void Use()
+    private void OnEnable()
     {
-        Debug.Log("I am a torch.");
-        GameObject torch = TorchUsableController.Instance;
-        bool status = torch.activeSelf; 
-        torch.SetActive(!status);
+        iconEquippedTexture = Texture2D.blackTexture;
+        iconUnequippedTexture = Texture2D.blackTexture;
+        IconTexture = iconUnequippedTexture;
     }
 
-    public override bool IsUsable()
+    public override bool IsEquipable()
     {
         return true;
     }

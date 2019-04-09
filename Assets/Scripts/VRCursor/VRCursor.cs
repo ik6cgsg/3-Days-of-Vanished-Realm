@@ -21,6 +21,14 @@ public class VRCursor : GvrBasePointer
         NONE             // put them before NUM_OF_STATES
     }
 
+    // Current mode of drawing
+    public enum CursorDrawMode
+    {
+        NONE,
+        FIXED,
+        VARIABLE
+    }
+
     // Maximum distance of the cursor raycasting (in meters).
     public float maxReticleDistance = 20.0f;
 
@@ -35,6 +43,12 @@ public class VRCursor : GvrBasePointer
 
     // Width of cursor
     public float width = 0.05f;
+
+    // Fixed distance in 3D to cursor in FIXED draw mode
+    public float fixedDistanceToCursor = 1.0f;
+
+    // Fixed scale of cursor in FIXED draw mode
+    public float fixedScale = 0.5f;
 
     // Sorting order to use for the reticle's renderer.
     // Range values come from https://docs.unity3d.com/ScriptReference/Renderer-sortingOrder.html.
@@ -88,6 +102,13 @@ public class VRCursor : GvrBasePointer
         set;
     }
 
+    // Current mode of drawing
+    private static CursorDrawMode CurrentDrawMode
+    {
+        get;
+        set;
+    }
+
     // The material used to render the reticle.
     private static Material MaterialComp
     {
@@ -104,10 +125,15 @@ public class VRCursor : GvrBasePointer
         rendComponent.sortingOrder = sortingOrder;
         MaterialComp = rendComponent.material;
         CurrentState = CursorState.NONE;
+        CurrentDrawMode = CursorDrawMode.NONE;
 
         BuildMesh();
         InitTextures();
         SetState(CursorState.NEUTRAL);
+        SetDrawMode(CursorDrawMode.FIXED);
+
+        MaterialComp.SetFloat("_FixedScale", fixedScale);
+        MaterialComp.SetFloat("_FixedDistanceToCursor", fixedDistanceToCursor);
     }
 
     // Initing the array of textures references
@@ -131,10 +157,10 @@ public class VRCursor : GvrBasePointer
 
         #region Mesh Build
         Vector3[] verts = new Vector3[4];
-        verts[0] = new Vector3(-width, -width, 1.0f);
-        verts[1] = new Vector3(-width, width, 1.0f);
-        verts[2] = new Vector3(width, width, 1.0f);
-        verts[3] = new Vector3(width, -width, 1.0f);
+        verts[0] = new Vector3(-width, -width, fixedDistanceToCursor);
+        verts[1] = new Vector3(-width, width, fixedDistanceToCursor);
+        verts[2] = new Vector3(width, width, fixedDistanceToCursor);
+        verts[3] = new Vector3(width, -width, fixedDistanceToCursor);
 
         int[] indices = new int[6];
 
@@ -169,6 +195,18 @@ public class VRCursor : GvrBasePointer
 
         CurrentState = newState;
         MaterialComp.SetTexture("_MainTex", stateTextures[(int)CurrentState]);
+    }
+
+    // Setting current mode of drawing
+    public static void SetDrawMode(CursorDrawMode newMode)
+    {
+        if (CurrentDrawMode == newMode)
+        {
+            return;
+        }
+
+        CurrentDrawMode = newMode;
+        MaterialComp.SetInt("_DrawingMode", (int)CurrentDrawMode);
     }
 
     // Update is called once per frame.

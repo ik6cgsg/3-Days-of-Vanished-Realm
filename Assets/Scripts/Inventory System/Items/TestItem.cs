@@ -10,20 +10,14 @@ public class TestItem : IItem
         }
     }
 
-    public override Texture IconTexture
+    private void OnEnable()
     {
-        get
-        {
-            return Texture2D.whiteTexture;
-        }
+        iconEquippedTexture = Texture2D.whiteTexture;
+        iconUnequippedTexture = Texture2D.whiteTexture;
+        IconTexture = iconUnequippedTexture;
     }
 
-    public override void Use()
-    {
-        Debug.Log("I am a Test. Guess I work.");
-    }
-
-    public override bool IsUsable()
+    public override bool IsEquipable()
     {
         return true;
     }

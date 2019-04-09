@@ -19,6 +19,8 @@ public class FloorController : MonoBehaviour
     public Color canJumpColor = new Color(0, 1, 0, 0.30F);
     public Color cannotJumpColor = new Color(1, 0, 0, 0.30F);
 
+    public float maxTiltAngleInDegrees = 90;
+
     // Private variables
     private Transform playerTransform;
     private bool canJump;
@@ -29,6 +31,8 @@ public class FloorController : MonoBehaviour
 
     private Color fadeColor = new Color(0, 0, 0, 0);
 
+    private float currentAngle;
+
     private enum JumpState
     {
         FADE_IN,
@@ -36,7 +40,9 @@ public class FloorController : MonoBehaviour
         FADE_OUT
     }
 
-    JumpState jumpState;
+    private JumpState jumpState;
+    private int floorLayerMask;
+
 
     private void Start()
     {
@@ -70,6 +76,8 @@ public class FloorController : MonoBehaviour
 
         isJumping = false;
         timer = 0;
+
+        floorLayerMask = LayerMask.NameToLayer("Floor");
     }
 
     private void Update()
@@ -120,7 +128,14 @@ public class FloorController : MonoBehaviour
         float thresh = 0.001F;
         Vector3 p1 = lookAt + new Vector3(0, playerRadius + thresh, 0);
         Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh, 0);
-        canJump = !Physics.CheckCapsule(p1, p2, playerRadius);
+        bool canJump1 = !Physics.CheckCapsule(p1, p2, playerRadius, floorLayerMask);
+
+        Vector3 normal = raycast.worldNormal;
+        Vector3 up = new Vector3(0, 1, 0);
+        currentAngle = Vector3.Angle(up, normal);
+        bool canJump2 = currentAngle <= maxTiltAngleInDegrees;
+
+        canJump = canJump1 && canJump2;
     }
 
     private void UpdateCircleTransform()
@@ -128,6 +143,7 @@ public class FloorController : MonoBehaviour
         //circle.transform.position = Vector3.Lerp(circle.transform.position, GvrPointerInputModule.CurrentRaycastResult.worldPosition, 1000 * Time.deltaTime);
         //targetCircle.transform.position = Vector3.Lerp(targetCircle.transform.position, GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, 1, 0), Time.deltaTime / (Time.deltaTime + 0.30F));
         targetCircle.transform.position = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, 0.001F, 0);
+        targetCircle.transform.rotation = Quaternion.Euler(currentAngle, 0, 0);
         targetCircle.transform.localScale = new Vector3(2 * playerRadius, 1, 2 * playerRadius);
     }
 
@@ -167,7 +183,8 @@ public class FloorController : MonoBehaviour
             timer = 0;
             jumpState = JumpState.FADE_IN;
             jumpTarget = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, playerEyeHeight, 0);
-            blackScreen.transform.localScale = new Vector3(2 * playerRadius, 2 * playerRadius, 2 * playerRadius);
+            blackScreen.transform.localScale = new Vector3(playerRadius, playerRadius, playerRadius);
+            targetCircleController.EnableRenderer(false);
             return;
         }
 
@@ -209,6 +226,8 @@ public class FloorController : MonoBehaviour
                     Debug.Log("Switch to no jump");
                     mtl.SetColor("_Color", SetFadeColorAlpha(0));
                     isJumping = false;
+                    if (isWatched)
+                        targetCircleController.EnableRenderer(true);
                     return;
                 }
                 mtl.SetColor("_Color", SetFadeColorAlpha(1.0F - timer / fadeTime));

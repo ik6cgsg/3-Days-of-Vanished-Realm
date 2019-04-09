@@ -13,6 +13,22 @@ The game is first-person, you will:
 
 Difficulty will grow with geometric speed. As the result, dive into the world of mysteries with pleasant music in the background.
 
+# The target audience
+People, who want to try a full-fledged VR experience without having to buy expensive headsets.
+
+# System requirements
+- Google Cardboard v1.0 or similar viewer with magnet button
+- Android - 4.4 "KitKat" or higher
+- iOS - iPhone 5 or higher with iOS 8.0 or higher
+
+If you are a developer:
+- Recommended Unity version: LTS release 2017.4 or higher
+- Minimum version for smartphone: 5.6
+
+# Restrictions
+Our game is for almost all ages: 3+.
+It is recommended to take frequent breaks or not play at all if you experience nausea, discomfort, eye strain, disorientation or you are prone to seizures.
+
 # Getting Started
 
 #### Prepare enviroment

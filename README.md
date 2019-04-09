@@ -53,3 +53,10 @@ Other apps on current market are either poor quality or even dangerous
 
 # Development details 
 To learn more about our development team and coding standards visit [Development.md](https://github.com/ik6cgsg/3-Days-of-Vanished-Realm/blob/master/Development.md)
+
+# Development team
+1) [Denisov Pavel](https://github.com/Ppasha9) - **software engineer**
+2) [Vasiliev Peter](https://github.com/pv6) - **techlead**
+3) [Kononov Pavel](https://github.com/decentNick) - **software engineer**
+4) [Lavrichenko Olga](https://github.com/OLavrik) - **software engineer**
+5) [Kozlov Ilya](https://github.com/ik6cgsg) - **teamlead**

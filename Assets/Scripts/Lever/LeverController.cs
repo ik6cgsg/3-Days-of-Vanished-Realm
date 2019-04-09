@@ -22,6 +22,8 @@ public class LeverController : IInteractiveObject
         rotateCentre = transform.position;
         rotateCentre.y -= h * Mathf.Cos(startAngle);
         rotateCentre.z -= h * Mathf.Sin(startAngle);
+
+        transform.rotation = Quaternion.Euler(startAngle, 0, 0);
     }
 
     // Update is called once per frame
@@ -36,17 +38,15 @@ public class LeverController : IInteractiveObject
             {
                 moveTimer = 0;
                 isMoving = false;
-                transform.rotation = Quaternion.Euler(endAngle, 0, 0);
 
                 float tmp = startAngle;
                 startAngle = endAngle;
                 endAngle = tmp;
+
             }
 
             float ang = (endAngle - startAngle) * dt;
             transform.RotateAround(rotateCentre, new Vector3(1,0,0), ang);
-            //transform.rotation = Quaternion.Euler(ang, 0, 0);
-            //transform.position = Vector3.Lerp(curPos, targetPos, moveTimer / changeTime);
         }
     }
 

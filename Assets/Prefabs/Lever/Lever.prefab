@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2481406121757796179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.86, y: 0, z: 8.74}
+  m_LocalPosition: {x: 0, y: 0, z: -0.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1083741718865755513}
@@ -52,12 +52,12 @@ PrefabInstance:
     - target: {fileID: 2481406121757796188, guid: d1566c8cdf58c434ebf7de669ec51882,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.853
+      value: 0.87
       objectReference: {fileID: 0}
     - target: {fileID: 2481406121757796188, guid: d1566c8cdf58c434ebf7de669ec51882,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.75
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 2481406121757796188, guid: d1566c8cdf58c434ebf7de669ec51882,
         type: 3}
@@ -129,6 +129,11 @@ PrefabInstance:
       propertyPath: m_Height
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5936872902007837233, guid: d1566c8cdf58c434ebf7de669ec51882,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1566c8cdf58c434ebf7de669ec51882, type: 3}
 --- !u!4 &4422050730613399077 stripped
@@ -162,7 +167,7 @@ PrefabInstance:
     - target: {fileID: 2481406121757796188, guid: 88e5a3329aad4b045bf1578d4465218d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2481406121757796188, guid: 88e5a3329aad4b045bf1578d4465218d,
         type: 3}
@@ -202,6 +207,26 @@ PrefabInstance:
     - target: {fileID: 2481406121757796188, guid: 88e5a3329aad4b045bf1578d4465218d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631991891376576347, guid: 88e5a3329aad4b045bf1578d4465218d,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631991891376576347, guid: 88e5a3329aad4b045bf1578d4465218d,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631991891376576347, guid: 88e5a3329aad4b045bf1578d4465218d,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631991891376576347, guid: 88e5a3329aad4b045bf1578d4465218d,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

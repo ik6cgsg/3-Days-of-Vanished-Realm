@@ -15,7 +15,7 @@ Difficulty will grow with geometric speed. As the result, dive into the world of
 
 # Getting Started
 
-#### Prepare envairoment
+#### Prepare enviroment
 1) [Unity sdk (minimum version: 5.6) ](https://store.unity.com).
 
 2) Development environment under C#:
@@ -27,11 +27,11 @@ Difficulty will grow with geometric speed. As the result, dive into the world of
 
 `$ git clone  https://github.com/ik6cgsg/3-Days-of-Vanished-Realm`
 
-2) Open  projects  folder ***3-Days-of-Vanished-Realm*** with Unity.
+2) Open  project  folder ***3-Days-of-Vanished-Realm*** with Unity.
 
 3) Set compilations preferences:
     - for [iOS instruction](https://developers.google.com/vr/develop/unity/get-started-ios) 
-    - Windows you use automatic settings.
+    - for Windows you use automatic setting
 
 4) Build project, and you will get it for developer mode.
 

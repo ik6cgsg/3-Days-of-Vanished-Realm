@@ -12,11 +12,10 @@ public class KeyItem : IItem
         }
     }
 
-    public override Texture IconTexture
+    private void OnEnable()
     {
-        get
-        {
-            return Texture2D.whiteTexture;
-        }
+        iconEquippedTexture = Resources.Load<Texture>("Textures/GUI/GuiInventory/Items/GuiKeyStopIcon");
+        iconUnequippedTexture = Resources.Load<Texture>("Textures/GUI/GuiInventory/Items/GuiKeyIcon");
+        IconTexture = iconUnequippedTexture;
     }
 }

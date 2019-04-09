@@ -10,12 +10,12 @@ public class GuiItemIconController : IInteractiveObject
 
     public override void Interact()
     {
-        item.Use();
+        EquipmentController.EquipItem(item);
     }
 
     public override bool CanInteract()
     {
-        return item.IsUsable();
+        return item.IsEquipable();
     }
 
     void Awake()

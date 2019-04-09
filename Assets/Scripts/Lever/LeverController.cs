@@ -46,7 +46,7 @@ public class LeverController : IInteractiveObject
             }
 
             float ang = (endAngle - startAngle) * dt;
-            transform.RotateAround(rotateCentre, new Vector3(1,0,0), ang);
+            transform.RotateAround(rotateCentre, new Vector3(1, 0, 0), ang);
         }
     }
 

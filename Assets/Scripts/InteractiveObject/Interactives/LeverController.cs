@@ -8,6 +8,8 @@ public class LeverController : IInteractiveObject
     public float startAngle;
     public float endAngle;
 
+    public GameObject leverGears;
+
     private bool isMoving;
     private float moveTimer;
 
@@ -15,6 +17,7 @@ public class LeverController : IInteractiveObject
     void Start()
     {
         transform.localRotation = Quaternion.Euler(startAngle, 0, 0);
+        leverGears.transform.localRotation = transform.localRotation;
     }
 
     // Update is called once per frame
@@ -30,25 +33,28 @@ public class LeverController : IInteractiveObject
                 isMoving = false;
 
                 transform.localRotation = Quaternion.Euler(endAngle, 0, 0);
+                leverGears.transform.localRotation = transform.localRotation;
 
                 float tmp = startAngle;
                 startAngle = endAngle;
                 endAngle = tmp;
+
+                controlledObject.Interact();
             }
 
             float t = moveTimer / changeTime;
             transform.localRotation = Quaternion.Euler(startAngle * (1 - t) + endAngle * t, 0, 0);
+            leverGears.transform.localRotation = transform.localRotation;
         }
     }
 
     public override void Interact()
     {
-        controlledObject.Interact();
         isMoving = true;
     }
 
     public override bool CanInteract()
     {
-        return controlledObject.CanInteract();
+        return !isMoving && controlledObject.CanInteract();
     }
 }

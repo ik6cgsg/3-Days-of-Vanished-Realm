@@ -106,9 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a074e18728afb8c4d83b48392cf42f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeTime: 1
+  changeTime: 0.59
   startAngle: 0
   endAngle: 90
+  rotationAxis: 1
 --- !u!114 &8064130996335452144
 MonoBehaviour:
   m_ObjectHideFlags: 0

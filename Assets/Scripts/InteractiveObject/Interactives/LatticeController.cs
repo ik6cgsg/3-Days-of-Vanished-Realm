@@ -22,7 +22,10 @@ public class LatticeController : IInteractiveObject
 
     private void Awake()
     {
-        barredFloorController.enabled = false;
+        if (barredFloorController != null)
+        {
+            barredFloorController.enabled = false;
+        }
     }
 
     void Update()
@@ -42,7 +45,10 @@ public class LatticeController : IInteractiveObject
                 targetPos = curPos;
                 curPos = tmp;
 
-                barredFloorController.enabled = true;
+                if (barredFloorController != null)
+                {
+                    barredFloorController.enabled = true;
+                }
             }
 
             transform.position = Vector3.Lerp(curPos, targetPos, moveTimer / openTime);

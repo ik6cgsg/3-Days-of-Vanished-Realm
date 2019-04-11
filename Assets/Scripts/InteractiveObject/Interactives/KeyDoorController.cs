@@ -45,10 +45,10 @@ public class KeyDoorController : IInteractiveObject
 
     public override void Interact()
     {
-        if (!isMoving)
-        {
-            isMoving = true;
-        }
+        isMoving = true;
+        Destroy(GetComponent<InteractiveObjectController>());
+        VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
+        InventoryController.RemoveItem("Key");
     }
 
     public override bool CanInteract()

@@ -26,10 +26,17 @@ public class InventoryController: MonoBehaviour
     }
 
     // Removing item from inventory
-    public static void RemoveItem(int index)
+    public static void RemoveItem(string name)
     {
-        items.RemoveAt(index);
-        removeItemEvent.Invoke();
+        for (int i = 0; i < items.Capacity; i++)
+        {
+            if (items[i].Name.Equals(name))
+            {
+                items.RemoveAt(i);
+                removeItemEvent.Invoke();
+                break;
+            }
+        }
     }
 
     // Getting item from array by its index

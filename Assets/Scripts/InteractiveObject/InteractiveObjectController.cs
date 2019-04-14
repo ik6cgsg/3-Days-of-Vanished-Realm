@@ -73,7 +73,7 @@ public class InteractiveObjectController : MonoBehaviour
         if (GvrPointerInputModule.CurrentRaycastResult.distance <= maxDistance
             && interactiveObject.CanInteract())
         {
-            interactiveObject.Interact();
+            interactiveObject.InteractGlobal();
         }
     }
 }

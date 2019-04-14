@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class BurnableItemController : IInteractiveObject
 {
+    public AudioSource soundRef;
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
+
     public float burnTime;
     public bool IsOnFire
     {

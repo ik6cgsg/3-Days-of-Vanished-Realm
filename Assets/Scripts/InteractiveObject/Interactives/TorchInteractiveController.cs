@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class TorchInteractiveController : IInteractiveObject
 {
+    public AudioSource soundRef;
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
+
     private GameObject fire;
 
     public bool IsLit

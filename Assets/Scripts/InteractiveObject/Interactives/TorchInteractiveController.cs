@@ -12,6 +12,8 @@ public class TorchInteractiveController : IInteractiveObject
         private set;
     }
 
+    public bool isLitAtStart = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +27,8 @@ public class TorchInteractiveController : IInteractiveObject
                 break;
             }
         }
-        fire.SetActive(false);
-        IsLit = false;
+        fire.SetActive(isLitAtStart);
+        IsLit = isLitAtStart;
     }
 
     public override void Interact()
@@ -42,7 +44,7 @@ public class TorchInteractiveController : IInteractiveObject
 
     public override bool CanInteract()
     {
-        if (EquipmentController.CurrentItem == EquipmentController.EquipableItem.TORCH)
+        if (!isLitAtStart && EquipmentController.CurrentItem == EquipmentController.EquipableItem.TORCH)
         {
             return true;
         }

@@ -44,7 +44,7 @@ public class FloorController : MonoBehaviour
     private int floorLayerMask;
 
 
-    private void Start()
+    private void Awake()
     {
         // Add EventTrigger components
         EventTrigger trigger = gameObject.AddComponent(typeof(EventTrigger)) as EventTrigger;
@@ -232,6 +232,14 @@ public class FloorController : MonoBehaviour
                 }
                 mtl.SetColor("_Color", SetFadeColorAlpha(1.0F - timer / fadeTime));
                 break;
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (GvrPointerInputModule.CurrentRaycastResult.gameObject.Equals(gameObject))
+        {
+            OnPointerEnter();
         }
     }
 }

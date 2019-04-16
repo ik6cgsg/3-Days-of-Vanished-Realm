@@ -43,7 +43,6 @@ public class FloorController : MonoBehaviour
     private JumpState jumpState;
     private int floorLayerMask;
 
-
     private void Start()
     {
         // Add EventTrigger components
@@ -130,7 +129,7 @@ public class FloorController : MonoBehaviour
         Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh, 0);
         bool canJump1 = !Physics.CheckCapsule(p1, p2, playerRadius, floorLayerMask);
 
-        Vector3 normal = raycast.worldNormal;
+        Vector3 normal = raycast.gameObject.transform.up;
         Vector3 up = new Vector3(0, 1, 0);
         currentAngle = Vector3.Angle(up, normal);
         bool canJump2 = currentAngle <= maxTiltAngleInDegrees;

@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Fire
   m_Shader: {fileID: 210, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _COLORADDSUBDIFF_ON _GLOSSYREFLECTIONS_OFF _REQUIRE_UV2
-    _SPECULARHIGHLIGHTS_OFF
+  m_ShaderKeywords: _ALPHABLEND_ON _COLORADDSUBDIFF_ON _FADING_ON _GLOSSYREFLECTIONS_OFF
+    _REQUIRE_UV2 _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -114,7 +114,7 @@ Material:
     - _Parallax: 0.02
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 0
+    - _SoftParticlesEnabled: 1
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 0
@@ -126,6 +126,6 @@ Material:
     - _Color: {r: 0.12517802, g: 0.27543336, b: 0.9150943, a: 1}
     - _ColorAddSubDiff: {r: -1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

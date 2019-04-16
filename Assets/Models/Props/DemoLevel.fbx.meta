@@ -10,6 +10,10 @@ ModelImporter:
     100008: DemoRoom2
     100010: DemoRoom3
     100012: DemoRoom4
+    100014: DemoRoom2Floor
+    100016: DemoRoom3Floor
+    100018: DemoRoom3.002
+    100020: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
     400000: //RootNode
     400002: DemoRoom1
     400004: DemoRoom1FloorBlocked
@@ -17,6 +21,10 @@ ModelImporter:
     400008: DemoRoom2
     400010: DemoRoom3
     400012: DemoRoom4
+    400014: DemoRoom2Floor
+    400016: DemoRoom3Floor
+    400018: DemoRoom3.002
+    400020: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
     2100000: No Name
     2300000: DemoRoom1
     2300002: DemoRoom1FloorBlocked
@@ -24,18 +32,32 @@ ModelImporter:
     2300006: DemoRoom2
     2300008: DemoRoom3
     2300010: DemoRoom4
+    2300012: //RootNode
+    2300014: DemoRoom2Floor
+    2300016: DemoRoom3Floor
+    2300018: DemoRoom3.002
+    2300020: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
     3300000: DemoRoom1
     3300002: DemoRoom1FloorBlocked
     3300004: DemoRoom1FloorUnblocked
     3300006: DemoRoom2
     3300008: DemoRoom3
     3300010: DemoRoom4
+    3300012: //RootNode
+    3300014: DemoRoom2Floor
+    3300016: DemoRoom3Floor
+    3300018: DemoRoom3.002
+    3300020: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
     4300000: DemoRoom1FloorBlocked
     4300002: DemoRoom3
     4300004: DemoRoom2
     4300006: DemoRoom1
     4300008: DemoRoom4
     4300010: DemoRoom1FloorUnblocked
+    4300012: DemoRoom2Floor
+    4300014: DemoRoom3Floor
+    4300016: DemoRoom3.002
+    4300018: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
   externalObjects: {}
   materials:
     importMaterials: 0

@@ -41,6 +41,10 @@ public class GuiItemPanelController : MonoBehaviour
         InventoryController.addItemEvent.AddListener(UpdateItems);
         InventoryController.removeItemEvent.AddListener(UpdateItems);
         InventoryController.increaseSizeEvent.AddListener(AddPage);
+
+        // Set up equipment controller event triggers
+        EquipmentController.equipItemEvent.AddListener(UpdateItems);
+        EquipmentController.unequipItemEvent.AddListener(UpdateItems);
     }
 
     private void UpdateItems()

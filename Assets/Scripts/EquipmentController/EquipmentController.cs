@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EquipmentController : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class EquipmentController : MonoBehaviour
 
     private static GameObject[] staticItems;
     private static IItem currentEquippedItem;
+
+    public static UnityEvent equipItemEvent = new UnityEvent();
+    public static UnityEvent unequipItemEvent = new UnityEvent();
+
     public static EquipableItem CurrentItem
     {
         get
@@ -48,6 +53,8 @@ public class EquipmentController : MonoBehaviour
         currentEquippedItem = item;
         currentEquippedItem.Equip();
         HandleItemObject();
+
+        equipItemEvent.Invoke();
     }
 
     public static void UnequipItem()
@@ -60,6 +67,8 @@ public class EquipmentController : MonoBehaviour
         currentEquippedItem.Unequip();
         HandleItemObject();
         currentEquippedItem = null;
+
+        unequipItemEvent.Invoke();
     }
 
     private static void HandleItemObject()

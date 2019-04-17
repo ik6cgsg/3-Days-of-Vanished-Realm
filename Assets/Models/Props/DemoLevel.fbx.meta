@@ -19,6 +19,14 @@ ModelImporter:
     100026: DemoRoom5Floor
     100028: DemoRoom4.001
     100030: DemoRoom4StairsRight
+    100032: DemoRoom4Stairs
+    100034: DemoRoom4StairsLeftFloor
+    100036: DemoRoom4StairsRightFloor
+    100038: DemoRoom4Collider
+    100040: DemoRoom5HotGarbage
+    100042: DemoRoom5Stairs1
+    100044: DemoRoom5Stairs2
+    100046: DemoRoom5Collider
     400000: //RootNode
     400002: DemoRoom1
     400004: DemoRoom1FloorBlocked
@@ -35,6 +43,14 @@ ModelImporter:
     400026: DemoRoom5Floor
     400028: DemoRoom4.001
     400030: DemoRoom4StairsRight
+    400032: DemoRoom4Stairs
+    400034: DemoRoom4StairsLeftFloor
+    400036: DemoRoom4StairsRightFloor
+    400038: DemoRoom4Collider
+    400040: DemoRoom5HotGarbage
+    400042: DemoRoom5Stairs1
+    400044: DemoRoom5Stairs2
+    400046: DemoRoom5Collider
     2100000: No Name
     2300000: DemoRoom1
     2300002: DemoRoom1FloorBlocked
@@ -52,6 +68,14 @@ ModelImporter:
     2300026: DemoRoom5Floor
     2300028: DemoRoom4.001
     2300030: DemoRoom4StairsRight
+    2300032: DemoRoom4Stairs
+    2300034: DemoRoom4StairsLeftFloor
+    2300036: DemoRoom4StairsRightFloor
+    2300038: DemoRoom4Collider
+    2300040: DemoRoom5HotGarbage
+    2300042: DemoRoom5Stairs1
+    2300044: DemoRoom5Stairs2
+    2300046: DemoRoom5Collider
     3300000: DemoRoom1
     3300002: DemoRoom1FloorBlocked
     3300004: DemoRoom1FloorUnblocked
@@ -68,6 +92,14 @@ ModelImporter:
     3300026: DemoRoom5Floor
     3300028: DemoRoom4.001
     3300030: DemoRoom4StairsRight
+    3300032: DemoRoom4Stairs
+    3300034: DemoRoom4StairsLeftFloor
+    3300036: DemoRoom4StairsRightFloor
+    3300038: DemoRoom4Collider
+    3300040: DemoRoom5HotGarbage
+    3300042: DemoRoom5Stairs1
+    3300044: DemoRoom5Stairs2
+    3300046: DemoRoom5Collider
     4300000: DemoRoom1FloorBlocked
     4300002: DemoRoom3
     4300004: DemoRoom2
@@ -83,6 +115,14 @@ ModelImporter:
     4300024: DemoRoom5Floor
     4300026: DemoRoom4StairsRight
     4300028: DemoRoom4.001
+    4300030: DemoRoom4Stairs
+    4300032: DemoRoom4StairsRightFloor
+    4300034: DemoRoom4StairsLeftFloor
+    4300036: DemoRoom4Collider
+    4300038: DemoRoom5Stairs2
+    4300040: DemoRoom5Stairs1
+    4300042: DemoRoom5HotGarbage
+    4300044: DemoRoom5Collider
   externalObjects: {}
   materials:
     importMaterials: 0

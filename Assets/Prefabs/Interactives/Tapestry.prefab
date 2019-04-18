@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundRef: {fileID: 0}
-  burnTime: 1
+  burnTime: 1.33
 --- !u!114 &2045397800
 MonoBehaviour:
   m_ObjectHideFlags: 0

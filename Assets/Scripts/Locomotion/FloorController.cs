@@ -93,6 +93,11 @@ public class FloorController : MonoBehaviour
 
     private void Update()
     {
+        if (isJumpingStatic)
+        {
+            VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
+        }
+
         // Continue jumping if already in progress
         if (isJumping)
         {
@@ -106,16 +111,7 @@ public class FloorController : MonoBehaviour
             }
             UpdateCircleTransform();
             UpdateCanJump();
-            if (canJump)
-            {
-                VRCursor.SetState(VRCursor.CursorState.CAN_STEP);
-                targetCircleController.SetColor(canJumpColor);
-            }
-            else
-            {
-                VRCursor.SetState(VRCursor.CursorState.CANNOT_STEP);
-                targetCircleController.SetColor(cannotJumpColor);
-            }
+            UpdateCursor();
         }
     }
 
@@ -145,11 +141,24 @@ public class FloorController : MonoBehaviour
         bool canJump1 = !Physics.CheckCapsule(p1, p2, playerRadius, floorLayerMask);
 
         Vector3 normal = GvrPointerInputModule.CurrentRaycastResult.gameObject.transform.up;
-        Debug.Log(normal);
         Vector3 up = new Vector3(0, 1, 0);
         bool canJump2 = Vector3.Angle(up, normal) <= maxTiltAngleInDegrees;
 
         canJump = canJump1 && canJump2;
+    }
+
+    private void UpdateCursor()
+    {
+        if (canJump)
+        {
+            VRCursor.SetState(VRCursor.CursorState.CAN_STEP);
+            targetCircleController.SetColor(canJumpColor);
+        }
+        else
+        {
+            VRCursor.SetState(VRCursor.CursorState.CANNOT_STEP);
+            targetCircleController.SetColor(cannotJumpColor);
+        }
     }
 
     private void UpdateCircleTransform()
@@ -162,9 +171,12 @@ public class FloorController : MonoBehaviour
     private void OnPointerEnter()
     {
         isWatched = true;
-        if (!isJumpingStatic)
+        if (!isJumpingStatic && enabled)
         {
             targetCircleController.EnableRenderer(true);
+            UpdateCircleTransform();
+            UpdateCanJump();
+            UpdateCursor();
         }
     }
 
@@ -257,7 +269,8 @@ public class FloorController : MonoBehaviour
 
     private void OnEnable()
     {
-        if (GvrPointerInputModule.CurrentRaycastResult.gameObject.Equals(gameObject))
+        GameObject curObject = GvrPointerInputModule.CurrentRaycastResult.gameObject;
+        if (curObject != null && curObject.Equals(gameObject))
         {
             OnPointerEnter();
         }

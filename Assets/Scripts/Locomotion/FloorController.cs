@@ -21,6 +21,8 @@ public class FloorController : MonoBehaviour
 
     public float maxTiltAngleInDegrees = 90;
 
+    public static bool isEnabled = true;
+
     // Private variables
     private static GameObject targetCircle;
     private static GameObject blackScreen;
@@ -93,6 +95,14 @@ public class FloorController : MonoBehaviour
 
     private void Update()
     {
+        if (!isEnabled)
+        {
+            if (isWatched)
+                VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
+            targetCircleController.EnableRenderer(false);
+            return;
+        }
+
         if (isJumpingStatic)
         {
             VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
@@ -163,7 +173,7 @@ public class FloorController : MonoBehaviour
 
     private void UpdateCircleTransform()
     {
-        targetCircle.transform.position = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, 0.001F, 0);
+        targetCircle.transform.position = GvrPointerInputModule.CurrentRaycastResult.worldPosition;
         targetCircle.transform.rotation = Quaternion.Euler(GvrPointerInputModule.CurrentRaycastResult.gameObject.transform.eulerAngles);
         targetCircle.transform.localScale = new Vector3(2 * playerRadius, 1, 2 * playerRadius);
     }
@@ -171,7 +181,7 @@ public class FloorController : MonoBehaviour
     private void OnPointerEnter()
     {
         isWatched = true;
-        if (!isJumpingStatic && enabled)
+        if (!isJumpingStatic && enabled && isEnabled)
         {
             targetCircleController.EnableRenderer(true);
             UpdateCircleTransform();

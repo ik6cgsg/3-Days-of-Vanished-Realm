@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2045397799}
   - component: {fileID: 2045397800}
   m_Layer: 0
-  m_Name: Carpet
+  m_Name: Tapestry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661902740900495487}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.08, y: 2.31, z: 8.16}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.500001, y: 2, z: 1}
   m_Children:
   - {fileID: 2005327611}
@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9f0d8c619fd0ee348a50f10b310c3744, type: 2}
+  - {fileID: 2100000, guid: bb19fb0fc8419104ea57d5b6b548ddf9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe14c04ce23d45479ab89af621c8219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundRef: {fileID: 0}
   burnTime: 1
 --- !u!114 &2045397800
 MonoBehaviour:
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 2045397799}
-  maxDistance: 3
+  maxDistance: 1
 --- !u!1 &9168850084464260008
 GameObject:
   m_ObjectHideFlags: 0

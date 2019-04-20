@@ -198,7 +198,7 @@ public class FloorController : MonoBehaviour
 
     private void OnPointerClick()
     {
-        if (canJump)
+        if (isEnabled && canJump)
         {
             Jump();
         }

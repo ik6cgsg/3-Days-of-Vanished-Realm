@@ -3,7 +3,11 @@ guid: 68f229add29fbc645b45a35c25fe81eb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - iconEquippedTexture: {fileID: 2800000, guid: 7cef441ef95984e4ba43ea15f8ef998c,
+      type: 3}
+  - iconUnequippedTexture: {fileID: 2800000, guid: 7cef441ef95984e4ba43ea15f8ef998c,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

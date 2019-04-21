@@ -9,9 +9,18 @@ public class LeverController : IInteractiveObject
     public float endAngle;
 
     public GameObject leverGears;
+    public AudioSource soundRef;
 
     private bool isMoving;
     private float moveTimer;
+
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

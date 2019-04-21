@@ -6,12 +6,21 @@ public class KeyDoorController : IInteractiveObject
 {
     public float openTime;
     public float openHeight;
+    public AudioSource soundRef;
 
     private bool isMoving;
     private float moveTimer;
 
     private Vector3 curPos;
     private Vector3 targetPos;
+
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

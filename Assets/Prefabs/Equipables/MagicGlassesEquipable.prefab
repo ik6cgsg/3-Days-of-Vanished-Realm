@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4835453490863894158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 4561741167219859377}
   m_RootOrder: 0
@@ -100,6 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4561741167219859377}
   - component: {fileID: 6440060352960539685}
+  - component: {fileID: 5497482131010443765}
   m_Layer: 0
   m_Name: MagicGlassesEquipable
   m_TagString: Untagged
@@ -134,3 +135,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6386f955e0bde9946bdd6e12dc9fe57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5497482131010443765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7791586887407151874}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37485fbc7263d1341bdbbd54f8011fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0
+  bobSpeed: 0
+  rotationSpeed: 5

@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 1682901588}
   - component: {fileID: 1682901589}
   m_Layer: 0
-  m_Name: MagicGlasses
+  m_Name: MagicGlassesPickupable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 1682901589}
-  maxDistance: 3
+  maxDistance: 1
 --- !u!114 &1682901589
 MonoBehaviour:
   m_ObjectHideFlags: 0

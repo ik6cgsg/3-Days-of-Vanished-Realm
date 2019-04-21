@@ -8,11 +8,11 @@ public class GuiPageTrackerController : MonoBehaviour
     public float passiveScale = 0.1F;
     public float activeScale = 0.2F;
 
-    private int noofPages = 3;
+    private int noofPages = 2;
     private int currentPage = 0;
     private const float SELF_T = 0;
     private const float SELF_T1 = 1;
-    private const float SELF_WIDTH = 0.20F;
+    private const float SELF_WIDTH = 0.10F;
 
     private List<GameObject> pageCircles = new List<GameObject>();
     private GuiInventoryController inventoryController;

@@ -90,7 +90,7 @@ public class InventoryController: MonoBehaviour
     public void Start()
     {
         // --- For test ---
-        maxSize = 5;
+        maxSize = 10;
         // ------
     }
 }

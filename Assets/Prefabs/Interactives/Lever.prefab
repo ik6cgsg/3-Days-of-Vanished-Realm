@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 3308265436435714203}
-  maxDistance: 2
+  maxDistance: 1
 --- !u!1 &1232961809811765724
 GameObject:
   m_ObjectHideFlags: 0

@@ -167,4 +167,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 8461545939351121579}
-  maxDistance: 2
+  maxDistance: 1

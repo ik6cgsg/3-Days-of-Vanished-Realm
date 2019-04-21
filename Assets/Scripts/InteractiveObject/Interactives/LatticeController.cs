@@ -5,6 +5,7 @@ public class LatticeController : IInteractiveObject
     public float openTime;
     public float openHeight;
     public FloorController barredFloorController;
+    public AudioSource soundRef;
 
     private bool isMoving;
     private float moveTimer;
@@ -12,6 +13,14 @@ public class LatticeController : IInteractiveObject
 
     private Vector3 curPos;
     private Vector3 targetPos;
+
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
 
     void Start()
     {

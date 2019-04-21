@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class InvisibleObject : MonoBehaviour
+public class InvisibleObjectController : MonoBehaviour
 {
     Transform[] children;
 
@@ -17,13 +15,19 @@ public class InvisibleObject : MonoBehaviour
         Renderer renderer = transform.GetComponent<Renderer>();
         if (renderer != null)
         {
-            transform.GetComponent<Renderer>().enabled = enabled;
+            renderer.enabled = enabled;
         }
 
         Collider collider = transform.GetComponent<Collider>();
         if (collider != null)
         {
-            transform.GetComponent<Collider>().enabled = enabled;
+            collider.enabled = enabled;
+        }
+
+        Canvas canvas = transform.GetComponent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.enabled = enabled;
         }
     }
 
@@ -35,7 +39,7 @@ public class InvisibleObject : MonoBehaviour
         }
     }
 
-    public void Start()
+    public void Awake()
     {
         children = GetComponentsInChildren<Transform>(true);
 

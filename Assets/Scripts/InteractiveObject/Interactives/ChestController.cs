@@ -5,9 +5,18 @@ public class ChestController : IInteractiveObject
     public float changeTime;
     public float startAngle;
     public float endAngle;
+    public AudioSource soundRef;
 
     private bool isMoving;
     private float moveTimer;
+
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
 
     public enum RotationAxis
     {

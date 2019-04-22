@@ -8,9 +8,7 @@ public class LeverController : IInteractiveObject
     public float startAngle;
     public float endAngle;
     public AudioSource soundRef;
-
     public GameObject leverGears;
-    public AudioSource soundRef;
 
     private bool isMoving;
     private float moveTimer;

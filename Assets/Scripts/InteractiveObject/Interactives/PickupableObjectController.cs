@@ -37,7 +37,6 @@ public class PickupableObjectController : IInteractiveObject
     private void Start()
     {
         children = GetComponentsInChildren<Transform>(true);
-
     }
 
     public override AudioSource Sound

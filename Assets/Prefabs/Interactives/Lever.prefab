@@ -113,6 +113,7 @@ MonoBehaviour:
   endAngle: -150
   soundRef: {fileID: 334619376}
   leverGears: {fileID: 2727790953698850452}
+  soundRef: {fileID: 5909084643289229325}
 --- !u!114 &7963981528036807396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -7,11 +7,19 @@ public class LeverController : IInteractiveObject
     public float changeTime;
     public float startAngle;
     public float endAngle;
-
+    public AudioSource soundRef;
     public GameObject leverGears;
 
     private bool isMoving;
     private float moveTimer;
+
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +47,7 @@ public class LeverController : IInteractiveObject
                 startAngle = endAngle;
                 endAngle = tmp;
 
-                controlledObject.Interact();
+                controlledObject.InteractGlobal();
             }
 
             float t = moveTimer / changeTime;

@@ -70,6 +70,9 @@ public class InteractiveObjectController : MonoBehaviour
 
     private void OnPointerClick(BaseEventData eventData)
     {
+        if (FloorController.IsJumpingStatic)
+            return;
+
         if (GvrPointerInputModule.CurrentRaycastResult.distance <= maxDistance
             && interactiveObject.CanInteract())
         {

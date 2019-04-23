@@ -23,6 +23,8 @@ public class FloorController : MonoBehaviour
 
     public static bool isEnabled = true;
 
+    public static bool IsJumpingStatic { get; private set; }
+
     // Private variables
     private static GameObject targetCircle;
     private static GameObject blackScreen;
@@ -30,7 +32,6 @@ public class FloorController : MonoBehaviour
     private Transform playerTransform;
     private bool canJump;
     private bool isJumping;
-    private static bool isJumpingStatic;
     private Vector3 jumpTarget;
     private float timer;
     private TargetCircleController targetCircleController;
@@ -87,7 +88,7 @@ public class FloorController : MonoBehaviour
         targetCircleController = targetCircle.GetComponent<TargetCircleController>();
 
         isJumping = false;
-        isJumpingStatic = false;
+        IsJumpingStatic = false;
         timer = 0;
 
         floorLayerMask = LayerMask.NameToLayer("Floor");
@@ -103,7 +104,7 @@ public class FloorController : MonoBehaviour
             return;
         }
 
-        if (isJumpingStatic)
+        if (IsJumpingStatic)
         {
             VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
         }
@@ -115,7 +116,7 @@ public class FloorController : MonoBehaviour
         }
         else if (isWatched)
         {
-            if (!isJumpingStatic)
+            if (!IsJumpingStatic)
             {
                 targetCircleController.EnableRenderer(true);
             }
@@ -181,7 +182,7 @@ public class FloorController : MonoBehaviour
     private void OnPointerEnter()
     {
         isWatched = true;
-        if (!isJumpingStatic && enabled && isEnabled)
+        if (!IsJumpingStatic && enabled && isEnabled)
         {
             targetCircleController.EnableRenderer(true);
             UpdateCircleTransform();
@@ -215,7 +216,7 @@ public class FloorController : MonoBehaviour
         if (!isJumping)
         {
             Debug.Log("Start jump");
-            isJumpingStatic = true;
+            IsJumpingStatic = true;
             isJumping = true;
             canJump = false;
             timer = 0;
@@ -263,7 +264,7 @@ public class FloorController : MonoBehaviour
                 {
                     Debug.Log("Switch to no jump");
                     mtl.SetColor("_Color", SetFadeColorAlpha(0));
-                    isJumpingStatic = false;
+                    IsJumpingStatic = false;
                     isJumping = false;
                     if (isWatched)
                     {

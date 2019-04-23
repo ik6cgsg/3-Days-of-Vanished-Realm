@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 3858d83d07dc21c4bbc16257fd16a076
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: DemoRoom1
+    100004: DemoRoom1FloorBlocked
+    100006: DemoRoom1FloorUnblocked
+    100008: DemoRoom2
+    100010: DemoRoom3
+    100012: DemoRoom4
+    100014: DemoRoom2Floor
+    100016: DemoRoom3Floor
+    100018: DemoRoom3.002
+    100020: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
+    100022: DemoRoom4Floor
+    100024: DemoRoom5
+    100026: DemoRoom5Floor
+    100028: DemoRoom4.001
+    100030: DemoRoom4StairsRight
+    100032: DemoRoom4Stairs
+    100034: DemoRoom4StairsLeftFloor
+    100036: DemoRoom4StairsRightFloor
+    100038: DemoRoom4Collider
+    100040: DemoRoom5HotGarbage
+    100042: DemoRoom5Stairs1
+    100044: DemoRoom5Stairs2
+    100046: DemoRoom5Collider
+    400000: //RootNode
+    400002: DemoRoom1
+    400004: DemoRoom1FloorBlocked
+    400006: DemoRoom1FloorUnblocked
+    400008: DemoRoom2
+    400010: DemoRoom3
+    400012: DemoRoom4
+    400014: DemoRoom2Floor
+    400016: DemoRoom3Floor
+    400018: DemoRoom3.002
+    400020: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
+    400022: DemoRoom4Floor
+    400024: DemoRoom5
+    400026: DemoRoom5Floor
+    400028: DemoRoom4.001
+    400030: DemoRoom4StairsRight
+    400032: DemoRoom4Stairs
+    400034: DemoRoom4StairsLeftFloor
+    400036: DemoRoom4StairsRightFloor
+    400038: DemoRoom4Collider
+    400040: DemoRoom5HotGarbage
+    400042: DemoRoom5Stairs1
+    400044: DemoRoom5Stairs2
+    400046: DemoRoom5Collider
+    2100000: No Name
+    2300000: DemoRoom1
+    2300002: DemoRoom1FloorBlocked
+    2300004: DemoRoom1FloorUnblocked
+    2300006: DemoRoom2
+    2300008: DemoRoom3
+    2300010: DemoRoom4
+    2300012: //RootNode
+    2300014: DemoRoom2Floor
+    2300016: DemoRoom3Floor
+    2300018: DemoRoom3.002
+    2300020: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
+    2300022: DemoRoom4Floor
+    2300024: DemoRoom5
+    2300026: DemoRoom5Floor
+    2300028: DemoRoom4.001
+    2300030: DemoRoom4StairsRight
+    2300032: DemoRoom4Stairs
+    2300034: DemoRoom4StairsLeftFloor
+    2300036: DemoRoom4StairsRightFloor
+    2300038: DemoRoom4Collider
+    2300040: DemoRoom5HotGarbage
+    2300042: DemoRoom5Stairs1
+    2300044: DemoRoom5Stairs2
+    2300046: DemoRoom5Collider
+    3300000: DemoRoom1
+    3300002: DemoRoom1FloorBlocked
+    3300004: DemoRoom1FloorUnblocked
+    3300006: DemoRoom2
+    3300008: DemoRoom3
+    3300010: DemoRoom4
+    3300012: //RootNode
+    3300014: DemoRoom2Floor
+    3300016: DemoRoom3Floor
+    3300018: DemoRoom3.002
+    3300020: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
+    3300022: DemoRoom4Floor
+    3300024: DemoRoom5
+    3300026: DemoRoom5Floor
+    3300028: DemoRoom4.001
+    3300030: DemoRoom4StairsRight
+    3300032: DemoRoom4Stairs
+    3300034: DemoRoom4StairsLeftFloor
+    3300036: DemoRoom4StairsRightFloor
+    3300038: DemoRoom4Collider
+    3300040: DemoRoom5HotGarbage
+    3300042: DemoRoom5Stairs1
+    3300044: DemoRoom5Stairs2
+    3300046: DemoRoom5Collider
+    4300000: DemoRoom1FloorBlocked
+    4300002: DemoRoom3
+    4300004: DemoRoom2
+    4300006: DemoRoom1
+    4300008: DemoRoom4
+    4300010: DemoRoom1FloorUnblocked
+    4300012: DemoRoom2Floor
+    4300014: DemoRoom3Floor
+    4300016: DemoRoom3.002
+    4300018: "DemoRoom2\u0410\u0434\u0449\u0449\u043A"
+    4300020: DemoRoom5
+    4300022: DemoRoom4Floor
+    4300024: DemoRoom5Floor
+    4300026: DemoRoom4StairsRight
+    4300028: DemoRoom4.001
+    4300030: DemoRoom4Stairs
+    4300032: DemoRoom4StairsRightFloor
+    4300034: DemoRoom4StairsLeftFloor
+    4300036: DemoRoom4Collider
+    4300038: DemoRoom5Stairs2
+    4300040: DemoRoom5Stairs1
+    4300042: DemoRoom5HotGarbage
+    4300044: DemoRoom5Collider
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

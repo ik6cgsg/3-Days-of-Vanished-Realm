@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BrazierPuzzleController : MonoBehaviour
 {
@@ -30,7 +28,6 @@ public class BrazierPuzzleController : MonoBehaviour
         if (!Solved && AllLit())
         {
             platform.Interact();
-            Destroy(platform.GetComponent("FloorController"));
             Solved = true;
         }
     }

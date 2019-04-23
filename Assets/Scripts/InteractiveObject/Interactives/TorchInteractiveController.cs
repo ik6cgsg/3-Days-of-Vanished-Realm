@@ -38,6 +38,11 @@ public class TorchInteractiveController : IInteractiveObject
         }
         fire.SetActive(isLitAtStart);
         IsLit = isLitAtStart;
+        if (isLitAtStart)
+        {
+            soundRef.Play();
+            Destroy(GetComponent<InteractiveObjectController>());
+        }
     }
 
     public override void Interact()

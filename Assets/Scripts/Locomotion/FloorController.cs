@@ -6,8 +6,8 @@ public class FloorController : MonoBehaviour
     private bool isWatched = false;
 
     // Public variables
-    public GameObject targetCircle;
-    public GameObject blackScreen;
+    public GameObject targetCirclePrefab;
+    public GameObject blackScreenPrefab;
 
     public float fadeTime = 0.5F;
     public float waitTime = 0.1F;
@@ -21,17 +21,23 @@ public class FloorController : MonoBehaviour
 
     public float maxTiltAngleInDegrees = 90;
 
+    public static bool isEnabled = true;
+
     // Private variables
+    private static GameObject targetCircle;
+    private static GameObject blackScreen;
+
     private Transform playerTransform;
     private bool canJump;
     private bool isJumping;
+    private static bool isJumpingStatic;
     private Vector3 jumpTarget;
     private float timer;
     private TargetCircleController targetCircleController;
 
     private Color fadeColor = new Color(0, 0, 0, 0);
 
-    private float currentAngle;
+    private Vector3 currentEuler;
 
     private enum JumpState
     {
@@ -43,7 +49,7 @@ public class FloorController : MonoBehaviour
     private JumpState jumpState;
     private int floorLayerMask;
 
-    private void Start()
+    private void Awake()
     {
         // Add EventTrigger components
         EventTrigger trigger = gameObject.AddComponent(typeof(EventTrigger)) as EventTrigger;
@@ -68,12 +74,20 @@ public class FloorController : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         // Create black screen and target circle game objects
-        blackScreen = GameObject.Instantiate(blackScreen, playerTransform);
+        if (blackScreen == null)
+        {
+            blackScreen = GameObject.Instantiate(blackScreenPrefab, playerTransform);
+        }
         blackScreen.GetComponent<Transform>().position = playerTransform.position;
-        targetCircle = GameObject.Instantiate(targetCircle, playerTransform);
+
+        if (targetCircle == null)
+        {
+            targetCircle = GameObject.Instantiate(targetCirclePrefab, playerTransform);
+        }
         targetCircleController = targetCircle.GetComponent<TargetCircleController>();
 
         isJumping = false;
+        isJumpingStatic = false;
         timer = 0;
 
         floorLayerMask = LayerMask.NameToLayer("Floor");
@@ -81,26 +95,33 @@ public class FloorController : MonoBehaviour
 
     private void Update()
     {
+        if (!isEnabled)
+        {
+            if (isWatched)
+                VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
+            targetCircleController.EnableRenderer(false);
+            return;
+        }
+
+        if (isJumpingStatic)
+        {
+            VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
+        }
+
         // Continue jumping if already in progress
         if (isJumping)
         {
             Jump();
         }
-
-        if (isWatched)
+        else if (isWatched)
         {
+            if (!isJumpingStatic)
+            {
+                targetCircleController.EnableRenderer(true);
+            }
             UpdateCircleTransform();
             UpdateCanJump();
-            if (canJump)
-            {
-                VRCursor.SetState(VRCursor.CursorState.CAN_STEP);
-                targetCircleController.SetColor(canJumpColor);
-            }
-            else
-            {
-                VRCursor.SetState(VRCursor.CursorState.CANNOT_STEP);
-                targetCircleController.SetColor(cannotJumpColor);
-            }
+            UpdateCursor();
         }
     }
 
@@ -129,27 +150,44 @@ public class FloorController : MonoBehaviour
         Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh, 0);
         bool canJump1 = !Physics.CheckCapsule(p1, p2, playerRadius, floorLayerMask);
 
-        Vector3 normal = raycast.gameObject.transform.up;
+        Vector3 normal = GvrPointerInputModule.CurrentRaycastResult.gameObject.transform.up;
         Vector3 up = new Vector3(0, 1, 0);
-        currentAngle = Vector3.Angle(up, normal);
-        bool canJump2 = currentAngle <= maxTiltAngleInDegrees;
+        bool canJump2 = Vector3.Angle(up, normal) <= maxTiltAngleInDegrees;
 
         canJump = canJump1 && canJump2;
     }
 
+    private void UpdateCursor()
+    {
+        if (canJump)
+        {
+            VRCursor.SetState(VRCursor.CursorState.CAN_STEP);
+            targetCircleController.SetColor(canJumpColor);
+        }
+        else
+        {
+            VRCursor.SetState(VRCursor.CursorState.CANNOT_STEP);
+            targetCircleController.SetColor(cannotJumpColor);
+        }
+    }
+
     private void UpdateCircleTransform()
     {
-        //circle.transform.position = Vector3.Lerp(circle.transform.position, GvrPointerInputModule.CurrentRaycastResult.worldPosition, 1000 * Time.deltaTime);
-        //targetCircle.transform.position = Vector3.Lerp(targetCircle.transform.position, GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, 1, 0), Time.deltaTime / (Time.deltaTime + 0.30F));
-        targetCircle.transform.position = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, 0.001F, 0);
-        targetCircle.transform.rotation = Quaternion.Euler(currentAngle, 0, 0);
+        targetCircle.transform.position = GvrPointerInputModule.CurrentRaycastResult.worldPosition;
+        targetCircle.transform.rotation = Quaternion.Euler(GvrPointerInputModule.CurrentRaycastResult.gameObject.transform.eulerAngles);
         targetCircle.transform.localScale = new Vector3(2 * playerRadius, 1, 2 * playerRadius);
     }
 
     private void OnPointerEnter()
     {
         isWatched = true;
-        targetCircleController.EnableRenderer(true);
+        if (!isJumpingStatic && enabled && isEnabled)
+        {
+            targetCircleController.EnableRenderer(true);
+            UpdateCircleTransform();
+            UpdateCanJump();
+            UpdateCursor();
+        }
     }
 
     private void OnPointerExit()
@@ -160,7 +198,7 @@ public class FloorController : MonoBehaviour
 
     private void OnPointerClick()
     {
-        if (canJump)
+        if (isEnabled && canJump)
         {
             Jump();
         }
@@ -174,9 +212,10 @@ public class FloorController : MonoBehaviour
 
     private void Jump()
     {
-        if (isJumping == false)
+        if (!isJumping)
         {
             Debug.Log("Start jump");
+            isJumpingStatic = true;
             isJumping = true;
             canJump = false;
             timer = 0;
@@ -224,13 +263,26 @@ public class FloorController : MonoBehaviour
                 {
                     Debug.Log("Switch to no jump");
                     mtl.SetColor("_Color", SetFadeColorAlpha(0));
+                    isJumpingStatic = false;
                     isJumping = false;
                     if (isWatched)
+                    {
+                        UpdateCircleTransform();
                         targetCircleController.EnableRenderer(true);
+                    }
                     return;
                 }
                 mtl.SetColor("_Color", SetFadeColorAlpha(1.0F - timer / fadeTime));
                 break;
+        }
+    }
+
+    private void OnEnable()
+    {
+        GameObject curObject = GvrPointerInputModule.CurrentRaycastResult.gameObject;
+        if (curObject != null && curObject.Equals(gameObject))
+        {
+            OnPointerEnter();
         }
     }
 }

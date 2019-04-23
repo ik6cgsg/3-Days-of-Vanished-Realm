@@ -40,6 +40,7 @@ public class TorchInteractiveController : IInteractiveObject
         IsLit = isLitAtStart;
         if (isLitAtStart)
         {
+            soundRef.Play();
             Destroy(GetComponent<InteractiveObjectController>());
         }
     }

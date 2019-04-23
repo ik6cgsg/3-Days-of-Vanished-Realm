@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 3308265436435714203}
-  maxDistance: 2
+  maxDistance: 1
 --- !u!82 &334619376
 AudioSource:
   m_ObjectHideFlags: 0

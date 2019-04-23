@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GuiInventoryController : MonoBehaviour
 {
+    public static int LAYER_MASK;
+
     public GameObject collapseButton;
     public GameObject prevPageButton;
     public GameObject itemPanel;
@@ -39,6 +41,7 @@ public class GuiInventoryController : MonoBehaviour
 
     void Start()
     {
+        LAYER_MASK = LayerMask.NameToLayer("UI");
         Hide();
     }
 

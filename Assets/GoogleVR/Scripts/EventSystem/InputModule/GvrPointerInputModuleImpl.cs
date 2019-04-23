@@ -200,7 +200,17 @@ public class GvrPointerInputModuleImpl
         if (isPointerActiveAndAvailable)
         {
             RaycastAll();
+
             raycastResult = ModuleController.FindFirstRaycast(ModuleController.RaycastResultCache);
+            foreach (RaycastResult rr in ModuleController.RaycastResultCache)
+            {
+                if (rr.gameObject.layer == GuiInventoryController.LAYER_MASK)
+                {
+                    raycastResult = rr;
+                    break;
+                }
+            }
+
             if (Pointer.ControllerInputDevice == null || Pointer.ControllerInputDevice.IsDominantHand)
             {
                 CurrentEventData.pointerId = (int)GvrControllerHand.Dominant;
@@ -225,6 +235,16 @@ public class GvrPointerInputModuleImpl
             Pointer.ShouldUseExitRadiusForRaycast = true;
             RaycastAll();
             RaycastResult firstResult = ModuleController.FindFirstRaycast(ModuleController.RaycastResultCache);
+
+            foreach (RaycastResult rr in ModuleController.RaycastResultCache)
+            {
+                if (rr.gameObject.layer == GuiInventoryController.LAYER_MASK)
+                {
+                    firstResult = rr;
+                    break;
+                }
+            }
+
             if (firstResult.gameObject == previousRaycastResult.gameObject)
             {
                 raycastResult = firstResult;

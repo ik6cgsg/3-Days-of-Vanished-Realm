@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7156742419044440229}
   - component: {fileID: 7447475096197114892}
   - component: {fileID: 8966142414639182447}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GuiItemIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

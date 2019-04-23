@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4657329429244790934}
   - component: {fileID: 4919800297744375910}
   - component: {fileID: 2432805688871746463}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GuiPageTrackerCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

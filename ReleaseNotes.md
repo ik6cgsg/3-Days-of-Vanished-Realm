@@ -1,4 +1,25 @@
 # Release Notes
+## Version 1.2.3 (23.04.2019)
+### Build link
+[3DVR-1.2.3.apk](https://drive.google.com/open?id=1SMyWGMgyqEZTcj5tL0YE7anLiu22_MYq)
+### What's new
+* Finally, some good fascinating game level
+* Key-spheres are now trending
+* Our own sound library (incomplete, but completely perfect)
+* Glad to present you our prize value: *rotating Crystall* (original, isn't it?)
+* New interactive object - *tapestry* and yes, it's burnable
+* *Statues* with their secrets - what can be better for quests?
+* Outstanding, but not that hard, puzzles
+
+### What's improved
+* The only thought that will be spinning in your head after seeing our **Blue Fire** - "Am I in paradise?"
+* Plenty (really enormous amount) of models and textures have been improved
+
+### What's fixed
+* We can now interact with inventory even through walls (almost did not fix Google code) 
+* No more shakes and trembles for our good old teleport circle
+* Fix *can't touch this* sign in inventory 
+
 ## Version 0.3.2 (09.04.2019)
 ### Build link
 [3DVR-0.3.2.apk](https://drive.google.com/open?id=17bt3mmQeFusOaMuonx9eGMAHXB1JhtyK)

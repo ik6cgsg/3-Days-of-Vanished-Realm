@@ -14,7 +14,9 @@ Shader "Custom/VR Cursor Shader"
     {
         Tags
         {
-            "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent"
+            "Queue" = "Transparent"
+            "IgnoreProjector" = "True"
+            "RenderType" = "Transparent"
         }
 
         Lighting Off

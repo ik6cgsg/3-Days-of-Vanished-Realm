@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6853192151824972554}
   - component: {fileID: 6285951710974665101}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ItemPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 8815702862669314502}
   - component: {fileID: 2542994528736557347}
   - component: {fileID: 6883343793914253363}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NextPageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7563463198762863959}
   - component: {fileID: 3671517642462278009}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GuiInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 4128110447729403161}
   - component: {fileID: 8657280837919632810}
   - component: {fileID: 5759503085945294507}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PrevPageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 1074357214976438530}
   - component: {fileID: 4801341252722807149}
   - component: {fileID: 6730101793285072822}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CollapseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7750622830430588411}
   - component: {fileID: 3095081658412487512}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GuiPageTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -24,7 +24,7 @@ public class PortalCamera : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,
                                               transform.rotation.eulerAngles.y - 180,
-                                              transform.rotation.eulerAngles.z);
+                                              playerCamera.eulerAngles.z);
                                               
     }
 }

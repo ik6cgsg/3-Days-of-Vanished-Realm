@@ -1416,8 +1416,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283732084}
   m_LocalRotation: {x: 0.6532815, y: -0.27059805, z: 0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 0, y: 1.42, z: 0}
-  m_LocalScale: {x: 0.17, y: 1, z: 0.2}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 964874807}
   m_RootOrder: 0
@@ -1959,8 +1959,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482581805}
   m_LocalRotation: {x: 0.6532815, y: -0.27059805, z: 0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 0, y: 1.42, z: 0}
-  m_LocalScale: {x: 0.17, y: 1, z: 0.2}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 2037763260}
   m_RootOrder: 0
@@ -10312,7 +10312,7 @@ MonoBehaviour:
   playerCamera: {fileID: 272727037}
   portalIn: {fileID: 482581806}
   portalOut: {fileID: 283732085}
-  offsetAngle: {x: 0, y: -135, z: 0}
+  offsetAngle: 0
 --- !u!114 &1892645557 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1401566432, guid: 8353ac64477ef8449ad8b753d29dc470,

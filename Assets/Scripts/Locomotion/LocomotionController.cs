@@ -3,20 +3,31 @@ using UnityEngine.EventSystems;
 
 public class LocomotionController : FloorController
 {
+    public enum StepBackDirection
+    {
+        LINE_OF_SIGHT,
+        NORMAL
+    }
+
+    public StepBackDirection stepBackDirection = StepBackDirection.NORMAL;
+    public bool onlyWalls = true;
+
     private VRCursor cursor;
-    private FloorController floorController;
+    private Transform floorTransform;
     private Vector3 onFloorPosition;
+    private int wallLayerMask;
 
     new void Awake()
     {
         SetUpFields();
         cursor = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<VRCursor>();
+        wallLayerMask = LayerMask.NameToLayer("Walls");
     }
 
     override protected void UpdateCircleTransform()
     {
         targetCircle.transform.position = onFloorPosition;
-        targetCircle.transform.rotation = Quaternion.Euler(floorController.gameObject.transform.eulerAngles);
+        targetCircle.transform.rotation = Quaternion.Euler(floorTransform.eulerAngles);
         targetCircle.transform.localScale = new Vector3(2 * playerRadius, 1, 2 * playerRadius);
     }
 
@@ -73,25 +84,40 @@ public class LocomotionController : FloorController
         // Temporarily disable circle renderer
         targetCircleController.EnableRenderer(false);
 
-        // Check that not colliding with interactive object
-        if (lookAtObject.GetComponentInChildren<InteractiveObjectController>() != null
-            || lookAtObject.GetComponentInParent<InteractiveObjectController>() != null)
+        // Check that colliding with walls if needed
+        if (onlyWalls && lookAtObject.layer != wallLayerMask)
         {
             return;
         }
 
-        // Step back along player line of sight xz-plane projection
+        // Check that not colliding with interactive object
+        if (lookAtObject.GetComponentInParent<InteractiveObjectController>() != null)
+        {
+            return;
+        }
+
+        // Step back from hit position
         Vector3 hitPos = raycastResult.worldPosition;
         Vector3 projNorm = new Vector3(raycastResult.worldNormal.x, 0, raycastResult.worldNormal.z);
-        Vector3 projLOS = new Vector3(hitPos.x - playerTransform.position.x,
-                                      0,
-                                      hitPos.z - playerTransform.position.z);
         projNorm.Normalize();
-        projLOS.Normalize();
-
-        float stepbackDist = (playerRadius + 0.001F) / Vector3.Dot(projNorm, -projLOS);
-
-        jumpTarget = raycastResult.worldPosition - projLOS * stepbackDist;
+        float stepbackDist;
+        switch (stepBackDirection)
+        {
+            case StepBackDirection.LINE_OF_SIGHT:
+                // Step back along player line of sight xz-plane projection
+                Vector3 projLOS = new Vector3(hitPos.x - playerTransform.position.x,
+                                              0,
+                                              hitPos.z - playerTransform.position.z);
+                projLOS.Normalize();
+                stepbackDist = (playerRadius + 0.001F) / Vector3.Dot(projNorm, -projLOS);
+                jumpTarget = raycastResult.worldPosition - projLOS * stepbackDist;
+                break;
+            case StepBackDirection.NORMAL:
+                // Step back along object normal xz-plane projection
+                stepbackDist = playerRadius + 0.001F;
+                jumpTarget = raycastResult.worldPosition + projNorm * stepbackDist;
+                break;
+        }
 
         // Find floor beneath
         RaycastHit floorHit = new RaycastHit();
@@ -102,17 +128,18 @@ public class LocomotionController : FloorController
             return;
         }
 
-        floorController = floorHit.collider.gameObject.GetComponentInParent<FloorController>();
+        FloorController floorController = floorHit.collider.gameObject.GetComponentInParent<FloorController>();
         if (floorController == null)
         {
             floorController = floorHit.collider.gameObject.GetComponentInChildren<FloorController>();
-        }
-        if (floorController == null)
-        {
-            Debug.Log("U Fucked up, m8");
-            return;
+            if (floorController == null)
+            {
+                Debug.Log("U Fucked up, m8");
+                return;
+            }
         }
         onFloorPosition = floorHit.point;
+        floorTransform = floorHit.collider.gameObject.transform;
 
         // Check if floor controller is enabled
         if (!floorController.enabled)

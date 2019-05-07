@@ -2,6 +2,7 @@
 
 public class KeySpherePedestalController : IInteractiveObject
 {
+    
     public GameObject keySphere;
     public LogicBoolean logicBoolean;
 
@@ -12,6 +13,7 @@ public class KeySpherePedestalController : IInteractiveObject
 
     public override void Interact()
     {
+        
         logicBoolean.Interact();
         keySphere.SetActive(true);
         GetComponent<InteractiveObjectController>().enabled = false;

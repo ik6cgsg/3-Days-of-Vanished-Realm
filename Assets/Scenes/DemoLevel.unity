@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 103487065}
   - component: {fileID: 103487064}
   - component: {fileID: 103487063}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1905,7 +1905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24730a0afa6f4314788f1e49fd55edda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openTime: 0
+  openTime: 0.1
   openHeight: 5
 --- !u!1001 &269409501
 PrefabInstance:
@@ -2096,7 +2096,6 @@ MonoBehaviour:
   playerRadius: 0.5
   canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
   cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
-  maxTiltAngleInDegrees: 90
 --- !u!1001 &315270693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5046,7 +5045,6 @@ MonoBehaviour:
   playerRadius: 0.5
   canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
   cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
-  maxTiltAngleInDegrees: 90
 --- !u!1001 &836880913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5269,7 +5267,7 @@ GameObject:
   - component: {fileID: 852551894}
   - component: {fileID: 852551893}
   - component: {fileID: 852551892}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5900,7 +5898,6 @@ MonoBehaviour:
   playerRadius: 0.5
   canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
   cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
-  maxTiltAngleInDegrees: 90
 --- !u!1001 &935892364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7655,7 +7652,7 @@ GameObject:
   - component: {fileID: 1181805084}
   - component: {fileID: 1181805083}
   - component: {fileID: 1181805082}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8051,7 +8048,7 @@ GameObject:
   - component: {fileID: 1256884129}
   - component: {fileID: 1256884128}
   - component: {fileID: 1256884130}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10884,6 +10881,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9217722124160696444, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
+        type: 3}
+      propertyPath: onlyWalls
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217722124160696444, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
+        type: 3}
+      propertyPath: stepBackDirection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb, type: 3}
 --- !u!1001 &1699977830
@@ -11992,7 +11999,7 @@ PrefabInstance:
     - target: {fileID: 506885992478849154, guid: 9150c76d484ccf3499854f63380d63ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.71999985
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 506885992478849154, guid: 9150c76d484ccf3499854f63380d63ba,
         type: 3}
@@ -12094,7 +12101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1815905129}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rooms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13217,7 +13224,6 @@ MonoBehaviour:
   playerRadius: 0.5
   canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
   cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
-  maxTiltAngleInDegrees: 90
 --- !u!1001 &2038105354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14061,7 +14067,7 @@ GameObject:
   - component: {fileID: 2098367899}
   - component: {fileID: 2098367898}
   - component: {fileID: 2098367897}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

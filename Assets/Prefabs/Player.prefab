@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 2481406121757796188}
   - component: {fileID: 1108817024}
   - component: {fileID: 1108817025}
+  - component: {fileID: 9217722124160696444}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -213,6 +214,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6b4b0b4c87120478688bb8877e99fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9217722124160696444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481406121757796179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5368e8ac2375bb4daf56d88f93b8f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCirclePrefab: {fileID: 2338858181355739482, guid: bb7cba0a709f3c646be2eceff8bb31c2,
+    type: 3}
+  blackScreenPrefab: {fileID: 7698567339097829918, guid: 55dd997cfe2d00c44b1bb49bae9bd161,
+    type: 3}
+  fadeTime: 0.5
+  waitTime: 0.1
+  maxJumpDistance: 10
+  playerHeight: 2
+  playerEyeHeight: 1.6
+  playerRadius: 0.5
+  canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
+  cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
 --- !u!1001 &49556257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -653,15 +678,15 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 2481406121540302053}
-    - target: {fileID: 6533814263435147695, guid: 7264f1f7a32084e439138221304df223,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6533814263099179325, guid: 7264f1f7a32084e439138221304df223,
         type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533814263435147695, guid: 7264f1f7a32084e439138221304df223,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7264f1f7a32084e439138221304df223, type: 3}

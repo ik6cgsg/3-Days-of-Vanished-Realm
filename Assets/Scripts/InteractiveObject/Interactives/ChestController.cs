@@ -18,6 +18,14 @@ public class ChestController : IInteractiveObject
         }
     }
 
+    public override float SoundPlayTime
+    {
+        get
+        {
+            return changeTime;
+        }
+    }
+
     public enum RotationAxis
     {
         X,

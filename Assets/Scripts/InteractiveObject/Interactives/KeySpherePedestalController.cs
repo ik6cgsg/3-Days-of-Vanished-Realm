@@ -4,6 +4,15 @@ public class KeySpherePedestalController : IInteractiveObject
 {
     public GameObject keySphere;
     public LogicBoolean logicBoolean;
+    public AudioSource soundRef;
+
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
 
     public override bool CanInteract()
     {

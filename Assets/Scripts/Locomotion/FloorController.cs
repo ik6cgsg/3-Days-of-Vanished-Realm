@@ -8,6 +8,7 @@ public class FloorController : MonoBehaviour
     // Public variables
     public GameObject targetCirclePrefab;
     public GameObject blackScreenPrefab;
+    public AudioSource soudRef;
 
     public float fadeTime = 0.5F;
     public float waitTime = 0.1F;
@@ -206,6 +207,7 @@ public class FloorController : MonoBehaviour
     {
         if (isEnabled && canJump)
         {
+            soudRef.Play();
             Jump();
         }
     }
@@ -268,6 +270,7 @@ public class FloorController : MonoBehaviour
                 break;
             case JumpState.FADE_OUT:
                 // Fade out of black
+                soudRef.Stop();
                 if (timer >= fadeTime)
                 {
                     Debug.Log("Switch to no jump");

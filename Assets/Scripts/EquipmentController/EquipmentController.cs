@@ -16,9 +16,9 @@ public class EquipmentController : MonoBehaviour
 
     [SerializeField]
     private GameObject[] items = new GameObject[(int)EquipableItem.NUM_OF_ITEMS];
-
     private static GameObject[] staticItems;
     private static IItem currentEquippedItem;
+    private static AudioSource soundRef;
 
     public static UnityEvent equipItemEvent = new UnityEvent();
     public static UnityEvent unequipItemEvent = new UnityEvent();
@@ -39,10 +39,12 @@ public class EquipmentController : MonoBehaviour
     {
         staticItems = items;
         currentEquippedItem = null;
+        soundRef = GetComponent<AudioSource>();
     }
 
     public static void EquipItem(IItem item)
     {
+        soundRef.Play();
         if (currentEquippedItem == item)
         {
             UnequipItem();

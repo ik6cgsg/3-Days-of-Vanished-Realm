@@ -6,12 +6,29 @@ public class DemoDoorController : IInteractiveObject
 {
     public float openTime;
     public float openHeight;
+    public AudioSource soundRef;
 
     private bool isMoving;
     private float moveTimer;
 
     private Vector3 curPos;
     private Vector3 targetPos;
+
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
+
+    public override float SoundPlayTime
+    {
+        get
+        {
+            return openTime;
+        }
+    }
 
     private void Start()
     {

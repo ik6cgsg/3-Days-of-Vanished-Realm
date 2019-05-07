@@ -22,7 +22,7 @@ public class LogicAndInteractor : MonoBehaviour
             }
         }
 
-        interactee.InteractGlobal();
+        interactee.InteractWithSound();
         hasInteracted = true;
     }
 }

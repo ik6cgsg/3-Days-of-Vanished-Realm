@@ -199,8 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 0}
-  - {fileID: 602277448}
-  - {fileID: 5683777867566000905}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1108817025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,12 +564,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d54b7f63ae2f048a350a90570a3b0c, type: 3}
---- !u!1 &5683777867566000905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7791586887407151874, guid: a1d54b7f63ae2f048a350a90570a3b0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2504444656494903307}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2129952250698358714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4561741167219859377, guid: a1d54b7f63ae2f048a350a90570a3b0c,
@@ -653,24 +647,18 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 2481406121540302053}
-    - target: {fileID: 6533814263435147695, guid: 7264f1f7a32084e439138221304df223,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6533814263099179325, guid: 7264f1f7a32084e439138221304df223,
         type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6533814263435147695, guid: 7264f1f7a32084e439138221304df223,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7264f1f7a32084e439138221304df223, type: 3}
---- !u!1 &602277448 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6533814263526424930, guid: 7264f1f7a32084e439138221304df223,
-    type: 3}
-  m_PrefabInstance: {fileID: 6533814262995453738}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &602277447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6533814263526424941, guid: 7264f1f7a32084e439138221304df223,

@@ -22,6 +22,14 @@ public class LatticeController : IInteractiveObject
         }
     }
 
+    public override float SoundPlayTime
+    {
+        get
+        {
+            return openTime;
+        }
+    }
+
     void Start()
     {
         curPos = transform.position;

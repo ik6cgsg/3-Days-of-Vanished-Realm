@@ -12,11 +12,23 @@ public abstract class IInteractiveObject : MonoBehaviour
         }
     }
 
-    public void InteractGlobal()
+    public virtual float SoundPlayTime
+    {
+        get
+        {
+            return -1;
+        }
+    }
+
+    public void InteractWithSound()
     {
         if (Sound != null)
         {
             Sound.Play();
+            if (SoundPlayTime > 0)
+            {
+                Sound.SetScheduledEndTime(AudioSettings.dspTime + SoundPlayTime);
+            }
         }
         Interact();
     }

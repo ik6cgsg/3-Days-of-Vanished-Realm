@@ -47,7 +47,7 @@ public class LeverController : IInteractiveObject
                 startAngle = endAngle;
                 endAngle = tmp;
 
-                controlledObject.InteractGlobal();
+                controlledObject.InteractWithSound();
             }
 
             float t = moveTimer / changeTime;

@@ -27,7 +27,7 @@ public class BrazierPuzzleController : MonoBehaviour
     {
         if (!Solved && AllLit())
         {
-            platform.Interact();
+            platform.InteractWithSound();
             Solved = true;
         }
     }

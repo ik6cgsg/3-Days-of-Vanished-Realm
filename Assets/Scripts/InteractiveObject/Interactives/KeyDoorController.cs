@@ -22,6 +22,14 @@ public class KeyDoorController : IInteractiveObject
         }
     }
 
+    public override float SoundPlayTime
+    {
+        get
+        {
+            return openTime;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

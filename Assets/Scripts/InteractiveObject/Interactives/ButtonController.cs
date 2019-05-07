@@ -23,7 +23,7 @@ public class ButtonController : IInteractiveObject
 
                 transform.localPosition = Vector3.zero;
 
-                controlledObject.Interact();
+                controlledObject.InteractWithSound();
             }
 
             float t = moveTimer / moveTime;

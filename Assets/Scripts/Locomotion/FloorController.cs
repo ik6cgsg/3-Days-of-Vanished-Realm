@@ -40,7 +40,7 @@ public class FloorController : MonoBehaviour
 
     private Vector3 currentEuler;
 
-    private enum JumpState
+    public enum JumpState
     {
         FADE_IN,
         WAIT,

@@ -214,6 +214,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6b4b0b4c87120478688bb8877e99fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9217722124160696444
+MonoBehaviour:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5368e8ac2375bb4daf56d88f93b8f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCirclePrefab: {fileID: 2338858181355739482, guid: bb7cba0a709f3c646be2eceff8bb31c2,
+    type: 3}
+  blackScreenPrefab: {fileID: 7698567339097829918, guid: 55dd997cfe2d00c44b1bb49bae9bd161,
+    type: 3}
+  fadeTime: 0.5
+  waitTime: 0.1
+  maxJumpDistance: 10
+  playerHeight: 2
+  playerEyeHeight: 1.6
+  playerRadius: 0.5
+  canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
+  cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
 --- !u!82 &2683563869148299831
 AudioSource:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class FloorController : MonoBehaviour
 {
-    private bool isWatched = false;
+    protected bool isWatched = false;
 
     // Public variables
     public GameObject targetCirclePrefab;
@@ -20,38 +20,36 @@ public class FloorController : MonoBehaviour
     public Color canJumpColor = new Color(0, 1, 0, 0.30F);
     public Color cannotJumpColor = new Color(1, 0, 0, 0.30F);
 
-    public float maxTiltAngleInDegrees = 90;
-
     public static bool isEnabled = true;
 
-    public static bool IsJumpingStatic { get; private set; }
+    public static bool IsJumpingStatic { get; protected set; }
 
-    // Private variables
-    private static GameObject targetCircle;
-    private static GameObject blackScreen;
+    // protected variables
+    protected static GameObject targetCircle;
+    protected static GameObject blackScreen;
 
-    private Transform playerTransform;
-    private bool canJump;
-    private bool isJumping;
-    private Vector3 jumpTarget;
-    private float timer;
-    private TargetCircleController targetCircleController;
+    protected Transform playerTransform;
+    protected bool canJump;
+    protected bool isJumping;
+    protected Vector3 jumpTarget;
+    protected float timer;
+    protected TargetCircleController targetCircleController;
 
-    private Color fadeColor = new Color(0, 0, 0, 0);
+    protected Color fadeColor = new Color(0, 0, 0, 0);
 
-    private Vector3 currentEuler;
+    protected Vector3 currentEuler;
 
-    private enum JumpState
+    protected enum JumpState
     {
         FADE_IN,
         WAIT,
         FADE_OUT
     }
 
-    private JumpState jumpState;
-    private int floorLayerMask;
+    protected JumpState jumpState;
+    protected int floorLayerMask;
 
-    private void Awake()
+    private void SetUpTriggers()
     {
         // Add EventTrigger components
         EventTrigger trigger = gameObject.AddComponent(typeof(EventTrigger)) as EventTrigger;
@@ -71,7 +69,10 @@ public class FloorController : MonoBehaviour
         trigger.triggers.Add(entryEnter);
         trigger.triggers.Add(entryExit);
         trigger.triggers.Add(entryClick);
+    }
 
+    protected void SetUpFields()
+    {
         // Get player transform component 
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
@@ -95,7 +96,13 @@ public class FloorController : MonoBehaviour
         floorLayerMask = LayerMask.NameToLayer("Floor");
     }
 
-    private void Update()
+    protected void Awake()
+    {                         
+        SetUpTriggers();
+        SetUpFields();
+    }
+
+    protected void Update()
     {
         if (!isEnabled)
         {
@@ -127,7 +134,15 @@ public class FloorController : MonoBehaviour
         }
     }
 
-    private void UpdateCanJump()
+    protected bool checkCollision(Vector3 onFloorPosition)
+    {
+        float thresh = 0.001F;
+        Vector3 p1 = onFloorPosition + new Vector3(0, playerRadius + thresh, 0);
+        Vector3 p2 = onFloorPosition + new Vector3(0, playerHeight - playerRadius + thresh, 0);
+        return !Physics.CheckCapsule(p1, p2, playerRadius, floorLayerMask);
+    }
+
+    virtual protected void UpdateCanJump()
     {
         // Check if already jumping
         if (isJumping)
@@ -146,20 +161,10 @@ public class FloorController : MonoBehaviour
         }
 
         // Perform collision check with scene at jump target
-        Vector3 lookAt = raycast.worldPosition;
-        float thresh = 0.001F;
-        Vector3 p1 = lookAt + new Vector3(0, playerRadius + thresh, 0);
-        Vector3 p2 = lookAt + new Vector3(0, playerHeight - playerRadius + thresh, 0);
-        bool canJump1 = !Physics.CheckCapsule(p1, p2, playerRadius, floorLayerMask);
-
-        Vector3 normal = GvrPointerInputModule.CurrentRaycastResult.gameObject.transform.up;
-        Vector3 up = new Vector3(0, 1, 0);
-        bool canJump2 = Vector3.Angle(up, normal) <= maxTiltAngleInDegrees;
-
-        canJump = canJump1 && canJump2;
+        canJump = checkCollision(raycast.worldPosition);
     }
 
-    private void UpdateCursor()
+    virtual protected void UpdateCursor()
     {
         if (canJump)
         {
@@ -173,14 +178,14 @@ public class FloorController : MonoBehaviour
         }
     }
 
-    private void UpdateCircleTransform()
+    virtual protected void UpdateCircleTransform()
     {
         targetCircle.transform.position = GvrPointerInputModule.CurrentRaycastResult.worldPosition;
         targetCircle.transform.rotation = Quaternion.Euler(GvrPointerInputModule.CurrentRaycastResult.gameObject.transform.eulerAngles);
         targetCircle.transform.localScale = new Vector3(2 * playerRadius, 1, 2 * playerRadius);
     }
 
-    private void OnPointerEnter()
+    protected void OnPointerEnter()
     {
         isWatched = true;
         if (!IsJumpingStatic && enabled && isEnabled)
@@ -192,13 +197,13 @@ public class FloorController : MonoBehaviour
         }
     }
 
-    private void OnPointerExit()
+    protected void OnPointerExit()
     {
         isWatched = false;
         targetCircleController.EnableRenderer(false);
     }
 
-    private void OnPointerClick()
+    protected void OnPointerClick()
     {
         if (isEnabled && canJump)
         {
@@ -207,13 +212,13 @@ public class FloorController : MonoBehaviour
         }
     }
 
-    private Color SetFadeColorAlpha(float alpha)
+    protected Color SetFadeColorAlpha(float alpha)
     {
         fadeColor.a = alpha;
         return fadeColor;
     }
 
-    private void Jump()
+    protected void Jump(bool setJumpTarget = true)
     {
         if (!isJumping)
         {
@@ -223,7 +228,10 @@ public class FloorController : MonoBehaviour
             canJump = false;
             timer = 0;
             jumpState = JumpState.FADE_IN;
-            jumpTarget = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, playerEyeHeight, 0);
+            if (setJumpTarget)
+            {
+                jumpTarget = GvrPointerInputModule.CurrentRaycastResult.worldPosition + new Vector3(0, playerEyeHeight, 0);
+            }
             blackScreen.transform.localScale = new Vector3(playerRadius, playerRadius, playerRadius);
             targetCircleController.EnableRenderer(false);
             return;
@@ -281,7 +289,7 @@ public class FloorController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         GameObject curObject = GvrPointerInputModule.CurrentRaycastResult.gameObject;
         if (curObject != null && curObject.Equals(gameObject))

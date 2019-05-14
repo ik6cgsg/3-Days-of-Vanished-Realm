@@ -7996,23 +7996,23 @@ Transform:
   - {fileID: 251104507}
   - {fileID: 827815620}
   - {fileID: 794147059}
+  - {fileID: 1664385655}
   - {fileID: 150790373}
   - {fileID: 2116837923}
-  - {fileID: 1664385655}
+  - {fileID: 1055134526}
+  - {fileID: 1640861104}
+  - {fileID: 128319918}
   - {fileID: 1298295888}
   - {fileID: 692017922}
+  - {fileID: 1273438218}
   - {fileID: 1799463186}
   - {fileID: 1977552090}
   - {fileID: 1599640863}
   - {fileID: 576462159}
   - {fileID: 1642526533}
-  - {fileID: 1055134526}
-  - {fileID: 1640861104}
-  - {fileID: 128319918}
   - {fileID: 1193152928}
   - {fileID: 1852562105}
   - {fileID: 2068516520}
-  - {fileID: 1273438218}
   - {fileID: 730984380}
   - {fileID: 705228309}
   - {fileID: 2043209305}
@@ -10967,6 +10967,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9217722124160696444, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
+        type: 3}
+      propertyPath: onlyWalls
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217722124160696444, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
+        type: 3}
+      propertyPath: stepBackDirection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2481406121540302053, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -11095,16 +11105,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9217722124160696444, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
+    - target: {fileID: 5995710763935424638, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
         type: 3}
-      propertyPath: onlyWalls
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9217722124160696444, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
-        type: 3}
-      propertyPath: stepBackDirection
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: soudRef
+      value: 
+      objectReference: {fileID: 898443607}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb, type: 3}
 --- !u!1001 &1699977830

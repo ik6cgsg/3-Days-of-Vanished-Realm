@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd096a29e8087884cb4793bb9cc6002c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueObjectName: 
 --- !u!1 &5875794130870338927
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,9 +277,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b46fffad28c4242924a64e5be97273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueObjectName: 
   keySphere: {fileID: 3604941700911492050}
   logicBoolean: {fileID: 1495266536}
   soundRef: {fileID: 6095185683697424335}
+  isEmpty: 0
 --- !u!114 &3861657973583053675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KeySphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526801398295786478, guid: 69c0ce636fbf636479f8079de5e690e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526801398295786479, guid: 69c0ce636fbf636479f8079de5e690e5,
         type: 3}

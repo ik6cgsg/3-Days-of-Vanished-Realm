@@ -10,6 +10,27 @@ public class ChestController : IInteractiveObject
     private bool isMoving;
     private float moveTimer;
 
+    private bool isOpen = false;
+
+    public override void Save()
+    {
+        SaveBool("isOpen", isOpen);
+    }
+
+    public override void Load()
+    {
+        isOpen = LoadBool("isOpen");
+
+        if (isOpen)
+        {
+            Rotate(endAngle);
+
+            float tmp = startAngle;
+            startAngle = endAngle;
+            endAngle = tmp;
+        }
+    }
+
     public override AudioSource Sound
     {
         get
@@ -47,7 +68,7 @@ public class ChestController : IInteractiveObject
         }
     }
 
-    void Start()
+    void Awake()
     {
         Rotate(startAngle);
     }
@@ -78,6 +99,7 @@ public class ChestController : IInteractiveObject
     public override void Interact()
     {
         isMoving = true;
+        isOpen = !isOpen;
     }
 
     public override bool CanInteract()

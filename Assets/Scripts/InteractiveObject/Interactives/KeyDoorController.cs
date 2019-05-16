@@ -30,14 +30,33 @@ public class KeyDoorController : IInteractiveObject
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private bool isOpen = false;
+
+    public override void Save()
+    {
+        SaveBool("isOpen", isOpen);
+    }
+
+    public override void Load()
+    {
+        isOpen = LoadBool("isOpen");
+
+        if (isOpen)
+        {
+            Destroy(GetComponent<InteractiveObjectController>());
+            transform.position = targetPos;
+            Vector3 tmp = targetPos;
+            targetPos = curPos;
+            curPos = tmp;
+        }
+    }
+
+    void Awake()
     {
         curPos = transform.position;
         targetPos = transform.position + new Vector3(0, openHeight, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isMoving)

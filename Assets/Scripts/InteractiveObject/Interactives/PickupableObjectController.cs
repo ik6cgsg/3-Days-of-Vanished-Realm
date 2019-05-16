@@ -34,7 +34,24 @@ public class PickupableObjectController : IInteractiveObject
         }
     }
 
-    private void Start()
+    private bool isPickedUp = false;
+
+    public override void Save()
+    {
+        SaveBool("isPickedUp", isPickedUp);
+    }
+
+    public override void Load()
+    {
+        isPickedUp = LoadBool("isPickedUp");
+
+        if (isPickedUp)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Awake()
     {
         children = GetComponentsInChildren<Transform>(true);
     }
@@ -52,6 +69,7 @@ public class PickupableObjectController : IInteractiveObject
         IItem item = (IItem)ScriptableObject.CreateInstance(itemName + "Item");
         InventoryController.AddItem(item);
         SetChildrenEnabled(false);
+        isPickedUp = true;
         Destroy(gameObject, 5);
     }
 

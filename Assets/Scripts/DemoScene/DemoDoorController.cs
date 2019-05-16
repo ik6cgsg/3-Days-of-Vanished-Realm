@@ -30,7 +30,27 @@ public class DemoDoorController : IInteractiveObject
         }
     }
 
-    private void Start()
+    private bool isOpen = false;
+
+    public override void Save()
+    {
+        SaveBool("isOpen", isOpen);
+    }
+
+    public override void Load()
+    {
+        isOpen = LoadBool("isOpen");
+
+        if (isOpen)
+        {
+            transform.position = targetPos;
+            Vector3 tmp = targetPos;
+            targetPos = curPos;
+            curPos = tmp;
+        }
+    }
+
+    private void Awake()
     {
         curPos = transform.position;
         targetPos = transform.position + new Vector3(0, openHeight, 0);

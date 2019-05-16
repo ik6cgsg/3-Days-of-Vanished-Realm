@@ -22,7 +22,22 @@ public class BurnableItemController : IInteractiveObject
 
     private GameObject fire;
 
-    void Start()
+    public override void Save()
+    {
+        SaveBool("isOnFire", IsOnFire);
+    }
+
+    public override void Load()
+    {
+        IsOnFire = LoadBool("isOnFire");
+
+        if (IsOnFire)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void Awake()
     {
         IsOnFire = false;
         Transform[] children = GetComponentsInChildren<Transform>();
@@ -45,6 +60,7 @@ public class BurnableItemController : IInteractiveObject
             fire.SetActive(true);
             VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
             Destroy(GetComponent<InteractiveObjectController>());
+            Save();
             Destroy(gameObject, burnTime);
         }
     }

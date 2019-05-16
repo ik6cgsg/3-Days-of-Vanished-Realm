@@ -17,6 +17,6 @@ public class PortalActivator : IInteractiveObject
 
     public override void Interact()
     {
-        baseRef.SetActive(true);
+        baseRef.SetActive(!baseRef.isActive);
     }
 }

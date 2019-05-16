@@ -7,6 +7,7 @@ public class BasePortal : IInteractiveObject
     public Transform portalOut;
     public bool isActive;
     public GameObject blackScreenPrefab;
+    public AudioSource soundRef = null;
 
     private Transform player;
     private bool isJumping;
@@ -23,6 +24,14 @@ public class BasePortal : IInteractiveObject
     private FloorController.JumpState jumpState;
     private Color fadeColor = new Color(0, 0, 0, 0);
     private static GameObject blackScreen;
+
+    public override AudioSource Sound
+    {
+        get
+        {
+            return soundRef;
+        }
+    }
 
     public override void Interact()
     {

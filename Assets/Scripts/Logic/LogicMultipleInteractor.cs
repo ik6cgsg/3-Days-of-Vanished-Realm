@@ -6,7 +6,7 @@
     {
         foreach (IInteractiveObject interactiveObject in interactees)
         {
-            interactiveObject.Interact();
+            interactiveObject.InteractWithSound();
         }
     }
 }

@@ -82,6 +82,7 @@ public class KeyDoorController : IInteractiveObject
     public override void Interact()
     {
         isMoving = true;
+        isOpen = true;
         Destroy(GetComponent<InteractiveObjectController>());
         VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
         InventoryController.RemoveItem("Key");

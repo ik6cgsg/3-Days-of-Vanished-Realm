@@ -47,7 +47,7 @@ public class PickupableObjectController : IInteractiveObject
 
         if (isPickedUp)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -70,7 +70,6 @@ public class PickupableObjectController : IInteractiveObject
         InventoryController.AddItem(item);
         SetChildrenEnabled(false);
         isPickedUp = true;
-        Destroy(gameObject, 5);
     }
 
     public override bool CanInteract()

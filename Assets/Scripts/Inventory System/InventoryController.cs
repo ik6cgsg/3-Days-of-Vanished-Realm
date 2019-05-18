@@ -11,6 +11,18 @@ public class InventoryController: MonoBehaviour
     private static int maxSize;
     private static List<IItem> items = new List<IItem>();
 
+    private static IItem emptyItem;
+
+    private static IItem getEmptyItem()
+    {
+        if (emptyItem == null)
+        {
+            emptyItem = (IItem)ScriptableObject.CreateInstance("EmptyItem");
+        }
+
+        return emptyItem;
+    }
+
     // Adding new item to array
     // Returns false if inventory is full, true otherwise
     public static bool AddItem(IItem item)
@@ -25,10 +37,22 @@ public class InventoryController: MonoBehaviour
         return true;
     }
 
+    public static bool AddItem(string itemName)
+    {
+        if (IsFull())
+        {
+            return false;
+        }
+
+        items.Add((IItem)ScriptableObject.CreateInstance(itemName + "Item"));
+        addItemEvent.Invoke();
+        return true;
+    }
+
     // Removing item from inventory
     public static void RemoveItem(string name)
     {
-        for (int i = 0; i < items.Capacity; i++)
+        for (int i = 0; i < items.Count; i++)
         {
             if (items[i].Name.Equals(name))
             {
@@ -44,7 +68,7 @@ public class InventoryController: MonoBehaviour
     {
         return index >= 0 && index < items.Count
             ? items[index]
-            : (IItem)ScriptableObject.CreateInstance("EmptyItem");
+            : getEmptyItem();
     }
 
     // Getting item from array by its name
@@ -58,7 +82,7 @@ public class InventoryController: MonoBehaviour
             }
         }
 
-        return (IItem)ScriptableObject.CreateInstance("EmptyItem");
+        return getEmptyItem();
     }
 
     // Does we have this item in our inventory
@@ -87,10 +111,30 @@ public class InventoryController: MonoBehaviour
         increaseSizeEvent.Invoke();
     }
 
-    public void Start()
+    private void Start()
     {
         // --- For test ---
         maxSize = 10;
         // ------
+
+        for (int i = 0; i < maxSize; i++)
+        {
+            string itemName = PlayerPrefs.GetString("InventoryItem" + i);
+        
+            if (!itemName.Equals(""))
+            {
+                AddItem(itemName);
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        for (int i = 0; i < maxSize; i++)
+        {
+            PlayerPrefs.SetString("InventoryItem" + i, i < items.Count ? items[i].Name : "");
+        }
+
+        PlayerPrefs.Save();
     }
 }

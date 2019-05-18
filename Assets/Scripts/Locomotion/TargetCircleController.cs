@@ -33,6 +33,9 @@ public class TargetCircleController : MonoBehaviour
 
     public void EnableRenderer(bool enabled)
     {
-        circle.GetComponent<Renderer>().enabled = enabled;
+        if (circle != null)
+        {
+            circle.GetComponent<Renderer>().enabled = enabled;
+        }
     }
 }

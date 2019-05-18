@@ -9,4 +9,17 @@
             interactiveObject.Interact();
         }
     }
+
+    public override bool CanInteract()
+    {
+        foreach (IInteractiveObject interactee in interactees)
+        {
+            if (!interactee.CanInteract())
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

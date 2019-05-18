@@ -38,8 +38,7 @@ public class KeySpherePedestalController : IInteractiveObject
         logicBoolean.Interact();
         if (!isEmpty)
         {
-            IItem item = (IItem)ScriptableObject.CreateInstance("KeySphere");
-            InventoryController.AddItem(item);
+            InventoryController.AddItem("KeySphere");
         }
         else
         {

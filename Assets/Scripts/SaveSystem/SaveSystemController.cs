@@ -21,6 +21,12 @@ public class SaveSystemController : ISavableObject
         SaveGlobalBool(PlayerSavableController.LOAD_COORDINATES, true);
     }
 
+    private void OnApplicationPause()
+    {
+        Debug.Log("Application pause");
+        SaveSceneObjects();
+    }
+
     private void OnApplicationQuit()
     {
         Debug.Log("Application quit");

@@ -93,7 +93,7 @@ public class FloorController : MonoBehaviour
         IsJumpingStatic = false;
         timer = 0;
 
-        floorLayerMask = LayerMask.NameToLayer("Floor");
+        floorLayerMask = -1 ^ (1 << LayerMask.NameToLayer("Floor"));
     }
 
     protected void Awake()

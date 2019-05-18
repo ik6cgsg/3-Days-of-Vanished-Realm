@@ -1,7 +1,5 @@
 Shader "Unlit/ScreenCutoutShader"
 {
-	//UNITY_SHADER_NO_UPGRADE
-
 	Properties
 	{
 		_MainTex("Texture", 2D) = "white" {}
@@ -11,18 +9,9 @@ Shader "Unlit/ScreenCutoutShader"
 	{
 		Tags 
 		{
-			"Queue" = "Geometry"
+			"Queue" = "Geometry+1"
 			"RenderType" = "Opaque" 
 		}
-		LOD 100
-
-		Lighting Off
-		ZTest Always
-		Fog
-		{
-			Mode Off
-		}
-		Blend SrcAlpha OneMinusSrcAlpha
 
 		Pass
 		{
@@ -49,9 +38,7 @@ Shader "Unlit/ScreenCutoutShader"
 			V2F Vert(Appdata v)
 			{
 				V2F o;
-				//o.vertex = UnityObjectToClipPos(v.vertex);
-				//o.vertex = mul(UNITY_MATRIX_VP, mul(unity_ObjectToWorld, float4(v.vertex.xyz, 1.0)));
-				o.vertex = mul(UNITY_MATRIX_MVP, float4(v.vertex.xyz, 1.0));
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				return o;
 			}
 

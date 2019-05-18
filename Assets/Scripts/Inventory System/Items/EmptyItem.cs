@@ -6,7 +6,7 @@ public class EmptyItem : IItem
     {
         get
         {
-            return "EmptyItem";
+            return "Empty";
         }
     }
 

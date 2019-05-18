@@ -207,7 +207,7 @@ public class FloorController : MonoBehaviour
     {
         if (isEnabled && canJump)
         {
-            soudRef.Play();
+          
             Jump();
         }
     }
@@ -223,6 +223,7 @@ public class FloorController : MonoBehaviour
         if (!isJumping)
         {
             Debug.Log("Start jump");
+            soudRef.Play();
             IsJumpingStatic = true;
             isJumping = true;
             canJump = false;
@@ -270,7 +271,7 @@ public class FloorController : MonoBehaviour
                 break;
             case JumpState.FADE_OUT:
                 // Fade out of black
-                soudRef.Stop();
+               
                 if (timer >= fadeTime)
                 {
                     Debug.Log("Switch to no jump");
@@ -282,6 +283,7 @@ public class FloorController : MonoBehaviour
                         UpdateCircleTransform();
                         targetCircleController.EnableRenderer(true);
                     }
+                    soudRef.Stop();
                     return;
                 }
                 mtl.SetColor("_Color", SetFadeColorAlpha(1.0F - timer / fadeTime));

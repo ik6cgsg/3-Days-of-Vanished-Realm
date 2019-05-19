@@ -128,6 +128,16 @@ public class InventoryController: MonoBehaviour
         }
     }
 
+    private void OnApplicationPause()
+    {
+        for (int i = 0; i < maxSize; i++)
+        {
+            PlayerPrefs.SetString("InventoryItem" + i, i < items.Count ? items[i].Name : "");
+        }
+
+        PlayerPrefs.Save();
+    }
+
     private void OnDestroy()
     {
         for (int i = 0; i < maxSize; i++)

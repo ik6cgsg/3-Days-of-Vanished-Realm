@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &41065512
 Transform:
@@ -108,7 +108,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &480607338
 Transform:
@@ -199,7 +199,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &978807745
 Transform:
@@ -5138,7 +5138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalOut: {fileID: 0}
   isActive: 0
-  blackScreenPrefab: {fileID: 0}
+  blackScreenPrefab: {fileID: 7698567339097829918, guid: 55dd997cfe2d00c44b1bb49bae9bd161,
+    type: 3}
   soundRef: {fileID: 0}
 --- !u!114 &8803407726224790602
 MonoBehaviour:

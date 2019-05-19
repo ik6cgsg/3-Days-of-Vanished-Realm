@@ -207,7 +207,6 @@ public class FloorController : MonoBehaviour
     {
         if (isEnabled && canJump)
         {
-          
             Jump();
         }
     }

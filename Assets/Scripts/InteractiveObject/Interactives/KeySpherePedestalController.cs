@@ -14,6 +14,20 @@ public class KeySpherePedestalController : IInteractiveObject
         }
     }
 
+    public bool isEmpty = true;
+
+    public override void Save()
+    {
+        SaveBool("isEmpty", isEmpty);
+    }
+
+    public override void Load()
+    {
+        isEmpty = LoadBool("isEmpty");
+
+        keySphere.SetActive(isEmpty);
+    }
+
     public override bool CanInteract()
     {
         return InventoryController.HasItem("KeySphere");
@@ -22,14 +36,21 @@ public class KeySpherePedestalController : IInteractiveObject
     public override void Interact()
     {
         logicBoolean.Interact();
-        keySphere.SetActive(true);
-        GetComponent<InteractiveObjectController>().enabled = false;
-        VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
-        InventoryController.RemoveItem("KeySphere");
+        if (!isEmpty)
+        {
+            InventoryController.AddItem("KeySphere");
+        }
+        else
+        {
+            InventoryController.RemoveItem("KeySphere");
+        }
+
+        isEmpty = !isEmpty;
+        keySphere.SetActive(isEmpty);
     }
 
-    private void Start()
+    private void Awake()
     {
-        keySphere.SetActive(false);    
+        keySphere.SetActive(isEmpty);    
     }
 }

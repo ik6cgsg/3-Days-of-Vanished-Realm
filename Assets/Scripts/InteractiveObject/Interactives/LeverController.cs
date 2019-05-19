@@ -21,14 +21,34 @@ public class LeverController : IInteractiveObject
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private bool isPulled = false;
+
+    public override void Save()
+    {
+        SaveBool("isPulled", isPulled);
+    }
+
+    public override void Load()
+    {
+        isPulled = LoadBool("isPulled");
+
+        if (isPulled)
+        {
+            transform.localRotation = Quaternion.Euler(endAngle, 0, 0);
+            leverGears.transform.localRotation = transform.localRotation;
+
+            float tmp = startAngle;
+            startAngle = endAngle;
+            endAngle = tmp;
+        }
+    }
+
+    void Awake()
     {
         transform.localRotation = Quaternion.Euler(startAngle, 0, 0);
         leverGears.transform.localRotation = transform.localRotation;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isMoving)
@@ -59,6 +79,7 @@ public class LeverController : IInteractiveObject
     public override void Interact()
     {
         isMoving = true;
+        isPulled = !isPulled;
     }
 
     public override bool CanInteract()

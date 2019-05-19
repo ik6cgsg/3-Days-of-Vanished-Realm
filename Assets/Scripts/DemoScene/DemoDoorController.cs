@@ -62,6 +62,8 @@ public class DemoDoorController : IInteractiveObject
         {
             isMoving = true;
         }
+
+        isOpen = !isOpen;
     }
 
     void Update()

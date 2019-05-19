@@ -47,25 +47,21 @@ public abstract class ISavableObject : MonoBehaviour
     public static void SaveGlobalInt(string valueName, int value)
     {
         PlayerPrefs.SetInt(valueName, value);
-        PlayerPrefs.Save();
     }
 
     public static void SaveGlobalFloat(string valueName, float value)
     {
         PlayerPrefs.SetFloat(valueName, value);
-        PlayerPrefs.Save();
     }
 
     public static void SaveGlobalBool(string valueName, bool value)
     {
         PlayerPrefs.SetInt(valueName, value ? 1 : 0);
-        PlayerPrefs.Save();
     }
 
     public static void SaveGlobalString(string valueName, string value)
     {
         PlayerPrefs.SetString(valueName, value);
-        PlayerPrefs.Save();
     }
 
     protected int LoadInt(string valueName)

@@ -42,6 +42,13 @@ public class DebugItemActivatorController : MonoBehaviour
                     Debug.Log(debugItems[i].Name + " is not usable");
                 }
             }
+            else if (Input.GetKeyDown(KeyCode.P))
+            {
+                Debug.Log("Purged save data");
+                PlayerPrefs.DeleteAll();
+                SaveSystemController saveSystem = FindObjectOfType<SaveSystemController>();
+                saveSystem.enabled = false;
+            }
         }
     }
 }

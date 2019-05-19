@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InventoryController: MonoBehaviour
+public class InventoryController: ISavableObject
 {
     public static UnityEvent addItemEvent = new UnityEvent();
     public static UnityEvent removeItemEvent = new UnityEvent();
@@ -21,6 +21,27 @@ public class InventoryController: MonoBehaviour
         }
 
         return emptyItem;
+    }
+
+    public override void Save()
+    {
+        for (int i = 0; i < maxSize; i++)
+        {
+            SaveGlobalString("InventoryItem" + i, i < items.Count ? items[i].Name : "");
+        }
+    }
+
+    public override void Load()
+    {
+        for (int i = 0; i < maxSize; i++)
+        {
+            string itemName = LoadGlobalString("InventoryItem" + i);
+
+            if (!itemName.Equals(""))
+            {
+                AddItem(itemName);
+            }
+        }
     }
 
     // Adding new item to array
@@ -111,40 +132,10 @@ public class InventoryController: MonoBehaviour
         increaseSizeEvent.Invoke();
     }
 
-    private void Start()
+    private void Awake()
     {
         // --- For test ---
         maxSize = 10;
         // ------
-
-        for (int i = 0; i < maxSize; i++)
-        {
-            string itemName = PlayerPrefs.GetString("InventoryItem" + i);
-        
-            if (!itemName.Equals(""))
-            {
-                AddItem(itemName);
-            }
-        }
-    }
-
-    private void OnApplicationPause()
-    {
-        for (int i = 0; i < maxSize; i++)
-        {
-            PlayerPrefs.SetString("InventoryItem" + i, i < items.Count ? items[i].Name : "");
-        }
-
-        PlayerPrefs.Save();
-    }
-
-    private void OnDestroy()
-    {
-        for (int i = 0; i < maxSize; i++)
-        {
-            PlayerPrefs.SetString("InventoryItem" + i, i < items.Count ? items[i].Name : "");
-        }
-
-        PlayerPrefs.Save();
     }
 }

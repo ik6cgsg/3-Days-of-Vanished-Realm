@@ -14,6 +14,29 @@ public class LatticeController : IInteractiveObject
     private Vector3 curPos;
     private Vector3 targetPos;
 
+    public override void Save()
+    {
+        SaveBool("isClosed", isClosed);
+    }
+
+    public override void Load()
+    {
+        isClosed = LoadBool("isClosed");
+
+        if (!isClosed)
+        {
+            transform.position = targetPos;
+            Vector3 tmp = targetPos;
+            targetPos = curPos;
+            curPos = tmp;
+
+            if (barredFloorController != null)
+            {
+                barredFloorController.enabled = true;
+            }
+        }
+    }
+
     public override AudioSource Sound
     {
         get
@@ -30,19 +53,16 @@ public class LatticeController : IInteractiveObject
         }
     }
 
-    void Start()
-    {
-        curPos = transform.position;
-        targetPos = transform.position + new Vector3(0, openHeight, 0);
-        isClosed = true;
-    }
-
     private void Awake()
     {
         if (barredFloorController != null)
         {
             barredFloorController.enabled = false;
         }
+
+        curPos = transform.position;
+        targetPos = transform.position + new Vector3(0, openHeight, 0);
+        isClosed = true;
     }
 
     void Update()

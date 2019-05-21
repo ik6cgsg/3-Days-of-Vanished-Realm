@@ -162,6 +162,8 @@ GameObject:
   - component: {fileID: 1108817024}
   - component: {fileID: 1108817025}
   - component: {fileID: 2683563869148299831}
+  - component: {fileID: 3373594263121500032}
+  - component: {fileID: 5995710763935424638}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -214,24 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6b4b0b4c87120478688bb8877e99fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9217722124160696444
-MonoBehaviour:
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5368e8ac2375bb4daf56d88f93b8f2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetCirclePrefab: {fileID: 2338858181355739482, guid: bb7cba0a709f3c646be2eceff8bb31c2,
-    type: 3}
-  blackScreenPrefab: {fileID: 7698567339097829918, guid: 55dd997cfe2d00c44b1bb49bae9bd161,
-    type: 3}
-  fadeTime: 0.5
-  waitTime: 0.1
-  maxJumpDistance: 10
-  playerHeight: 2
-  playerEyeHeight: 1.6
-  playerRadius: 0.5
-  canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
-  cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
 --- !u!82 &2683563869148299831
 AudioSource:
   m_ObjectHideFlags: 0
@@ -328,6 +312,46 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3373594263121500032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481406121757796179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b24a5fe19eef2439ad3adbe8b4e2e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueObjectName: Player
+--- !u!114 &5995710763935424638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481406121757796179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5368e8ac2375bb4daf56d88f93b8f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCirclePrefab: {fileID: 2338858181355739482, guid: bb7cba0a709f3c646be2eceff8bb31c2,
+    type: 3}
+  blackScreenPrefab: {fileID: 7698567339097829918, guid: 55dd997cfe2d00c44b1bb49bae9bd161,
+    type: 3}
+  soudRef: {fileID: 0}
+  fadeTime: 0.5
+  waitTime: 0.1
+  maxJumpDistance: 10
+  playerHeight: 2
+  playerEyeHeight: 1.6
+  playerRadius: 0.5
+  canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
+  cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
+  stepBackDirection: 1
+  onlyWalls: 1
 --- !u!1001 &49556257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -447,15 +471,15 @@ PrefabInstance:
       objectReference: {fileID: 3590822830499959090}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6242b9fdea053064bbf214ad81851e24, type: 3}
---- !u!4 &7563463198745306742 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7563463198762863959, guid: 6242b9fdea053064bbf214ad81851e24,
-    type: 3}
-  m_PrefabInstance: {fileID: 49556257}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8534850686970278456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8534850686924921113, guid: 6242b9fdea053064bbf214ad81851e24,
+    type: 3}
+  m_PrefabInstance: {fileID: 49556257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7563463198745306742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7563463198762863959, guid: 6242b9fdea053064bbf214ad81851e24,
     type: 3}
   m_PrefabInstance: {fileID: 49556257}
   m_PrefabAsset: {fileID: 0}
@@ -792,3 +816,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6533814262995453738}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9217722124160696444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5368e8ac2375bb4daf56d88f93b8f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCirclePrefab: {fileID: 2338858181355739482, guid: bb7cba0a709f3c646be2eceff8bb31c2,
+    type: 3}
+  blackScreenPrefab: {fileID: 7698567339097829918, guid: 55dd997cfe2d00c44b1bb49bae9bd161,
+    type: 3}
+  soudRef: {fileID: 0}
+  fadeTime: 0.5
+  waitTime: 0.1
+  maxJumpDistance: 10
+  playerHeight: 2
+  playerEyeHeight: 1.6
+  playerRadius: 0.5
+  canJumpColor: {r: 0, g: 1, b: 0, a: 0.3}
+  cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
+  stepBackDirection: 1
+  onlyWalls: 1

@@ -11,26 +11,22 @@ public class TorchEquipableController : MonoBehaviour
     private int upLimit = 270;
     private int downLimit = 90;
 
-    void Start()
-    {
-        // gameObject.SetActive(false);
-    }
-
     void LateUpdate()
     {
         Vector3 cameraRot = mainCamera.rotation.eulerAngles;
-        // Debug.Log(cameraRot);
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
         if (cameraRot.x >= fullRound - maxUpAngle || cameraRot.x <= maxDownAngle)
         {
-            transform.rotation = Quaternion.Euler(cameraRot.x, cameraRot.y, 0);
+            transform.Rotate(cameraRot.x, cameraRot.y, 0);                                  
         }
         else if (cameraRot.x < fullRound - maxUpAngle && cameraRot.x >= upLimit)
         {
-            transform.rotation = Quaternion.Euler(fullRound - maxUpAngle, cameraRot.y, 0);
+            transform.Rotate(fullRound - maxUpAngle, cameraRot.y, 0);
         }
         else if (cameraRot.x <= downLimit)
         {
-            transform.rotation = Quaternion.Euler(maxDownAngle, cameraRot.y, 0);
+            transform.Rotate(maxDownAngle, cameraRot.y, 0);
         }
+        transform.localPosition.Set(0, 0, 0);
     }
 }

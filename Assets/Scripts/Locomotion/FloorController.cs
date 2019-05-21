@@ -39,7 +39,7 @@ public class FloorController : MonoBehaviour
 
     protected Vector3 currentEuler;
 
-    protected enum JumpState
+    public enum JumpState
     {
         FADE_IN,
         WAIT,
@@ -93,7 +93,7 @@ public class FloorController : MonoBehaviour
         IsJumpingStatic = false;
         timer = 0;
 
-        floorLayerMask = LayerMask.NameToLayer("Floor");
+        floorLayerMask = -1 ^ (1 << LayerMask.NameToLayer("Floor"));
     }
 
     protected void Awake()
@@ -207,7 +207,6 @@ public class FloorController : MonoBehaviour
     {
         if (isEnabled && canJump)
         {
-            soudRef.Play();
             Jump();
         }
     }
@@ -223,6 +222,7 @@ public class FloorController : MonoBehaviour
         if (!isJumping)
         {
             Debug.Log("Start jump");
+            soudRef.Play();
             IsJumpingStatic = true;
             isJumping = true;
             canJump = false;
@@ -270,7 +270,7 @@ public class FloorController : MonoBehaviour
                 break;
             case JumpState.FADE_OUT:
                 // Fade out of black
-                soudRef.Stop();
+               
                 if (timer >= fadeTime)
                 {
                     Debug.Log("Switch to no jump");
@@ -282,6 +282,7 @@ public class FloorController : MonoBehaviour
                         UpdateCircleTransform();
                         targetCircleController.EnableRenderer(true);
                     }
+                    soudRef.Stop();
                     return;
                 }
                 mtl.SetColor("_Color", SetFadeColorAlpha(1.0F - timer / fadeTime));

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BrazierPuzzleController : MonoBehaviour
+public class BrazierPuzzleController : ISavableObject
 {
     public TorchInteractiveController[] braziers;
     public GameObject[] lights;
@@ -12,8 +12,17 @@ public class BrazierPuzzleController : MonoBehaviour
         get;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Save()
+    {
+        SaveBool("Solved", Solved);
+    }
+
+    public override void Load()
+    {
+        Solved = LoadBool("Solved");
+    }
+
+    void Awake()
     {
         foreach (GameObject l in lights)
         {
@@ -22,7 +31,6 @@ public class BrazierPuzzleController : MonoBehaviour
         Solved = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!Solved && AllLit())

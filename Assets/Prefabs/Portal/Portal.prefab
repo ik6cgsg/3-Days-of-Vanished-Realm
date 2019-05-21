@@ -47,9 +47,10 @@ Camera:
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -517,16 +518,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4083445045818890643, guid: ae30687492b424e429af7573f9368464,
-        type: 3}
-      propertyPath: maxReticleDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4083445045818890643, guid: ae30687492b424e429af7573f9368464,
-        type: 3}
-      propertyPath: fixedScale
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 4083445045818890641, guid: ae30687492b424e429af7573f9368464,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -581,6 +572,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083445045818890643, guid: ae30687492b424e429af7573f9368464,
+        type: 3}
+      propertyPath: maxReticleDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083445045818890643, guid: ae30687492b424e429af7573f9368464,
+        type: 3}
+      propertyPath: fixedScale
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae30687492b424e429af7573f9368464, type: 3}

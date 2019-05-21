@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class IInteractiveObject : MonoBehaviour
+public abstract class IInteractiveObject : ISavableObject
 {
     public virtual AudioSource Sound
     {

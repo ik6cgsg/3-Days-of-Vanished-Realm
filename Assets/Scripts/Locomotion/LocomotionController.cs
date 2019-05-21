@@ -71,6 +71,7 @@ public class LocomotionController : FloorController
         GameObject lookAtObject = raycastResult.gameObject;
         if (lookAtObject == null)
         {
+            targetCircleController.EnableRenderer(false);
             return;
         }
 
@@ -93,6 +94,13 @@ public class LocomotionController : FloorController
         // Check that not colliding with interactive object
         if (lookAtObject.GetComponentInParent<InteractiveObjectController>() != null)
         {
+            return;
+        }
+
+        // Check that locomotion is enabled
+        if (!isEnabled)
+        {
+            VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
             return;
         }
 

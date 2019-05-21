@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2481406121757796179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2528ea9cf1d45fd4da98e63cd235eae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueObjectName: 
   openTime: 1
   openHeight: 2.2
   barredFloorController: {fileID: 0}

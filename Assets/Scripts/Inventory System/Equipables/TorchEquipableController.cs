@@ -14,16 +14,10 @@ public class TorchEquipableController : MonoBehaviour
     void LateUpdate()
     {
         Vector3 cameraRot = mainCamera.rotation.eulerAngles;
-        Quaternion localRot = transform.localRotation;
-        float rollAngle = cameraRot.z;
-        if (rollAngle >= 90 && rollAngle <= 270)
-        {
-            rollAngle -= 180;
-        }
         transform.localRotation = Quaternion.Euler(0, 0, 0);
         if (cameraRot.x >= fullRound - maxUpAngle || cameraRot.x <= maxDownAngle)
         {
-            transform.Rotate(cameraRot.x, cameraRot.y, rollAngle);                                  
+            transform.Rotate(cameraRot.x, cameraRot.y, 0);                                  
         }
         else if (cameraRot.x < fullRound - maxUpAngle && cameraRot.x >= upLimit)
         {
@@ -31,7 +25,7 @@ public class TorchEquipableController : MonoBehaviour
         }
         else if (cameraRot.x <= downLimit)
         {
-            transform.Rotate(maxDownAngle, cameraRot.y, rollAngle);
+            transform.Rotate(maxDownAngle, cameraRot.y, 0);
         }
         transform.localPosition.Set(0, 0, 0);
     }

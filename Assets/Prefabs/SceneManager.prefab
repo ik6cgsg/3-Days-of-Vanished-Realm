@@ -48,7 +48,7 @@ MonoBehaviour:
   blackScreenPrefab: {fileID: 7698567339097829918, guid: 55dd997cfe2d00c44b1bb49bae9bd161,
     type: 3}
   soudRef: {fileID: 0}
-  fadeTime: 0.5
+  fadeTime: 1.25
   waitTime: 0.1
   maxJumpDistance: 10
   playerHeight: 2

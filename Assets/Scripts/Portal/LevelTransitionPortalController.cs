@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
-
-public class LevelTransitionPortalController : IInteractiveObject
+﻿public class LevelTransitionPortalController : IInteractiveObject
 {
     public string destinationSceneName;
     public bool resetPlayerPosition = true;
+    public float playerRotaitonY = 0;
 
     private SceneManagerController sceneManager;
 
@@ -15,6 +13,7 @@ public class LevelTransitionPortalController : IInteractiveObject
 
     public override void Interact()
     {
+        SaveGlobalFloat(PlayerSavableController.PLAYER_ROTATION_Y, playerRotaitonY);
         sceneManager.LoadScene(destinationSceneName, !resetPlayerPosition);        
     }
 }

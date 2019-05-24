@@ -28,8 +28,10 @@ public class SceneManagerController : FloorController
         // Set player position load boolean
         ISavableObject.SaveGlobalBool(PlayerSavableController.LOAD_COORDINATES, loadSavedPosition);
 
+        // Set load inventory boolean to false (inventory is static, saves from scene to scene)
+        ISavableObject.SaveGlobalBool(InventoryController.LOAD_INVENTORY, false);
+
         // Change scene
-        //StartCoroutine(LoadAsyncScene(sceneName));
         IsJumpingStatic = true;
         isJumping = true;
         timer = 0;
@@ -82,17 +84,6 @@ public class SceneManagerController : FloorController
                 }
                 mtl.SetColor("_Color", SetFadeColorAlpha(1.0F - timer / fadeTime));
                 break;
-        }
-    }
-
-    private IEnumerator LoadAsyncScene(string sceneName)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
         }
     }
 }

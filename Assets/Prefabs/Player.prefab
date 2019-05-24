@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6b4b0b4c87120478688bb8877e99fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueObjectName: 
 --- !u!82 &2683563869148299831
 AudioSource:
   m_ObjectHideFlags: 0
@@ -352,6 +353,7 @@ MonoBehaviour:
   cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
   stepBackDirection: 1
   onlyWalls: 1
+  stepBackThreshold: 0.05
 --- !u!1001 &49556257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,3 +845,4 @@ MonoBehaviour:
   cannotJumpColor: {r: 1, g: 0, b: 0, a: 0.3}
   stepBackDirection: 1
   onlyWalls: 1
+  stepBackThreshold: 0.01

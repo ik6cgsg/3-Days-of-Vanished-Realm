@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1179d83860accde4db8a75d5683dc6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactiveObject: {fileID: 0}
+  interactiveObject: {fileID: 1772422047594409619}
   maxDistance: 1.5
 --- !u!64 &899566692
 MeshCollider:
@@ -4975,6 +4975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 172309547}
+  - component: {fileID: 1772422047594409619}
   m_Layer: 0
   m_Name: LevelTransitionPortal
   m_TagString: Untagged
@@ -4997,6 +4998,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1772422047594409619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095560804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8fcc493a05c9d47b8056a3fa9336b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueObjectName: 
+  destinationSceneName: 
 --- !u!1 &1224840888
 GameObject:
   m_ObjectHideFlags: 0

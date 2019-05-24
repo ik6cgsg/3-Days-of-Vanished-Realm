@@ -6,6 +6,8 @@ public class SaveSystemController : ISavableObject
 
     private void Start()
     {
+        Debug.Log("Save system start");
+
         //PlayerPrefs.DeleteAll();
 
         // Find all savable objects on the scene
@@ -36,6 +38,12 @@ public class SaveSystemController : ISavableObject
     public void SaveSceneObjects()
     {
         Debug.Log("Saving scene objects");
+
+        if (savableObjects == null)
+        {
+            return;
+        }
+
         // Save all savable objects on the scene
         foreach (ISavableObject savable in savableObjects)
         {
@@ -48,6 +56,11 @@ public class SaveSystemController : ISavableObject
     public void LoadSceneObjects()
     {
         Debug.Log("Loading scene objects");
+
+        if (savableObjects == null)
+        {
+            return;
+        }
 
         // Load all savable objects on the scene
         foreach (ISavableObject savable in savableObjects)

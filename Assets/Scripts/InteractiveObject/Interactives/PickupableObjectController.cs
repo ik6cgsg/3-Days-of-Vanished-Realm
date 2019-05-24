@@ -34,7 +34,7 @@ public class PickupableObjectController : IInteractiveObject
         }
     }
 
-    private bool isPickedUp = false;
+    public bool isPickedUp = false;
 
     public override void Save()
     {
@@ -68,7 +68,8 @@ public class PickupableObjectController : IInteractiveObject
     {
         IItem item = (IItem)ScriptableObject.CreateInstance(itemName + "Item");
         InventoryController.AddItem(item);
-        SetChildrenEnabled(false);
+        //SetChildrenEnabled(false);
+        gameObject.SetActive(false);
         isPickedUp = true;
     }
 

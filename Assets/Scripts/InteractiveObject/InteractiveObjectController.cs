@@ -8,7 +8,7 @@ public class InteractiveObjectController : MonoBehaviour
     public IInteractiveObject interactiveObject;
     public float maxDistance;
 
-    private bool isWatched;
+    public bool isWatched;
 
     void Start()
     {

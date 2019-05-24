@@ -1609,6 +1609,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 4109022151489902045, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Pedestal3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719, type: 3}
 --- !u!4 &231656966 stripped
@@ -8058,6 +8063,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109022151489902045, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Pedestal2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719, type: 3}
@@ -15623,6 +15633,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109022151489902045, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
+        type: 3}
+      propertyPath: isEmpty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109022151489902045, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Pedestal1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719, type: 3}

@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TargetCircleController : MonoBehaviour
 {
     private GameObject circle;
-    private Vector3 yAxis;
+    private float currentAngle;
 
     public float rotationSpeed = 45;
 
@@ -17,13 +15,18 @@ public class TargetCircleController : MonoBehaviour
         {
             circle = child.gameObject;
         }
-
-        yAxis = new Vector3(0.0F, -1.0F, 0.0F);
     }
 
     private void Update()
     {
-        circle.transform.Rotate(yAxis, Time.deltaTime * rotationSpeed);
+        currentAngle += -Time.deltaTime * rotationSpeed;
+        if (currentAngle < -360)
+        {
+            currentAngle = 360 + currentAngle;
+        }
+
+        circle.transform.localRotation = Quaternion.Euler(0,
+            Camera.main.transform.rotation.eulerAngles.y + currentAngle, 0);
     }
 
     public void SetColor(Color color)

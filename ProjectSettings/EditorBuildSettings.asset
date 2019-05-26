@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoLevel.unity
     guid: ab2cf99b92088764fad9295139680c90
+  - enabled: 1
+    path: Assets/Scenes/HubLevel.unity
+    guid: cf4b5c5ff51396845820b90403a911aa
   m_configObjects: {}

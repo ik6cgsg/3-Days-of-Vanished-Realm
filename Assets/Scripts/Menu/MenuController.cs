@@ -90,9 +90,9 @@ public class MenuController : ISavableObject
             staticAngleStep = sign ? Mathf.Abs(staticAngleStep) : -Mathf.Abs(staticAngleStep);
 
             Vector3 newPageForward = new Vector3(
-                curPageForward.x * Mathf.Cos(staticAngleStep) + curPageForward.z * Mathf.Sin(staticAngleStep),
+                curPageForward.x * Mathf.Cos(angle * staticAngleStep) + curPageForward.z * Mathf.Sin(angle * staticAngleStep),
                 0,
-                -curPageForward.x * Mathf.Sin(staticAngleStep) + curPageForward.z * Mathf.Cos(staticAngleStep));
+                -curPageForward.x * Mathf.Sin(angle * staticAngleStep) + curPageForward.z * Mathf.Cos(angle * staticAngleStep));
             newPageForward.Normalize();
             curPageForward = newPageForward;
 
@@ -102,7 +102,7 @@ public class MenuController : ISavableObject
             for (int i = 0; i < staticPages.Count; i++)
             {
                 staticPages[i].transform.position = newPagePos;
-                staticPages[i].transform.RotateAroundLocal(up, staticAngleStep);
+                staticPages[i].transform.RotateAroundLocal(up, angle * staticAngleStep);
             }
         }
     }

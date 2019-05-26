@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34744054, g: 0.4146754, b: 0.4977309, a: 1}
+  m_IndirectSpecularColor: {r: 0.34715974, g: 0.41449344, b: 0.49834436, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -232,7 +232,7 @@ MonoBehaviour:
   distanceToCamera: 8
   height: 1
   rightOffset: 0
-  angleStepInDegrees: 0.8
+  angleStepInDegrees: 1.5
 --- !u!1001 &707067527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -393,6 +393,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2080281486}
     m_Modifications:
+    - target: {fileID: 100000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
+      propertyPath: m_Name
+      value: StartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.50000054
@@ -448,10 +452,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -88.977005
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
-      propertyPath: m_Name
-      value: StartGame
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -736,6 +736,10 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1108817024, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5995710763935424638, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
         type: 3}
       propertyPath: m_Enabled
@@ -744,10 +748,6 @@ PrefabInstance:
     - target: {fileID: 2062976674580537896, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1108817024, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3671517642495040088, guid: 08fc9d2b52b6d5e4a8e93c5838f5e1fb,
@@ -833,6 +833,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2080281486}
     m_Modifications:
+    - target: {fileID: 100000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
+      propertyPath: m_Name
+      value: Prev
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.31
@@ -888,10 +892,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
-      propertyPath: m_Name
-      value: Prev
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 667a119aa1af4ec4cbd17c1f4b9fdd76, type: 3}
       propertyPath: m_Materials.Array.data[0]

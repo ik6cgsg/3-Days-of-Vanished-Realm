@@ -6,6 +6,6 @@ public class ContinueInteractive : IInteractiveObject
 {
     public override void Interact()
     {
-        
+        // SceneManager.continue() ....
     }
 }

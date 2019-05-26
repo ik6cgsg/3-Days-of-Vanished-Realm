@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     // Angle threshold
-    public const float START_ROTATION_ANGLE_THRESHOLD_IN_DEGREES = 40f;
-    public const float FINISH_ROTATION_ANGLE_THRESHOLD_IN_DEGREES = 4f;
+    public const float START_ROTATION_ANGLE_THRESHOLD_IN_DEGREES = 33f;
+    public const float FINISH_ROTATION_ANGLE_THRESHOLD_IN_DEGREES = 18f;
 
     static private Vector3 START_CAMERA_FORWARD = new Vector3(0, 0, 1);
 

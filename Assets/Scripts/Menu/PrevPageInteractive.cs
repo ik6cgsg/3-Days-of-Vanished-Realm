@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrevPageInteractive : MonoBehaviour
+public class PrevPageInteractive : IInteractiveObject
 {
-    // Start is called before the first frame update
-    void Start()
+    override public void Interact()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MenuController.PrevPageClicked();
     }
 }

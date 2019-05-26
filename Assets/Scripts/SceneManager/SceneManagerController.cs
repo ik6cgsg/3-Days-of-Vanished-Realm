@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class SceneManagerController : FloorController
 {
@@ -17,7 +16,7 @@ public class SceneManagerController : FloorController
         jumpState = JumpState.FADE_OUT;
     }
 
-    public void LoadScene(string sceneName, bool loadSavedPosition = false)
+    public void LoadScene(string sceneName, bool loadSavedPosition = true, bool loadInventory = false)
     {
         // Save current scene state
         if (saveSystem != null)
@@ -29,7 +28,7 @@ public class SceneManagerController : FloorController
         ISavableObject.SaveGlobalBool(PlayerSavableController.LOAD_COORDINATES, loadSavedPosition);
 
         // Set load inventory boolean to false (inventory is static, saves from scene to scene)
-        ISavableObject.SaveGlobalBool(InventoryController.LOAD_INVENTORY, false);
+        ISavableObject.SaveGlobalBool(InventoryController.LOAD_INVENTORY, loadInventory);
 
         // Change scene
         IsJumpingStatic = true;

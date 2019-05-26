@@ -81,9 +81,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -261,6 +262,7 @@ GameObject:
   - component: {fileID: 2683563869148299831}
   - component: {fileID: 3373594263121500032}
   - component: {fileID: 5995710763935424638}
+  - component: {fileID: 1258625017195263310}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -451,6 +453,18 @@ MonoBehaviour:
   stepBackDirection: 1
   onlyWalls: 1
   stepBackThreshold: 0.05
+--- !u!114 &1258625017195263310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481406121757796179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b5b862e34a8f345aa5248836148afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &49556257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -580,6 +594,18 @@ PrefabInstance:
       objectReference: {fileID: 3590822830499959090}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6242b9fdea053064bbf214ad81851e24, type: 3}
+--- !u!1 &8534850686970278456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8534850686924921113, guid: 6242b9fdea053064bbf214ad81851e24,
+    type: 3}
+  m_PrefabInstance: {fileID: 49556257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7563463198745306742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7563463198762863959, guid: 6242b9fdea053064bbf214ad81851e24,
+    type: 3}
+  m_PrefabInstance: {fileID: 49556257}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3590822830499959090 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3590822830471920147, guid: 6242b9fdea053064bbf214ad81851e24,
@@ -592,18 +618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d226f348f394f7e4793d152204106bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &7563463198745306742 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7563463198762863959, guid: 6242b9fdea053064bbf214ad81851e24,
-    type: 3}
-  m_PrefabInstance: {fileID: 49556257}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8534850686970278456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8534850686924921113, guid: 6242b9fdea053064bbf214ad81851e24,
-    type: 3}
-  m_PrefabInstance: {fileID: 49556257}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2822749967390824174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2822749967438282191, guid: 6242b9fdea053064bbf214ad81851e24,
@@ -772,11 +786,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1538354032}
     m_Modifications:
-    - target: {fileID: 7791586887407151874, guid: a1d54b7f63ae2f048a350a90570a3b0c,
-        type: 3}
-      propertyPath: m_Name
-      value: MagicGlassesEquipable
-      objectReference: {fileID: 0}
     - target: {fileID: 4561741167219859377, guid: a1d54b7f63ae2f048a350a90570a3b0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -831,6 +840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791586887407151874, guid: a1d54b7f63ae2f048a350a90570a3b0c,
+        type: 3}
+      propertyPath: m_Name
+      value: MagicGlassesEquipable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d54b7f63ae2f048a350a90570a3b0c, type: 3}
@@ -853,16 +867,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1538354032}
     m_Modifications:
-    - target: {fileID: 6533814263526424930, guid: 7264f1f7a32084e439138221304df223,
-        type: 3}
-      propertyPath: m_Name
-      value: TorchEquipable
-      objectReference: {fileID: 0}
-    - target: {fileID: 6533814263526424930, guid: 7264f1f7a32084e439138221304df223,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6533814263526424941, guid: 7264f1f7a32084e439138221304df223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -916,6 +920,16 @@ PrefabInstance:
     - target: {fileID: 6533814263526424941, guid: 7264f1f7a32084e439138221304df223,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533814263526424930, guid: 7264f1f7a32084e439138221304df223,
+        type: 3}
+      propertyPath: m_Name
+      value: TorchEquipable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533814263526424930, guid: 7264f1f7a32084e439138221304df223,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8671348740099005833, guid: 7264f1f7a32084e439138221304df223,

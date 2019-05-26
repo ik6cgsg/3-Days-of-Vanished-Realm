@@ -129,6 +129,7 @@ public class MenuController : ISavableObject
 
     static public void StartGameClicked()
     {
+        PlayerPrefs.DeleteAll();
         SaveGlobalString("currentScene", "HubLevel");
         FindObjectOfType<SceneManagerController>().LoadScene("HubLevel");
     }

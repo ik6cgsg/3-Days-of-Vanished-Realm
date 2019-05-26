@@ -6,7 +6,7 @@
 
         if (!currentScene.Equals(""))
         {
-            FindObjectOfType<SceneManagerController>().LoadScene(currentScene);
+            FindObjectOfType<SceneManagerController>().LoadScene(currentScene, true, true);
         }
         else
         {

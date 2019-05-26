@@ -88,8 +88,10 @@ MonoBehaviour:
   maxReticleDistance: 5
   enterRadius: 0.04
   exitRadius: 0.04
-  rotationSpeed: 45
+  rotationSpeed: 0
   width: 0.05
+  fixedDistanceToCursor: 1
+  fixedScale: 1
   sortingOrder: 32767
   neutralTex: {fileID: 2800000, guid: f37687f7dd40e6547b7a12cba860d115, type: 3}
   canInteractTex: {fileID: 2800000, guid: da4d51c20157877459fb216655f7921d, type: 3}

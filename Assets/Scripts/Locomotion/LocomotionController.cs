@@ -11,6 +11,7 @@ public class LocomotionController : FloorController
 
     public StepBackDirection stepBackDirection = StepBackDirection.NORMAL;
     public bool onlyWalls = true;
+    public float stepBackThreshold = 0.01F;
 
     private VRCursor cursor;
     private Transform floorTransform;
@@ -117,12 +118,12 @@ public class LocomotionController : FloorController
                                               0,
                                               hitPos.z - playerTransform.position.z);
                 projLOS.Normalize();
-                stepbackDist = (playerRadius + 0.001F) / Vector3.Dot(projNorm, -projLOS);
+                stepbackDist = (playerRadius + stepBackThreshold) / Vector3.Dot(projNorm, -projLOS);
                 jumpTarget = raycastResult.worldPosition - projLOS * stepbackDist;
                 break;
             case StepBackDirection.NORMAL:
                 // Step back along object normal xz-plane projection
-                stepbackDist = playerRadius + 0.001F;
+                stepbackDist = playerRadius + stepBackThreshold;
                 jumpTarget = raycastResult.worldPosition + projNorm * stepbackDist;
                 break;
         }

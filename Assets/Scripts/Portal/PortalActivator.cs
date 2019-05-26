@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PortalActivator : IInteractiveObject
 {
@@ -13,6 +11,16 @@ public class PortalActivator : IInteractiveObject
         {
             return soundRef;
         }
+    }
+
+    public override void Save()
+    {
+        SaveBool("isActive", baseRef.isActive);
+    }
+
+    public override void Load()
+    {
+        baseRef.SetActive(LoadBool("isActive"));
     }
 
     public override void Interact()

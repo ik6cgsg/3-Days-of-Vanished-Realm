@@ -23,12 +23,26 @@ public class TorchInteractiveController : IInteractiveObject
 
     public bool isLitAtStart = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Save()
+    {
+        SaveBool("isLit", IsLit);
+    }
+
+    public override void Load()
+    {
+        IsLit = LoadBool("isLit");
+
+        if (IsLit)
+        {
+            fire.SetActive(true);
+            Destroy(GetComponent<InteractiveObjectController>());
+        }
+    }
+
+    void Awake()
     {
         Transform[] children = GetComponentsInChildren<Transform>();
-        Debug.Log(children);
-        foreach (Transform child in children)
+        foreach (Transform   child in children)
         {
             if (child.name.Equals("Fire"))
             {
@@ -47,13 +61,10 @@ public class TorchInteractiveController : IInteractiveObject
 
     public override void Interact()
     {
-        if (EquipmentController.CurrentItem == EquipmentController.EquipableItem.TORCH)
-        {
-            fire.SetActive(true);
-            IsLit = true;
-            Destroy(GetComponent<InteractiveObjectController>());
-            VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
-        }
+        fire.SetActive(true);
+        IsLit = true;
+        Destroy(GetComponent<InteractiveObjectController>());
+        VRCursor.SetState(VRCursor.CursorState.NEUTRAL);
     }
 
     public override bool CanInteract()

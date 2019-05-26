@@ -8,7 +8,7 @@ public class TorchItem : IItem
     {
         get
         {
-            return "Tourch";
+            return "Torch";
         }
     }
 

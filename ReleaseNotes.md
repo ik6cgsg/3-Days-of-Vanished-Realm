@@ -1,4 +1,23 @@
 # Release Notes
+## Version 0.6.5 (21.05.2019)
+### Build link
+[3DVR-0.6.5.apk](https://drive.google.com/file/d/1SfZvoOHTB0jWRpAWVZ8kScaa7snllP5b/view?usp=sharing)
+### What's new
+* By choosing our game you can not only save some money, but save some progress too
+* Unbelievable firework performance
+* Original portal sounds
+* 3dvr\[HUB\] level, where you can access all our levels (in the nearest future)
+* Finally you can press good old "start game" & "continue" buttons in our new menu
+
+### What's improved
+* Stepping sound is much more comfortable now
+* Epic final (yep, more epic then Avengers & GOT) version of our portals
+
+### What's fixed
+* Teleporting to walls in *magic glasses* is out of fashion now
+* Door's keyhole isn't door itself anymore
+* Visibility of button in second room wont leave you indifferent
+
 ## Version 0.4.6 (07.05.2019)
 ### Build link
 [3DVR-0.4.6.apk](https://drive.google.com/file/d/1dLkEcWNycASFyrCmjEnOZal5m39iRHk3/view?usp=sharing)

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class SceneManagerController : FloorController
 {
@@ -17,7 +16,7 @@ public class SceneManagerController : FloorController
         jumpState = JumpState.FADE_OUT;
     }
 
-    public void LoadScene(string sceneName, bool loadSavedPosition = false)
+    public void LoadScene(string sceneName, bool loadSavedPosition = true)
     {
         // Save current scene state
         if (saveSystem != null)

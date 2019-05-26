@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuController : MonoBehaviour
+public class MenuController : ISavableObject
 {
     // Angle threshold
     public const float START_ROTATION_ANGLE_THRESHOLD_IN_DEGREES = 33f;
@@ -129,7 +129,8 @@ public class MenuController : MonoBehaviour
 
     static public void StartGameClicked()
     {
-        SceneManager.LoadScene("DemoLevel");
+        SaveGlobalString("currentScene", "HubLevel");
+        FindObjectOfType<SceneManagerController>().LoadScene("HubLevel");
     }
 
     static private void SetCurrentPage(int index)

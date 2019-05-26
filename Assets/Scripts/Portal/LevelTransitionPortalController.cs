@@ -13,7 +13,8 @@
 
     public override void Interact()
     {
+        SaveGlobalString("currentScene", destinationSceneName);
         SaveGlobalFloat(PlayerSavableController.PLAYER_ROTATION_Y, playerRotaitonY);
-        sceneManager.LoadScene(destinationSceneName, !resetPlayerPosition);        
+        sceneManager.LoadScene(destinationSceneName, !resetPlayerPosition);
     }
 }

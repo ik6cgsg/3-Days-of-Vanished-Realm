@@ -42,8 +42,7 @@ public class TorchInteractiveController : IInteractiveObject
     void Awake()
     {
         Transform[] children = GetComponentsInChildren<Transform>();
-        Debug.Log(children);
-        foreach (Transform child in children)
+        foreach (Transform   child in children)
         {
             if (child.name.Equals("Fire"))
             {

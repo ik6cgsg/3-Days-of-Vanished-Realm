@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24730a0afa6f4314788f1e49fd55edda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueObjectName: 
   openTime: 2
   openHeight: 1.32
   soundRef: {fileID: 660881112575235008}
@@ -250,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3765bb7933255419f3b89b5ebbfc52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueObjectName: 
   braziers:
   - {fileID: 0}
   - {fileID: 0}
@@ -369,7 +371,7 @@ GameObject:
   - component: {fileID: 3933753972094312097}
   - component: {fileID: 3933753972094312096}
   - component: {fileID: 3933753972094312099}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

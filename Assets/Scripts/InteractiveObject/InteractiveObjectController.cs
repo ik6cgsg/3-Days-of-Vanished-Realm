@@ -8,7 +8,7 @@ public class InteractiveObjectController : MonoBehaviour
     public IInteractiveObject interactiveObject;
     public float maxDistance;
 
-    private bool isWatched;
+    public bool isWatched;
 
     void Start()
     {
@@ -70,8 +70,15 @@ public class InteractiveObjectController : MonoBehaviour
 
     private void OnPointerClick(BaseEventData eventData)
     {
-        if (FloorController.IsJumpingStatic)
+        if (!enabled)
+        {
             return;
+        }
+
+        if (FloorController.IsJumpingStatic)
+        {
+            return;
+        }
 
         if (GvrPointerInputModule.CurrentRaycastResult.distance <= maxDistance
             && interactiveObject.CanInteract())

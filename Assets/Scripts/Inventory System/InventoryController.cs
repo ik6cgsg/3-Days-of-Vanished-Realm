@@ -8,6 +8,8 @@ public class InventoryController: ISavableObject
     public static UnityEvent removeItemEvent = new UnityEvent();
     public static UnityEvent increaseSizeEvent = new UnityEvent();
 
+    public static string LOAD_INVENTORY = "LoadInventory";
+
     private static int maxSize;
     private static List<IItem> items = new List<IItem>();
 
@@ -29,17 +31,22 @@ public class InventoryController: ISavableObject
         {
             SaveGlobalString("InventoryItem" + i, i < items.Count ? items[i].Name : "");
         }
+
+        SaveGlobalBool(LOAD_INVENTORY, true);
     }
 
     public override void Load()
     {
-        for (int i = 0; i < maxSize; i++)
+        if (LoadGlobalBool(LOAD_INVENTORY))
         {
-            string itemName = LoadGlobalString("InventoryItem" + i);
-
-            if (!itemName.Equals(""))
+            for (int i = 0; i < maxSize; i++)
             {
-                AddItem(itemName);
+                string itemName = LoadGlobalString("InventoryItem" + i);
+
+                if (!itemName.Equals(""))
+                {
+                    AddItem(itemName);
+                }
             }
         }
     }

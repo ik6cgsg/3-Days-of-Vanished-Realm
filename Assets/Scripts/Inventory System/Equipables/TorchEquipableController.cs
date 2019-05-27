@@ -14,7 +14,7 @@ public class TorchEquipableController : MonoBehaviour
     void LateUpdate()
     {
         Vector3 cameraRot = mainCamera.rotation.eulerAngles;
-        transform.localRotation = Quaternion.Euler(0, 0, 0);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         if (cameraRot.x >= fullRound - maxUpAngle || cameraRot.x <= maxDownAngle)
         {
             transform.Rotate(cameraRot.x, cameraRot.y, 0);                                  

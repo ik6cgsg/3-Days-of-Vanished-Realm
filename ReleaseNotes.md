@@ -1,4 +1,23 @@
 # Release Notes
+## Version 1.0.0 (27.05.2019)
+### Build link
+[3DVR-1.0.0.apk](https://drive.google.com/file/d/1HyNtjwurmqt50hLL_1_7_s5f7BjH3ca8/view?usp=sharing)
+### What's new
+* Finally, we are the real (almost triple A) game!
+* You can play whole first level and find some puzzles in hub-level
+* All levels and menu are connected now
+* Can watch tutorial right from our menu
+* Can exit from the game now(...
+
+### What's improved
+* More user-friendly cursors
+* You can see sometimes where are you teleporting to
+* Incredible 3d VR marker for your next step
+* Menu textures and moving
+
+### What's fixed
+* Little buggies
+
 ## Version 0.6.5 (21.05.2019)
 ### Build link
 [3DVR-0.6.5.apk](https://drive.google.com/file/d/1SfZvoOHTB0jWRpAWVZ8kScaa7snllP5b/view?usp=sharing)

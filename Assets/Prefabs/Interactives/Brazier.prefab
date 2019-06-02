@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56199d2d48ee4b545a38351b0dba98ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uniqueObjectName: 
   soundRef: {fileID: 5380910924910815829}
   isLitAtStart: 0
 --- !u!114 &2684599766700958325
@@ -123,7 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 8751737943430018469}
-  maxDistance: 2
+  maxDistance: 1
+  isWatched: 0
 --- !u!82 &5380910924910815829
 AudioSource:
   m_ObjectHideFlags: 0

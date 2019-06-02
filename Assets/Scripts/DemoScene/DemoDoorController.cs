@@ -13,6 +13,7 @@ public class DemoDoorController : IInteractiveObject
 
     private Vector3 curPos;
     private Vector3 targetPos;
+    private bool canInteract = true;
 
     public override AudioSource Sound
     {
@@ -56,6 +57,11 @@ public class DemoDoorController : IInteractiveObject
         targetPos = transform.position + new Vector3(0, openHeight, 0);
     }
 
+    public override bool CanInteract()
+    {
+        return canInteract;
+    }
+
     public override void Interact()
     {
         if (!isMoving)
@@ -77,6 +83,7 @@ public class DemoDoorController : IInteractiveObject
                 moveTimer = 0;
 
                 isMoving = false;
+                canInteract = false;
 
                 transform.position = targetPos;
                 Vector3 tmp = targetPos;

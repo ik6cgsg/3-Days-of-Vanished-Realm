@@ -68,8 +68,7 @@ public class PickupableObjectController : IInteractiveObject
     {
         IItem item = (IItem)ScriptableObject.CreateInstance(itemName + "Item");
         InventoryController.AddItem(item);
-        //SetChildrenEnabled(false);
-        gameObject.SetActive(false);
+        SetChildrenEnabled(false);
         isPickedUp = true;
     }
 

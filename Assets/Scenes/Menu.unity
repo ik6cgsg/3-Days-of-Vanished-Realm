@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34715974, g: 0.41449344, b: 0.49834436, a: 1}
+  m_IndirectSpecularColor: {r: 0.34744054, g: 0.4146754, b: 0.4977309, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -315,6 +315,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.74
       objectReference: {fileID: 0}
+    - target: {fileID: 6828251009698159791, guid: 406bfe06025c91d428c908b587a88417,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4117127ada91db146bafbd0353d32ca5, type: 2}
+    - target: {fileID: 783584186050988329, guid: 406bfe06025c91d428c908b587a88417,
+        type: 3}
+      propertyPath: soundOnTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 35436ce9ec658154b861f039030d5618, type: 3}
+    - target: {fileID: 783584186050988329, guid: 406bfe06025c91d428c908b587a88417,
+        type: 3}
+      propertyPath: soundOffTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 41077fab36bf55747a5a03ea6bd42fae, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406bfe06025c91d428c908b587a88417, type: 3}
 --- !u!4 &707067528 stripped

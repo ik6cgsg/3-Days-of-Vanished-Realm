@@ -4839,6 +4839,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746192643}
   m_CullTransparentMesh: 0
+--- !u!1 &752620627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3530406349970058264, guid: d504f137e674d4e4ba922dd96ed2d19c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5836959657092194980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &752620631 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3851733210937900015, guid: d504f137e674d4e4ba922dd96ed2d19c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5836959657092194980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &752620632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752620627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f326979281b2ec242a8b99d293c47cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBirthSound: {fileID: 0}
+  onDeathSound: {fileID: 0}
+--- !u!82 &752620633 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 631444266384544394, guid: d504f137e674d4e4ba922dd96ed2d19c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5836959657092194980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &760471724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15771,42 +15803,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6809247596075105238}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3797198114716633990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3797198114716633990, guid: d504f137e674d4e4ba922dd96ed2d19c,
-    type: 3}
-  m_PrefabInstance: {fileID: 5836959657092194980}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3797198114716633991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3797198114716633990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7c0bf6f91ac5e4facf7d83edf176e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueObjectName: 
-  crystal: {fileID: 2122029730}
---- !u!114 &3797198114716633992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3797198114716633990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52010dcc7ac5e34cb80de35a417a6bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueObjectName: 
-  logicBooleans:
-  - {fileID: 2122029732}
-  interactee: {fileID: 3797198114716633991}
 --- !u!1001 &4126256443458271141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15888,6 +15884,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 863891024}
     m_Modifications:
+    - target: {fileID: 1935721005942747603, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: logicBooleans.Array.data[0]
+      value: 
+      objectReference: {fileID: 2122029732}
+    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: crystal
+      value: 
+      objectReference: {fileID: 2122029730}
     - target: {fileID: 3797198114716633990, guid: d504f137e674d4e4ba922dd96ed2d19c,
         type: 3}
       propertyPath: m_Name
@@ -16027,6 +16033,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_VertexStreams.Array.data[2]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851733210937900015, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851733210937900015, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161727160212783092, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: onBirthSound
+      value: 
+      objectReference: {fileID: 752620631}
+    - target: {fileID: 6161727160212783092, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: onDeathSound
+      value: 
+      objectReference: {fileID: 752620633}
+    - target: {fileID: 631444266384544394, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d504f137e674d4e4ba922dd96ed2d19c, type: 3}

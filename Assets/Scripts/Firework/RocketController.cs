@@ -15,8 +15,25 @@ public class RocketController : MonoBehaviour
         particleSystem = GetComponent<ParticleSystem>();    
     }
 
+    private float timer;
+    private float startDelay;
+
+    private void Awake()
+    {
+        startDelay = Random.value;
+    }
+
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer < startDelay)
+            return;
+
+        if (!particleSystem.isPlaying)
+        {
+            particleSystem.Play();
+        }
+
         if (!onBirthSound && !onDeathSound)
         {
             return;

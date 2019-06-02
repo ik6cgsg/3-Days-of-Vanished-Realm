@@ -17,6 +17,11 @@ public class RocketController : MonoBehaviour
 
     void Update()
     {
+        if (!particleSystem.isPlaying)
+        {
+            particleSystem.Play();
+        }
+
         if (!onBirthSound && !onDeathSound)
         {
             return;

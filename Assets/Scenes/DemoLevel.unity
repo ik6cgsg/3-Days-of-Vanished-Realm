@@ -1703,11 +1703,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier3
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Brazier3
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1762,6 +1757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Brazier3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -3302,11 +3302,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3361,6 +3356,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -3931,11 +3931,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier4
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Brazier4
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3990,6 +3985,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Brazier4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -4920,11 +4920,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4979,6 +4974,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -5215,11 +5215,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5274,6 +5269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -5461,21 +5461,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8946673549988869754, guid: 15b9967bb5c50054c8a2deefa5046466,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5540,6 +5525,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3431149316625260420, guid: 15b9967bb5c50054c8a2deefa5046466,
         type: 3}
@@ -6015,11 +6015,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6074,6 +6069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -7644,11 +7644,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7703,6 +7698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -10087,11 +10087,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10146,6 +10141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -12497,21 +12497,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier1
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Brazier1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12566,6 +12551,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Brazier1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -12710,21 +12710,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8946673549988869754, guid: 15b9967bb5c50054c8a2deefa5046466,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12789,6 +12774,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560160550862279502, guid: 15b9967bb5c50054c8a2deefa5046466,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3431149316625260420, guid: 15b9967bb5c50054c8a2deefa5046466,
         type: 3}
@@ -13078,11 +13078,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier2
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Brazier2
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13137,6 +13132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Brazier2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -13419,11 +13419,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3246835592418254994, guid: 15b9967bb5c50054c8a2deefa5046466,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Statue3
-      objectReference: {fileID: 0}
     - target: {fileID: 8325299315206176461, guid: 15b9967bb5c50054c8a2deefa5046466,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13433,6 +13428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246835592418254994, guid: 15b9967bb5c50054c8a2deefa5046466,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Statue3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15b9967bb5c50054c8a2deefa5046466, type: 3}
@@ -13543,11 +13543,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brazier (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
-        type: 3}
-      propertyPath: isLitAtStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2901803376789796393, guid: e6d7315de9840594fa8171ec47e781b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13602,6 +13597,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751737943430018469, guid: e6d7315de9840594fa8171ec47e781b6,
+        type: 3}
+      propertyPath: isLitAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6d7315de9840594fa8171ec47e781b6, type: 3}
@@ -15231,24 +15231,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2116837922}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2122029730 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1583552580412983308, guid: 0fa78c34d08eec4449d98e70195a6738,
-    type: 3}
-  m_PrefabInstance: {fileID: 3037624979536511672}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2122029732 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3037624980244994076, guid: 0fa78c34d08eec4449d98e70195a6738,
-    type: 3}
-  m_PrefabInstance: {fileID: 3037624979536511672}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2122029730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd096a29e8087884cb4793bb9cc6002c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2122292676
 GameObject:
   m_ObjectHideFlags: 0
@@ -15627,7 +15609,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4252072619666277711, guid: 0fa78c34d08eec4449d98e70195a6738,
+        type: 3}
+      propertyPath: interactees.Array.data[1]
+      value: 
+      objectReference: {fileID: 5836959657092194981}
+    m_RemovedComponents:
+    - {fileID: 2899265604920610753, guid: 0fa78c34d08eec4449d98e70195a6738, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fa78c34d08eec4449d98e70195a6738, type: 3}
 --- !u!4 &3502183706456367365 stripped
 Transform:
@@ -15716,25 +15704,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 863891024}
     m_Modifications:
-    - target: {fileID: 1935721005942747603, guid: d504f137e674d4e4ba922dd96ed2d19c,
-        type: 3}
-      propertyPath: logicBooleans.Array.data[0]
-      value: 
-      objectReference: {fileID: 2122029732}
-    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
-        type: 3}
-      propertyPath: crystal
-      value: 
-      objectReference: {fileID: 2122029730}
-    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Firework
-      objectReference: {fileID: 0}
     - target: {fileID: 3797198114716633990, guid: d504f137e674d4e4ba922dd96ed2d19c,
         type: 3}
       propertyPath: m_Name
       value: Firework
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797198114716633990, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2938529811241796982, guid: d504f137e674d4e4ba922dd96ed2d19c,
         type: 3}
@@ -15871,6 +15849,21 @@ PrefabInstance:
       propertyPath: m_VertexStreams.Array.data[2]
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1935721005942747603, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: logicBooleans.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: crystal
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Firework
+      objectReference: {fileID: 0}
     - target: {fileID: 6161727160212783092, guid: d504f137e674d4e4ba922dd96ed2d19c,
         type: 3}
       propertyPath: onBirthSound
@@ -15883,6 +15876,18 @@ PrefabInstance:
       objectReference: {fileID: 752620633}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d504f137e674d4e4ba922dd96ed2d19c, type: 3}
+--- !u!114 &5836959657092194981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5836959657092194980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7c0bf6f91ac5e4facf7d83edf176e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6809247596075105238
 PrefabInstance:
   m_ObjectHideFlags: 0

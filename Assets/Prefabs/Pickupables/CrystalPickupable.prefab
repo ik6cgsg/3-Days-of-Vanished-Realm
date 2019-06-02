@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amplitude: 0.1
+  offset: 0
   bobSpeed: 2
   rotationSpeed: 30
 --- !u!1 &4602159290716803092
@@ -117,8 +118,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7329366450281535053}
-  - component: {fileID: 8461545939351121579}
   - component: {fileID: 1950125073456798539}
+  - component: {fileID: 8461545939351121579}
   - component: {fileID: 4755070370596058286}
   m_Layer: 0
   m_Name: CrystalPickupable
@@ -142,20 +143,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8461545939351121579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4602159290716803092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea9f45e3817f27749b1527542a3d90b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Crystal
-  soundRef: {fileID: 4755070370596058286}
 --- !u!114 &1950125073456798539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +157,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 8461545939351121579}
   maxDistance: 1
+  isWatched: 0
+--- !u!114 &8461545939351121579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4602159290716803092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9f45e3817f27749b1527542a3d90b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueObjectName: 
+  itemName: Crystal
+  soundRef: {fileID: 4755070370596058286}
+  isPickedUp: 0
 --- !u!82 &4755070370596058286
 AudioSource:
   m_ObjectHideFlags: 0

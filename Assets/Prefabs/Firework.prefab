@@ -9470,7 +9470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &919322868500189406
 Transform:
   m_ObjectHideFlags: 0
@@ -14374,7 +14374,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2938529811241796982}
   - component: {fileID: 7333709184640368474}
-  - component: {fileID: 1935721005942747603}
   m_Layer: 0
   m_Name: Firework
   m_TagString: Untagged
@@ -14409,24 +14408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7c0bf6f91ac5e4facf7d83edf176e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueObjectName: 
-  crystal: {fileID: 0}
---- !u!114 &1935721005942747603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3797198114716633990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52010dcc7ac5e34cb80de35a417a6bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueObjectName: 
-  logicBooleans:
-  - {fileID: 0}
-  interactee: {fileID: 7333709184640368474}
+  uniqueObjectName: Firework
 --- !u!1 &8068464865441280537
 GameObject:
   m_ObjectHideFlags: 0

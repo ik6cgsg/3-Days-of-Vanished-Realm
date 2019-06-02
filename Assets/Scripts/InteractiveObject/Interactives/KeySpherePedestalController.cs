@@ -4,6 +4,7 @@ public class KeySpherePedestalController : IInteractiveObject
 {
     public GameObject keySphere;
     public AudioSource soundRef;
+    public string itemName = "KeySphere";
 
     public override AudioSource Sound
     {
@@ -32,7 +33,7 @@ public class KeySpherePedestalController : IInteractiveObject
 
     private void Awake()
     {
-        keySphere.GetComponent<PickupableObjectController>().uniqueObjectName = uniqueObjectName + "KeySphere";
+        keySphere.GetComponent<PickupableObjectController>().uniqueObjectName = uniqueObjectName + itemName;
         keySphere.SetActive(!isEmpty);
     }
 
@@ -44,12 +45,12 @@ public class KeySpherePedestalController : IInteractiveObject
 
     public override bool CanInteract()
     {
-        return InventoryController.HasItem("KeySphere");
+        return InventoryController.HasItem(itemName);
     }
 
     public override void Interact()
     {
-        InventoryController.RemoveItem("KeySphere");
+        InventoryController.RemoveItem(itemName);
         keySphere.SetActive(true);
         keySphere.GetComponent<InteractiveObjectController>().isWatched = false;
         keySphere.GetComponent<PickupableObjectController>().isPickedUp = false;

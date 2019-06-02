@@ -43,6 +43,8 @@ public class MenuController : ISavableObject
 
     void Awake()
     {
+        staticPages.Clear();
+        firstLoad = true;
         staticDistanceToCamera = distanceToCamera;
         staticHeight = height;
         staticRightOffset = rightOffset;

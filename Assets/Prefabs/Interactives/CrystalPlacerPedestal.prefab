@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueObjectName: 
-  itemName: KeySphere
+  itemName: Crystal
   soundRef: {fileID: 8943044682462136238}
   isPickedUp: 0
 --- !u!82 &8943044682462136238
@@ -692,7 +692,7 @@ MonoBehaviour:
   uniqueObjectName: 
   keySphere: {fileID: 3268799807745842220}
   soundRef: {fileID: 5087372535557653326}
-  itemName: KeySphere
+  itemName: Crystal
   isEmpty: 1
 --- !u!114 &2853263733509314538
 MonoBehaviour:

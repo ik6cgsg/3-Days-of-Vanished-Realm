@@ -57,7 +57,7 @@ public class PickupableObjectController : IInteractiveObject
 
         if (isPickedUp)
         {
-            gameObject.SetActive(false);
+            SetChildrenEnabled(false);
         }
     }
 

@@ -39,6 +39,8 @@ public class MenuController : ISavableObject
 
     private bool needRotation = false;
 
+    static private bool firstLoad = true;
+
     void Awake()
     {
         staticDistanceToCamera = distanceToCamera;
@@ -114,17 +116,26 @@ public class MenuController : ISavableObject
 
     static public void ContinueClicked()
     {
-        //TODO: ...
+        string currentScene = LoadGlobalString("currentScene");
+
+        if (!currentScene.Equals(""))
+        {
+            FindObjectOfType<SceneManagerController>().LoadScene(currentScene, true, true);
+        }
+        else
+        {
+            NewGameClicked();
+        }
     }
 
     static public void PrevPageClicked()
     {
-        ShowPage(currentPage - 1);
+        ShowPage(currentPage - 1, false);
     }
 
     static public void NextPageClicked()
     {
-        ShowPage(currentPage + 1);
+        ShowPage(currentPage + 1, false);
     }
 
     static public void StartGameClicked()
@@ -139,7 +150,7 @@ public class MenuController : ISavableObject
         currentPage = index;
     }
 
-    static private void ShowPage(int index)
+    static private void ShowPage(int index, bool needCorrectPosition = true)
     {
         if (currentPage >= 0)
         {
@@ -148,7 +159,11 @@ public class MenuController : ISavableObject
 
         SetCurrentPage(index);
         staticPages[currentPage].SetActive(true);
-        CorrectStartPosition();
+
+        if (needCorrectPosition)
+        {
+            CorrectStartPosition();
+        }
     }
 
     static private void CorrectStartPosition()
@@ -160,6 +175,12 @@ public class MenuController : ISavableObject
         {
             staticPages[i].transform.position = staticMainCamera.position + staticDistanceToCamera * curPageForward +
                staticHeight * up;
+
+            if (firstLoad)
+            {
+                staticPages[i].transform.RotateAroundLocal(up, Mathf.PI / 13);
+                firstLoad = false;
+            }
         }
     }
 
@@ -175,6 +196,7 @@ public class MenuController : ISavableObject
         z.z = cameraForward.z < 0 ? -1 : 1;
 
         cameraForward = cameraForward * Vector3.Dot(cameraForward, x) + cameraForward * Vector3.Dot(cameraForward, z);
+        cameraForward.y = 0;
         cameraForward.Normalize();
 
         return cameraForward;

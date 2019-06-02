@@ -1317,6 +1317,11 @@ PrefabInstance:
       propertyPath: uniqueObjectName
       value: CrystalRightPedestal
       objectReference: {fileID: 0}
+    - target: {fileID: 3268799807745842218, guid: 73801cdd222fda14ab2c357dff99228a,
+        type: 3}
+      propertyPath: isPickedUp
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3101190861106348380, guid: 73801cdd222fda14ab2c357dff99228a,
         type: 3}
       propertyPath: uniqueObjectName
@@ -2415,6 +2420,11 @@ PrefabInstance:
     - target: {fileID: 7329366450281535053, guid: 05df2e160120c1a4ba32078f87b9b615,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461545939351121579, guid: 05df2e160120c1a4ba32078f87b9b615,
+        type: 3}
+      propertyPath: isPickedUp
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3556,6 +3566,11 @@ PrefabInstance:
     - target: {fileID: 941393698, guid: 73801cdd222fda14ab2c357dff99228a, type: 3}
       propertyPath: uniqueObjectName
       value: CrystalRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3268799807745842218, guid: 73801cdd222fda14ab2c357dff99228a,
+        type: 3}
+      propertyPath: isPickedUp
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3101190861106348380, guid: 73801cdd222fda14ab2c357dff99228a,
         type: 3}

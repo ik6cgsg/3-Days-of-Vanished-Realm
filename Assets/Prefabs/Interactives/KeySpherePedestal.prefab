@@ -298,6 +298,7 @@ MonoBehaviour:
   uniqueObjectName: 
   keySphere: {fileID: 4562873556993869997}
   soundRef: {fileID: 6095185683697424335}
+  itemName: KeySphere
   isEmpty: 1
 --- !u!114 &3861657973583053675
 MonoBehaviour:
@@ -496,6 +497,10 @@ PrefabInstance:
     - target: {fileID: 1801070985, guid: e26701f76e2698b43ad8472a3a3a29d9, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1801070988, guid: e26701f76e2698b43ad8472a3a3a29d9, type: 3}
+      propertyPath: uniqueObjectName
+      value: This one is filled automatically
       objectReference: {fileID: 0}
     - target: {fileID: 1801070987, guid: e26701f76e2698b43ad8472a3a3a29d9, type: 3}
       propertyPath: interactiveObject

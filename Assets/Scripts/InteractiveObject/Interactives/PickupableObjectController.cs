@@ -28,10 +28,20 @@ public class PickupableObjectController : IInteractiveObject
 
     private void SetChildrenEnabled(bool enabled)
     {
+        if (children == null)
+        {
+            children = GetComponentsInChildren<Transform>(true);
+        }
+
         foreach (Transform child in children)
         {
             SetEnabled(child, enabled);
         }
+    }
+
+    public void SetEnabled(bool enabled)
+    {
+        SetChildrenEnabled(enabled);
     }
 
     public bool isPickedUp = false;
@@ -53,7 +63,10 @@ public class PickupableObjectController : IInteractiveObject
 
     private void Awake()
     {
-        children = GetComponentsInChildren<Transform>(true);
+        if (children == null)
+        {
+            children = GetComponentsInChildren<Transform>(true);
+        }
     }
 
     public override AudioSource Sound

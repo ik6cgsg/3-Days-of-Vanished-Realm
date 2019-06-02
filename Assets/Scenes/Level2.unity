@@ -2083,6 +2083,11 @@ PrefabInstance:
       propertyPath: uniqueObjectName
       value: MainPortalRightPedestalBool
       objectReference: {fileID: 0}
+    - target: {fileID: 4562873556993869995, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
+        type: 3}
+      propertyPath: isPickedUp
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4109022151489902045, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
         type: 3}
       propertyPath: uniqueObjectName
@@ -3731,6 +3736,11 @@ PrefabInstance:
       propertyPath: uniqueObjectName
       value: MainPortalLeftPedestalBool
       objectReference: {fileID: 0}
+    - target: {fileID: 4562873556993869995, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
+        type: 3}
+      propertyPath: isPickedUp
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4109022151489902045, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
         type: 3}
       propertyPath: uniqueObjectName
@@ -3921,6 +3931,11 @@ PrefabInstance:
     - target: {fileID: 1495266536, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719, type: 3}
       propertyPath: Value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562873556993869995, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
+        type: 3}
+      propertyPath: isPickedUp
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4109022151489902045, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
         type: 3}
@@ -4862,6 +4877,11 @@ PrefabInstance:
     - target: {fileID: 4109022151489902045, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
         type: 3}
       propertyPath: isEmpty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861657973583053675, guid: 3e4fb9b3094fc0e4ca93ce1439dfb719,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

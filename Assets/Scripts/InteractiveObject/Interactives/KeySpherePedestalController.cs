@@ -6,6 +6,8 @@ public class KeySpherePedestalController : IInteractiveObject
     public AudioSource soundRef;
     public string itemName = "KeySphere";
 
+    private PickupableObjectController pickupable;
+
     public override AudioSource Sound
     {
         get
@@ -27,19 +29,20 @@ public class KeySpherePedestalController : IInteractiveObject
         isEmpty = LoadBool("isEmpty");
         Debug.Log(uniqueObjectName + isEmpty.ToString());
 
-        keySphere.SetActive(!isEmpty);
+        pickupable.SetEnabled(!isEmpty);
         GetComponent<InteractiveObjectController>().enabled = isEmpty;
     }
 
     private void Awake()
     {
-        keySphere.GetComponent<PickupableObjectController>().uniqueObjectName = uniqueObjectName + itemName;
-        keySphere.SetActive(!isEmpty);
+        keySphere.GetComponentInChildren<PickupableObjectController>().uniqueObjectName = uniqueObjectName + itemName;
+        pickupable = keySphere.GetComponent<PickupableObjectController>();
+        pickupable.SetEnabled(!isEmpty);
     }
 
     private void Update()
     {
-        isEmpty = !keySphere.activeSelf;
+        isEmpty = pickupable.isPickedUp;
         GetComponent<InteractiveObjectController>().enabled = isEmpty;
     }
 
@@ -51,9 +54,9 @@ public class KeySpherePedestalController : IInteractiveObject
     public override void Interact()
     {
         InventoryController.RemoveItem(itemName);
-        keySphere.SetActive(true);
+        pickupable.SetEnabled(true);
         keySphere.GetComponent<InteractiveObjectController>().isWatched = false;
-        keySphere.GetComponent<PickupableObjectController>().isPickedUp = false;
+        pickupable.isPickedUp = false;
         isEmpty = false;
         GetComponent<InteractiveObjectController>().enabled = false;
         VRCursor.SetState(VRCursor.CursorState.NEUTRAL);

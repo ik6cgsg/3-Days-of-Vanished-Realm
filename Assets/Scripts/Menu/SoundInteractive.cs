@@ -1,7 +1,9 @@
-﻿public class SoundInteractive : IInteractiveObject
+﻿using UnityEngine;
+
+public class SoundInteractive : IInteractiveObject
 {
     public override void Interact()
     {
-        //Turn on/off sound...
+        AudioListener.volume = 1 - AudioListener.volume;
     }
 }

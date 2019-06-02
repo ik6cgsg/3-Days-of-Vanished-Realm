@@ -2009,9 +2009,9 @@ Transform:
   m_LocalPosition: {x: -2.16, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 973360267}
   - {fileID: 1740983015}
   - {fileID: 1841194232}
-  - {fileID: 973360267}
   m_Father: {fileID: 237041194}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3360,9 +3360,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1772422047594409619, guid: b747814eaf5d2f548ab973b7f54702aa,
+        type: 3}
+      propertyPath: destinationSceneName
+      value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 899566694, guid: b747814eaf5d2f548ab973b7f54702aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1486d6b322ce35a46b5a445603328972, type: 2}
     - target: {fileID: 899566688, guid: b747814eaf5d2f548ab973b7f54702aa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b747814eaf5d2f548ab973b7f54702aa, type: 3}

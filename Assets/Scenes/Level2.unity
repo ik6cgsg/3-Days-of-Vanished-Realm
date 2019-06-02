@@ -2238,7 +2238,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 974010486}
-  - component: {fileID: 974010488}
   - component: {fileID: 974010487}
   m_Layer: 0
   m_Name: PortalPuzzleA
@@ -2276,24 +2275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7677706de5560df49823c6f28f11cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActiveBoolean: {fileID: 974010488}
+  isActiveBoolean: {fileID: 1578178529}
   controlledGameObject: {fileID: 254393148}
---- !u!114 &974010488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974010485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0ccaeef957d444e9da9690fe788a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueObjectName: Island4APortalPuzzleBool
-  Value: 0
-  logicBooleans:
-  - {fileID: 1648322858}
 --- !u!1001 &987308381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3313,7 +3296,7 @@ PrefabInstance:
     - target: {fileID: 1772422047594409619, guid: b747814eaf5d2f548ab973b7f54702aa,
         type: 3}
       propertyPath: destinationSceneName
-      value: HubLebel
+      value: HubLevel
       objectReference: {fileID: 0}
     - target: {fileID: 1772422047594409619, guid: b747814eaf5d2f548ab973b7f54702aa,
         type: 3}
@@ -3325,6 +3308,10 @@ PrefabInstance:
       propertyPath: playerRotaitonY
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 899566694, guid: b747814eaf5d2f548ab973b7f54702aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e94f527c5c5ba5448ace0aaaa9cc7ff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b747814eaf5d2f548ab973b7f54702aa, type: 3}
 --- !u!4 &1248427466 stripped
@@ -4022,6 +4009,7 @@ MonoBehaviour:
   Value: 0
   logicBooleans:
   - {fileID: 1770143625}
+  - {fileID: 1648322858}
 --- !u!1001 &1603422104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4187,6 +4175,7 @@ MonoBehaviour:
   Value: 0
   logicBooleans:
   - {fileID: 1469416338}
+  - {fileID: 407724562}
 --- !u!1001 &1648322856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4651,7 +4640,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1782774114}
-  - component: {fileID: 1782774116}
   - component: {fileID: 1782774115}
   m_Layer: 0
   m_Name: PortalPuzzle
@@ -4689,24 +4677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7677706de5560df49823c6f28f11cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActiveBoolean: {fileID: 1782774116}
+  isActiveBoolean: {fileID: 1635702462}
   controlledGameObject: {fileID: 49496327}
---- !u!114 &1782774116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782774113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0ccaeef957d444e9da9690fe788a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueObjectName: Island5PortalPuzzleBool
-  Value: 0
-  logicBooleans:
-  - {fileID: 407724562}
 --- !u!1001 &1810891677
 PrefabInstance:
   m_ObjectHideFlags: 0

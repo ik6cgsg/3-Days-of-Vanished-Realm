@@ -1,6 +1,6 @@
 ﻿public class LogicBoolean : IInteractiveObject
 {
-    public bool Value;// { get; private set; }
+    public bool Value;
 
     public override void Save()
     {

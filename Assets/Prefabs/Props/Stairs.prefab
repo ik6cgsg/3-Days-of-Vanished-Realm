@@ -51,7 +51,7 @@ MonoBehaviour:
   soudRef: {fileID: 0}
   fadeTime: 0.5
   waitTime: 0.1
-  maxJumpDistance: 10
+  maxJumpDistance: 8
   playerHeight: 2
   playerEyeHeight: 1.6
   playerRadius: 0.5
@@ -230,7 +230,7 @@ MonoBehaviour:
   soudRef: {fileID: 0}
   fadeTime: 0.5
   waitTime: 0.1
-  maxJumpDistance: 10
+  maxJumpDistance: 8
   playerHeight: 2
   playerEyeHeight: 1.6
   playerRadius: 0.5

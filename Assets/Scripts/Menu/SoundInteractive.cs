@@ -5,7 +5,12 @@ public class SoundInteractive : IInteractiveObject
     public Texture2D soundOnTexture;
     public Texture2D soundOffTexture;
 
-    private bool soundOn = true;
+    private static bool soundOn = true;
+
+    private void Awake()
+    {
+        GetComponent<Renderer>().material.SetTexture("_MainTex", soundOn ? soundOnTexture : soundOffTexture);
+    }
 
     public override void Interact()
     {

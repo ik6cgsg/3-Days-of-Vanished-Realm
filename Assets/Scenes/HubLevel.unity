@@ -886,6 +886,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1918876181}
     m_Modifications:
+    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Firework3
+      objectReference: {fileID: 0}
     - target: {fileID: 3797198114716633990, guid: d504f137e674d4e4ba922dd96ed2d19c,
         type: 3}
       propertyPath: m_Name
@@ -950,11 +955,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Firework3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c, type: 3}
@@ -1184,6 +1184,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1918876181}
     m_Modifications:
+    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Firework1
+      objectReference: {fileID: 0}
     - target: {fileID: 3797198114716633990, guid: d504f137e674d4e4ba922dd96ed2d19c,
         type: 3}
       propertyPath: m_Name
@@ -1248,11 +1253,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Firework1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c, type: 3}
@@ -1358,6 +1358,11 @@ PrefabInstance:
       propertyPath: uniqueObjectName
       value: LeftCrystalBool
       objectReference: {fileID: 0}
+    - target: {fileID: 5087372535557653326, guid: 73801cdd222fda14ab2c357dff99228a,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0df990d4f67be4648b257a034ae7c182, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73801cdd222fda14ab2c357dff99228a, type: 3}
 --- !u!4 &523363005 stripped
@@ -1888,6 +1893,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1918876181}
     m_Modifications:
+    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Firework2
+      objectReference: {fileID: 0}
     - target: {fileID: 3797198114716633990, guid: d504f137e674d4e4ba922dd96ed2d19c,
         type: 3}
       propertyPath: m_Name
@@ -1952,11 +1962,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Firework2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c, type: 3}
@@ -2229,6 +2234,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1918876181}
     m_Modifications:
+    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
+        type: 3}
+      propertyPath: uniqueObjectName
+      value: Firework1
+      objectReference: {fileID: 0}
     - target: {fileID: 3797198114716633990, guid: d504f137e674d4e4ba922dd96ed2d19c,
         type: 3}
       propertyPath: m_Name
@@ -2293,11 +2303,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c,
-        type: 3}
-      propertyPath: uniqueObjectName
-      value: Firework1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7333709184640368474, guid: d504f137e674d4e4ba922dd96ed2d19c, type: 3}
@@ -3385,6 +3390,11 @@ PrefabInstance:
       propertyPath: uniqueObjectName
       value: RightCrystalBool
       objectReference: {fileID: 0}
+    - target: {fileID: 5087372535557653326, guid: 73801cdd222fda14ab2c357dff99228a,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0df990d4f67be4648b257a034ae7c182, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73801cdd222fda14ab2c357dff99228a, type: 3}
 --- !u!4 &1707663206 stripped

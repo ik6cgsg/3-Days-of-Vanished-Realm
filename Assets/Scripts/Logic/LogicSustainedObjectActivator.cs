@@ -5,8 +5,6 @@ public class LogicSustainedObjectActivator : MonoBehaviour
     public LogicBoolean isActiveBoolean;
     public GameObject controlledGameObject;
 
-    private bool isActive;
-
     private void Awake()
     {
         controlledGameObject.SetActive(false);
@@ -14,10 +12,9 @@ public class LogicSustainedObjectActivator : MonoBehaviour
 
     private void Update()
     {
-        if (isActive != isActiveBoolean.Value)
+        if (controlledGameObject.activeSelf != isActiveBoolean.Value)
         {
-            isActive = isActiveBoolean.Value;
-            controlledGameObject.SetActive(isActive);
+            controlledGameObject.SetActive(isActiveBoolean.Value);
         }
     }
 }

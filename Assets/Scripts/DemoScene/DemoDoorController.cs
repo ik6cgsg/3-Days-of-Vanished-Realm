@@ -56,6 +56,11 @@ public class DemoDoorController : IInteractiveObject
         targetPos = transform.position + new Vector3(0, openHeight, 0);
     }
 
+    public override bool CanInteract()
+    {
+        return !isOpen;
+    }
+
     public override void Interact()
     {
         if (!isMoving)

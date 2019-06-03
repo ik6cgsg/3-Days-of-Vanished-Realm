@@ -1,4 +1,21 @@
 # Release Notes
+## Version 1.1.3 (03.06.2019)
+### Build link
+[3DVR-1.1.3.apk]()
+### What's new
+* SECOND LEVEL!
+* Colorful congratulations for final dessert
+
+### What's improved
+* Soniferous *firework*
+* Finally you can mute all our hard work about sound effects
+
+### What's fixed
+* The Greatest return of pick-up sound
+* Rotation and form of main menu (flat is trending)
+* Pressing "back" leads to main menu loading now
+* Little buggies
+
 ## Version 1.0.0 (27.05.2019)
 ### Build link
 [3DVR-1.0.0.apk](https://drive.google.com/file/d/1HyNtjwurmqt50hLL_1_7_s5f7BjH3ca8/view?usp=sharing)

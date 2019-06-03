@@ -1,7 +1,7 @@
 # Release Notes
 ## Version 1.1.3 (03.06.2019)
 ### Build link
-[3DVR-1.1.3.apk]()
+[3DVR-1.1.3.apk](https://drive.google.com/file/d/1Fz2GKFxgV3f9qziVuismw7Zk5phkPGvG/view?usp=sharing)
 ### What's new
 * SECOND LEVEL!
 * Colorful congratulations for final dessert
@@ -15,6 +15,8 @@
 * Rotation and form of main menu (flat is trending)
 * Pressing "back" leads to main menu loading now
 * Little buggies
+
+Thank's for playing!!
 
 ## Version 1.0.0 (27.05.2019)
 ### Build link
